@@ -1,0 +1,14 @@
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/bin/Debug/net8.0/ExemploPOORevisao
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/bin/Debug/net8.0/ExemploPOORevisao.deps.json
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/bin/Debug/net8.0/ExemploPOORevisao.runtimeconfig.json
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/bin/Debug/net8.0/ExemploPOORevisao.dll
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/bin/Debug/net8.0/ExemploPOORevisao.pdb
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.AssemblyInfoInputs.cache
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.AssemblyInfo.cs
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.csproj.CoreCompileInputs.cache
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.dll
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/refint/ExemploPOORevisao.dll
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.pdb
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ExemploPOORevisao.genruntimeconfig.cache
+/Users/emerson/Documents/GitHub/Cursos/DIO/C#/ExemploPOORevisao/obj/Debug/net8.0/ref/ExemploPOORevisao.dll
