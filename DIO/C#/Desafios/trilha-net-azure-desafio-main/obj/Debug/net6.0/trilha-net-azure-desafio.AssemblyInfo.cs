@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("trilha-net-azure-desafio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a382694243da27b417553a0e241f1c64c855472")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a20cf3f9de046ae0c176d5bc7ce867f706db7576")]
 [assembly: System.Reflection.AssemblyProductAttribute("trilha-net-azure-desafio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("trilha-net-azure-desafio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
