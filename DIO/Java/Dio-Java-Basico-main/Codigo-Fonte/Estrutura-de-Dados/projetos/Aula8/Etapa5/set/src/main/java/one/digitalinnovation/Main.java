@@ -6,7 +6,8 @@ import java.util.TreeSet;
 
 public class Main {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
+        // Criar um conjunto de carros
         Set<Carro> hashSetCarros = new HashSet<>();
 
         hashSetCarros.add(new Carro("Ford"));
@@ -16,8 +17,10 @@ public class Main {
         hashSetCarros.add(new Carro("Zip"));
         hashSetCarros.add(new Carro("Alfa Romeo"));
 
+        // Imprimir o conjunto
         System.out.println(hashSetCarros);
 
+        // Criar uma arvore de carros
         Set<Carro> treeSetCarros = new TreeSet<>();
 
         treeSetCarros.add(new Carro("Ford"));
@@ -27,6 +30,7 @@ public class Main {
         treeSetCarros.add(new Carro("Zip"));
         treeSetCarros.add(new Carro("Alfa Romeo"));
 
+        // Imprimir a arvore
         System.out.println(treeSetCarros);
 
     }
