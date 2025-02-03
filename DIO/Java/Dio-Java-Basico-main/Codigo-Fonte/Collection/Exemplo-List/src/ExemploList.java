@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-class ExemploList {
+public class ExemploList {
     public static void main(String[] args) throws Exception {
 
         // Cria uma lista e adiciona sete notas
