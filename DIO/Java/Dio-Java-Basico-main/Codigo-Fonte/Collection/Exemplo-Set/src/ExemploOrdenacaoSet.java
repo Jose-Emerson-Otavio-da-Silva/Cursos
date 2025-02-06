@@ -8,8 +8,10 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 
+// Classe principal que demonstra a ordenação de um conjunto de séries
 public class ExemploOrdenacaoSet {
     public static void main(String[] args) throws Exception {
+        // Exemplo de ordenação aleatória usando HashSet
         System.out.println("--\tOrdem aleatória\t--");
         Set<Serie> minhasSeries = new HashSet<>() {
             {
@@ -21,6 +23,7 @@ public class ExemploOrdenacaoSet {
         for (Serie serie : minhasSeries)
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
 
+        // Exemplo de ordenação por ordem de inserção usando LinkedHashSet
         System.out.println("--\tOrdem inserção\t--");
         Set<Serie> minhasSeries1 = new LinkedHashSet<>() {
             {
@@ -32,11 +35,14 @@ public class ExemploOrdenacaoSet {
         for (Serie serie : minhasSeries1)
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
 
+        // Exemplo de ordenação natural (por tempo de episódio) usando TreeSet
         System.out.println("--\tOrdem natural (TempoEpisodio)\t--");
         Set<Serie> minhasSeries2 = new TreeSet<>(minhasSeries1);
         for (Serie serie : minhasSeries2)
             System.out.println(serie.getNome() + " - " + serie.getGenero() + " - " + serie.getTempoEpisodio());
 
+        // Exemplo de ordenação por Nome, Gênero e Tempo de Episódio usando TreeSet com
+        // Comparator
         System.out.println("--\tOrdem Nome/Gênero/TempoEpisodio\t--");
         Set<Serie> minhasSeries3 = new TreeSet<>(new compareToNomeGeneroTempoEpisodio());
         minhasSeries3.addAll(minhasSeries);
@@ -45,6 +51,8 @@ public class ExemploOrdenacaoSet {
     }
 }
 
+// Classe que representa uma série e implementa a interface Comparable para
+// ordenação natural
 class Serie implements Comparable<Serie> {
     private String nome;
     private String genero;
@@ -103,6 +111,8 @@ class Serie implements Comparable<Serie> {
     }
 }
 
+// Classe que implementa Comparator para ordenar séries por Nome, Gênero e Tempo
+// de Episódio
 class compareToNomeGeneroTempoEpisodio implements Comparator<Serie> {
 
     @Override
