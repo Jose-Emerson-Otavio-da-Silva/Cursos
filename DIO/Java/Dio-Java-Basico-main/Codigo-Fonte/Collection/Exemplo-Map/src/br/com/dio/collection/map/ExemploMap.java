@@ -1,3 +1,5 @@
+package br.com.dio.collection.map;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
