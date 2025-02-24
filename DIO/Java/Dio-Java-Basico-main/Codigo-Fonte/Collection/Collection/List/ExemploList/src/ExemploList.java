@@ -25,6 +25,12 @@ public class ExemploList {
      * - Cria um iterator para percorrer a lista.
      * - Limpa a lista.
      * 
+     * Definição de List:
+     * List é uma interface em Java que representa uma coleção ordenada de
+     * elementos.
+     * Ela permite elementos duplicados e mantém a ordem de inserção dos elementos.
+     * As implementações mais comuns de List são ArrayList, LinkedList e Vector.
+     * 
      * Definição de Iterator:
      * Um Iterator é uma interface em Java que permite percorrer uma coleção de
      * elementos, um por um.
