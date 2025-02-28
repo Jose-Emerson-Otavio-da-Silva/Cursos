@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Blazor8")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Blazor8.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d01f379987c8c4a1042245cb25b80750fcafdeb3")]
-[assembly: System.Reflection.AssemblyProductAttribute("Blazor8")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Blazor8")]
+[assembly: System.Reflection.AssemblyProductAttribute("Blazor8.Client")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Blazor8.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
