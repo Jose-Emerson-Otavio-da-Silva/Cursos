@@ -64,3 +64,13 @@ C:\Users\emerson.sap09\source\repos\Projetos-Blazor\Blazor8\Blazor8\Blazor8\obj\
 C:\Users\emerson.sap09\source\repos\Projetos-Blazor\Blazor8\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.pdb
 C:\Users\emerson.sap09\source\repos\Projetos-Blazor\Blazor8\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.genruntimeconfig.cache
 C:\Users\emerson.sap09\source\repos\Projetos-Blazor\Blazor8\Blazor8\Blazor8\obj\Debug\net8.0\ref\Blazor8.dll
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.csproj.AssemblyReference.cache
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.AssemblyInfoInputs.cache
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.AssemblyInfo.cs
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.csproj.CoreCompileInputs.cache
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.sourcelink.json
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.dll
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\refint\Blazor8.dll
+C:\Users\emerson.sap09\source\repos\Jose-Emerson-Otavio-da-Silva\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Blazor8\Blazor8\obj\Debug\net8.0\Blazor8.pdb
