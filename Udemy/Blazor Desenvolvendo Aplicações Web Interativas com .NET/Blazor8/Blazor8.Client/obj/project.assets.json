@@ -1671,11 +1671,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emerson.sap09\\source\\repos\\Projetos-Blazor\\Blazor8\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
+      "projectUniqueName": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
       "projectName": "Blazor8.Client",
-      "projectPath": "C:\\Users\\emerson.sap09\\source\\repos\\Projetos-Blazor\\Blazor8\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
+      "projectPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
       "packagesPath": "C:\\Users\\emerson.sap09\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emerson.sap09\\source\\repos\\Projetos-Blazor\\Blazor8\\Blazor8\\Blazor8.Client\\obj\\",
+      "outputPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
