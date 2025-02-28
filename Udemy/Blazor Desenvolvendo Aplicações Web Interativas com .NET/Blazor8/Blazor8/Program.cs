@@ -1,4 +1,4 @@
-using Blazor8.Client.Pages;
+//using Blazor8.Client;
 using Blazor8.Components;
 using Blazor8.Models;
 
@@ -34,7 +34,7 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Blazor8.Client.Program).Assembly);
+    .AddInteractiveWebAssemblyRenderMode();
+//.AddAdditionalAssemblies(typeof(Blazor8.Client.Program).Assembly);
 
 app.Run();
