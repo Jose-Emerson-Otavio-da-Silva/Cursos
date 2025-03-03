@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj": {}
+    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj": {
+    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
         "projectName": "Blazor8.Client",
-        "projectPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
-        "packagesPath": "C:\\Users\\emerson.sap09\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\",
+        "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj",
+        "packagesPath": "C:\\Users\\Emerson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\emerson.sap09\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Emerson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,13 +34,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -57,13 +47,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.13, )",
+              "version": "[8.0.1, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.2, )",
+              "version": "[8.0.1, )",
               "autoReferenced": true
             }
           },
@@ -81,7 +71,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.13, 8.0.13]"
+              "version": "[8.0.1, 8.0.1]"
             }
           ],
           "frameworkReferences": {
@@ -89,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -98,21 +88,17 @@
         }
       }
     },
-    "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj": {
+    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj",
+        "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj",
         "projectName": "Blazor8",
-        "projectPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj",
-        "packagesPath": "C:\\Users\\emerson.sap09\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\obj\\",
+        "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\Blazor8.csproj",
+        "packagesPath": "C:\\Users\\Emerson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\emerson.sap09\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Emerson\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -126,8 +112,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj": {
-                "projectPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj"
+              "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj": {
+                "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\Blazor8.Client.csproj"
               }
             }
           }
@@ -136,13 +122,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -172,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
