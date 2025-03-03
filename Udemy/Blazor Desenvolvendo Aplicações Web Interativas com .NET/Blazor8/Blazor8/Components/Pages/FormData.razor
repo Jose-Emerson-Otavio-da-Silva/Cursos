@@ -1,7 +1,17 @@
 @page "/form/data"
+@rendermode InteractiveServer
 
 <h3>FormData</h3>
 
-@code {
+<input @bind="Email" type="email" class="form-control" placeholder="Email" />
+<button @onclick="Acessar" class="btn btn-primary">Acessar</button>
 
+@code {
+    public string? Mensagem { get; set; }
+    private string? Email { get; set; }
+
+    public void Acessar()
+    {
+        Mensagem = "Login realizado com sucesso!"
+    }
 }
