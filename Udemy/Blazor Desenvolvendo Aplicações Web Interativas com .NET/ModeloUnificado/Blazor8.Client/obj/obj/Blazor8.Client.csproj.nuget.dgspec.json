@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\Blazor8.Client.csproj": {}
+    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\ModeloUnificado\\Blazor8.Client\\obj\\Blazor8.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\Blazor8.Client.csproj": {
+    "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\ModeloUnificado\\Blazor8.Client\\obj\\Blazor8.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\Blazor8.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\ModeloUnificado\\Blazor8.Client\\obj\\Blazor8.Client.csproj",
         "projectName": "Blazor8.Client",
-        "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\Blazor8.Client.csproj",
+        "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\ModeloUnificado\\Blazor8.Client\\obj\\Blazor8.Client.csproj",
         "packagesPath": "C:\\Users\\Emerson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Blazor8\\Blazor8.Client\\obj\\obj\\",
+        "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\ModeloUnificado\\Blazor8.Client\\obj\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Emerson\\AppData\\Roaming\\NuGet\\NuGet.Config",
