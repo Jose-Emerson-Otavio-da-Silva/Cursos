@@ -3,15 +3,53 @@
 
 <h3>FormData</h3>
 
-<input @bind="Email" type="email" class="form-control" placeholder="Email" />
-<button @onclick="Acessar" class="btn btn-primary">Acessar</button>
+@if (Mensagem is not null)
+{
+    <div class="alert alert-info" role="alert">
+        @Mensagem
+    </div>
+}
+@if (MensagemErro is not null)
+{
+    <div class="alert alert-danger" role="alert">
+        @MensagemErro
+    </div>
+}
+<EditForm Model="Usuario" OnInvalidSubmit="ValidacaoErro" OnValidSubmit="ValidacaoOK" FormName="login">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row">
+        <div class="col-12">
+            <label for="email">E-mail</label>
+            <InputText id="email" @bind-Value="Usuario.Email" class="form-control" />
+            <ValidationMessage For="@(() => Usuario.Email)" />
+        </div>
+        <div class="col-12">
+            <label for="senha">Senha</label>
+            <InputText type="password" id="senha" @bind-Value="Usuario.Senha" class="form-control" />
+            <ValidationMessage For="@(() => Usuario.Senha)" />
+        </div>
+    </div>
+    <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-outline-primary">Acessar</button>
+    </div>
+</EditForm>
+
 
 @code {
     public string? Mensagem { get; set; }
-    private string? Email { get; set; }
-
-    public void Acessar()
+    public string? MensagemErro { get; set; }
+    private Usuario Usuario { get; set; } = new Usuario();
+    public void Acessar(EditContext context)
     {
-        Mensagem = "Login realizado com sucesso!"
+        if (context.Validate()) { Mensagem = $"Acessando.... E-mail: {Usuario.Email} - Senha: {Usuario.Senha}"; }
+    }
+    private void ValidacaoOK(EditContext args)
+    {
+        Mensagem = $"Dados validados com sucesso!";
+    }
+    private void ValidacaoErro(EditContext args)
+    {
+        MensagemErro = $"Validação de dados falhou!";
     }
 }

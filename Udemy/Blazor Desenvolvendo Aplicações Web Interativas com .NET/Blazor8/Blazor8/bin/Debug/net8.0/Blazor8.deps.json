@@ -244,10 +244,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.12"
         },
         "runtime": {
-          "Blazor8.Client.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Blazor8.Client.dll": {}
         }
       }
     }
