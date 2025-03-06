@@ -10,8 +10,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddSingleton<NumeroAleatorio>();
-builder.Services.AddSingleton<MensagemSMS>();
-builder.Services.AddSingleton<MensagemEmail>();
+builder.Services.AddSingleton<IMensagem, MensagemEmail>();
 
 var app = builder.Build();
 
