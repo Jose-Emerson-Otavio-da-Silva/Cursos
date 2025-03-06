@@ -1,9 +1,8 @@
 package equipamentos.digitalizadora;
 
-public class Scanner implements Digitalizadora{
+public class Scanner implements Digitalizadora {
 
-	public void digitalizar()  {
-		// TODO Auto-generated method stub
+	public void digitalizar() {
 		System.out.println("Digitalizando.");
 	}
 

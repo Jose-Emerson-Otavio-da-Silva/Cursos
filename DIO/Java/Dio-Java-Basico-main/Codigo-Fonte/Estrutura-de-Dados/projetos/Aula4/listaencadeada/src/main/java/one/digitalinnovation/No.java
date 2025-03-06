@@ -3,13 +3,13 @@ package one.digitalinnovation;
 public class No<T> {
 
     private T conteudo;
-    private No proximoNo = null;
+    private No<T> proximoNo = null;
 
-    public No(T conteudo){
+    public No(T conteudo) {
         this.conteudo = conteudo;
     }
 
-    public No(T conteudo, No proximoNo) {
+    public No(T conteudo, No<T> proximoNo) {
         this.conteudo = conteudo;
         this.proximoNo = proximoNo;
     }
@@ -22,11 +22,11 @@ public class No<T> {
         this.conteudo = conteudo;
     }
 
-    public No getProximoNo() {
+    public No<T> getProximoNo() {
         return proximoNo;
     }
 
-    public void setProximoNo(No proximoNo) {
+    public void setProximoNo(No<T> proximoNo) {
         this.proximoNo = proximoNo;
     }
 
@@ -38,9 +38,9 @@ public class No<T> {
     public String toStringEncadeado() {
         String str = "No{" + conteudo + "}";
 
-        if(proximoNo != null){
+        if (proximoNo != null) {
             str += "->" + proximoNo.toString();
-        }else{
+        } else {
             str += "->null";
         }
         return str;

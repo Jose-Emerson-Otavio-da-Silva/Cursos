@@ -1,0 +1,5 @@
+{
+    "dataworkspace.excludedProjects": [
+        "BlazorIdentity/BlazorIdentity/Data/Teste/Teste.sqlproj"
+    ]
+}
