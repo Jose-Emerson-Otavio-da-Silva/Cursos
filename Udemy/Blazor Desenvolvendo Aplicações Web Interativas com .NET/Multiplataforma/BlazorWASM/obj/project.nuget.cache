@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IXMm7AjdlUxvOEn0VgWHpB6KF8oLmPG2Kcu+Hwzg123GdsWIfcT6bnJ4+3lXNP1Ah7s4MarOqkauguwd/EBU7Q==",
+  "dgSpecHash": "lZDzBjLwVgV+qnY4D7QHudcMLJX6JnB50+Ew09LCZtkAanZ9qcVJDMIxM+d/UslTFtn1c815o1oOWmZJfYxF2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Multiplataforma\\BlazorWASM\\BlazorWASM.csproj",
   "expectedPackageFiles": [
@@ -29,11 +29,11 @@
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.jsinterop\\8.0.1\\microsoft.jsinterop.8.0.1.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.1\\microsoft.jsinterop.webassembly.8.0.1.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.1\\microsoft.net.illink.tasks.8.0.1.nupkg.sha512",
-    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.1\\microsoft.net.sdk.webassembly.pack.8.0.1.nupkg.sha512",
+    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.13\\microsoft.net.sdk.webassembly.pack.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
-    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.1\\microsoft.netcore.app.runtime.mono.browser-wasm.8.0.1.nupkg.sha512"
+    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.13\\microsoft.netcore.app.runtime.mono.browser-wasm.8.0.13.nupkg.sha512"
   ],
   "logs": []
 }
