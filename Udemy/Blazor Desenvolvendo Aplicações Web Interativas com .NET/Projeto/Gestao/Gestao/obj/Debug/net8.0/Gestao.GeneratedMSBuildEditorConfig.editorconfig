@@ -170,6 +170,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Layout/Default/DefaultLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRGVmYXVsdFxEZWZhdWx0TGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -190,10 +194,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-1ikwk4k3wo
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Layout/Admin/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQWRtaW5cTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-71deae6lvz
 
-[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-27kpodfzc3
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Layout/Admin/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQWRtaW5cTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ahs2ex62hz
