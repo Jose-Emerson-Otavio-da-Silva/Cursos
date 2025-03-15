@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "Gestao.Client",
   "resources": {
-    "hash": "sha256-L9me/wTaQJN6vMgcqu5UqO4uwhtTAI2BES2CZMLwkqY=",
+    "hash": "sha256-xt8/HhT7ZbHFgeFJupYDWHNYDKFSWShmOW3oAf74BcQ=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-xNQsYHtL1vcbrVTHDZAwJM4WovpoyjsrM2C6FQ8cW1w="
+      "dotnet.native.8.0.13.s0bazgkbva.js": "sha256-xNQsYHtL1vcbrVTHDZAwJM4WovpoyjsrM2C6FQ8cW1w="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.js": "sha256-13vqU3hueOALvSTEM8xnJkJj2exVJYtNc1KZelMCDf0="
+      "dotnet.runtime.8.0.13.jgpqn6y7gj.js": "sha256-13vqU3hueOALvSTEM8xnJkJj2exVJYtNc1KZelMCDf0="
     },
     "wasmNative": {
       "dotnet.native.wasm": "sha256-XhsharnkthjahGEiBkFjCLc/87/Tecti9860TIEq0H0="
@@ -16,7 +16,6 @@
       "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
-    "coreAssembly": {},
     "assembly": {
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-g81inugSrrLKEtyxg9JkSxiBc3dly3FZcTKaz72rU/U=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-4/ecRnxEzB060rvNFk3n/GL1s3361WaHeLmfoea+Mp8=",
@@ -211,10 +210,10 @@
       "mscorlib.wasm": "sha256-RAf5jgXLg+06C4tJ3CabxAZaVjCN2/+E6fxRjRN8yHk=",
       "netstandard.wasm": "sha256-KCAE8RQwTurP5pGnGF819qf9sK++2O0rXzt6tOjlfi8=",
       "System.Private.CoreLib.wasm": "sha256-LQqLbHgeEX4HONx7GwIxGgmzIXP6n2OPxqnq+/4Tyqk=",
-      "Gestao.Client.wasm": "sha256-fAbkg9Su0+zAy8Su6sLY0agsTDhh8GUv3PEJQezLJVg="
+      "Gestao.Client.wasm": "sha256-lLZ5hN3v3vAKyaxSDwUyHiRsGxtu+WO+atvFZ7cgRU4="
     },
     "pdb": {
-      "Gestao.Client.pdb": "sha256-IrbSUyblg2d5y8suQxkurCMLlEVKliAz4vdeyXCint8="
+      "Gestao.Client.pdb": "sha256-Z9jREe11y5weu2IR88indXiYUbQBIMCOhlBEWRoY8ZU="
     }
   },
   "cacheBootResources": true,
