@@ -20,54 +20,46 @@
 <div class="row">
     <div class="col-md-4">
         <section>
-            <StatusMessage Message="@errorMessage" />
-            <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
-                <DataAnnotationsValidator />
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <ValidationSummary class="text-danger" role="alert" />
-                <div class="form-floating mb-3">
-                    <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username"
-                        aria-required="true" placeholder="name@example.com" />
-                    <label for="email" class="form-label">Email</label>
-                    <ValidationMessage For="() => Input.Email" class="text-danger" />
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText type="password" @bind-Value="Input.Password" class="form-control"
-                        autocomplete="current-password" aria-required="true" placeholder="password" />
-                    <label for="password" class="form-label">Password</label>
-                    <ValidationMessage For="() => Input.Password" class="text-danger" />
-                </div>
-                <div class="checkbox mb-3">
-                    <label class="form-label">
-                        <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
-                        Remember me
-                    </label>
-                </div>
-                <div>
-                    <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
-                <div>
-                    <p>
-                        <a href="Account/ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a
-                            href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register
-                            as a new user</a>
-                    </p>
-                    <p>
-                        <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
-                    </p>
-                </div>
-            </EditForm>
+
+            <h2>Use a local account to log in.</h2>
+            <hr />
+
+            <div class="form-floating mb-3">
+
+            </div>
+            <div class="form-floating mb-3">
+
+            </div>
+            <div class="checkbox mb-3">
+                <label class="form-label">
+                    <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input" />
+                    Remember me
+                </label>
+            </div>
+            <div>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+            </div>
+            <div>
+                <p>
+                    <a href="Account/ForgotPassword">Forgot your password?</a>
+                </p>
+                <p>
+                    <a
+                        href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register
+                        as a new user</a>
+                </p>
+                <p>
+                    <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
+                </p>
+            </div>
+
         </section>
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to log in.</h3>
             <hr />
-            <ExternalLoginPicker />
+
         </section>
     </div>
 </div>
@@ -75,26 +67,38 @@
 
 <div class="p-lg-5 p-4">
     <div>
-        <h5 class="text-primary">Welcome Back !</h5>
-        <p class="text-muted">Sign in to continue to Velzon.</p>
+        <h5 class="text-primary">Bem Vindo!</h5>
+        <p class="text-muted">Faça o login para acessar o sistema.</p>
     </div>
 
     <div class="mt-4">
-        <form action="index.html">
-
+        <StatusMessage Message="@errorMessage" />
+        <EditForm Model="Input" method="post" OnValidSubmit="LoginUser" FormName="login">
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" role="alert" />
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                <label for="email" class="form-label">Email</label>
+                <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" aria-required="true"
+                    placeholder="name@example.com" />
+
+                <ValidationMessage For="() => Input.Email" class="text-danger" />
             </div>
 
             <div class="mb-3">
+
+                <ValidationMessage For="() => Input.Password" class="text-danger" />
+
                 <div class="float-end">
                     <a href="auth-pass-reset-cover.html" class="text-muted">Forgot password?</a>
                 </div>
-                <label class="form-label" for="password-input">Password</label>
+
+                <label class="form-label" for="password">Password</label>
                 <div class="position-relative auth-pass-inputgroup mb-3">
-                    <input type="password" class="form-control pe-5 password-input" placeholder="Enter password"
-                        id="password-input">
+
+                    <InputText type="password" @bind-Value="Input.Password" class="form-control pe-5 password-input"
+                        autocomplete="current-password" aria-required="true" placeholder="password" />
+
+                    <input type="password" placeholder="Enter password" id="password-input">
                     <button
                         class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none"
                         type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
@@ -111,29 +115,30 @@
             </div>
 
             <div class="mt-4 text-center">
+                <ExternalLoginPicker />
                 <div class="signin-other-title">
                     <h5 class="fs-13 mb-4 title">Sign In with</h5>
                 </div>
-
-                <div>
-                    <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i
-                            class="ri-facebook-fill fs-16"></i></button>
-                    <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i
-                            class="ri-google-fill fs-16"></i></button>
-                    <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i
-                            class="ri-github-fill fs-16"></i></button>
-                    <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i
-                            class="ri-twitter-fill fs-16"></i></button>
-                </div>
-            </div>
-
-        </form>
+        </EditForm>
+        <div>
+            <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i
+                    class="ri-facebook-fill fs-16"></i></button>
+            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i
+                    class="ri-google-fill fs-16"></i></button>
+            <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i
+                    class="ri-github-fill fs-16"></i></button>
+            <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i
+                    class="ri-twitter-fill fs-16"></i></button>
+        </div>
     </div>
 
-    <div class="mt-5 text-center">
-        <p class="mb-0">Don't have an account ? <a href="auth-signup-cover.html"
-                class="fw-semibold text-primary text-decoration-underline"> Signup</a> </p>
-    </div>
+
+</div>
+
+<div class="mt-5 text-center">
+    <p class="mb-0">Don't have an account ? <a href="auth-signup-cover.html"
+            class="fw-semibold text-primary text-decoration-underline"> Signup</a> </p>
+</div>
 </div>
 
 
