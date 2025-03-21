@@ -56,7 +56,7 @@
             <div class="form-check">
                 <InputCheckbox @bind-Value="Input.RememberMe" class="darker-border-checkbox form-check-input"
                     id="auth-remember-check" />
-                <label class="form-check-label" for="auth-remember-check">Lembre-se de mim</label>
+                <label class="form-check-label" for="auth-remember-check">Lembrar-me?</label>
             </div>
 
             <div class="mt-4">
@@ -152,7 +152,7 @@
         [DataType(DataType.Password)]
         public string Password { get; set; } = "";
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "Lembrar-me?")]
         public bool RememberMe { get; set; }
     }
 }
