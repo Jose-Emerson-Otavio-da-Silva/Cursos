@@ -168,7 +168,7 @@
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmação da senha")]
-        [Compare("Senha", ErrorMessage = "A senha e a confirmação da senha não conferem.")]
+        [Compare("Password", ErrorMessage = "A senha e a confirmação da senha não conferem.")]
         public string ConfirmPassword { get; set; } = "";
     }
 }
