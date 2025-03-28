@@ -36,7 +36,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
-
+//------------------------------Config Envio Email----------------------------------
 builder.Services.AddSingleton<SmtpClient>(options =>
 {
     var smtp = new SmtpClient();
@@ -51,7 +51,7 @@ builder.Services.AddSingleton<SmtpClient>(options =>
     return smtp;
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
-
+//----------------------------------------------------------------------------------
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
