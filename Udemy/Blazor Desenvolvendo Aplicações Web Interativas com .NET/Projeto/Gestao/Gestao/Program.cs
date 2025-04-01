@@ -25,7 +25,22 @@ builder.Services.AddAuthentication(options =>
         options.DefaultScheme = IdentityConstants.ApplicationScheme;
         options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
     })
+    //Autenticacao do Google
+    .AddGoogle(options =>
+   {
+       options.ClientId = builder.Configuration.GetValue<String>("OAuth:Google:ClientId")!;
+       options.ClientSecret = builder.Configuration.GetValue<String>("OAuth:Google:ClientSecret")!;
+   })
+    //------------------------------------------------------------------------------------------------
+    //Autenticacao do Facebook
+    .AddFacebook(options =>
+   {
+       options.ClientId = builder.Configuration.GetValue<String>("OAuth:Facebook:ClientId")!;
+       options.ClientSecret = builder.Configuration.GetValue<String>("OAuth:Facebook:ClientSecret")!;
+   })
+    //------------------------------------------------------------------------------------------------
     .AddIdentityCookies();
+
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -36,7 +51,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
-
+//------------------------------Config Envio Email----------------------------------
 builder.Services.AddSingleton<SmtpClient>(options =>
 {
     var smtp = new SmtpClient();
@@ -51,7 +66,7 @@ builder.Services.AddSingleton<SmtpClient>(options =>
     return smtp;
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
-
+//----------------------------------------------------------------------------------
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

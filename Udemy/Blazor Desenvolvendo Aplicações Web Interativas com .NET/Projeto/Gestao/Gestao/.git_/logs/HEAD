@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 e7da3247c8c3671075b3d4d5b1590ee2aa94ae42 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743466146 -0300	commit (initial): Ignore appsettings.Development.json
+e7da3247c8c3671075b3d4d5b1590ee2aa94ae42 3eb14080ab69f4f00f646ed9e83ce9cd546f9803 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743466810 -0300	commit: appsettings.Development.json
+3eb14080ab69f4f00f646ed9e83ce9cd546f9803 406a3d83871ed8f88de61867083bb582c45d34a9 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743467334 -0300	commit (amend): appsettings.Development.json
+406a3d83871ed8f88de61867083bb582c45d34a9 29cd4fb729a0db6ab1eae8b2fad404739ac63667 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743467684 -0300	commit (rebase): appsettings.Development.json
+29cd4fb729a0db6ab1eae8b2fad404739ac63667 3eb14080ab69f4f00f646ed9e83ce9cd546f9803 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743467787 -0300	rebase (abort): returning to refs/heads/master
+3eb14080ab69f4f00f646ed9e83ce9cd546f9803 3eb14080ab69f4f00f646ed9e83ce9cd546f9803 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743467787 -0300	rebase (abort): returning to refs/heads/master
+3eb14080ab69f4f00f646ed9e83ce9cd546f9803 3eb14080ab69f4f00f646ed9e83ce9cd546f9803 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743467888 -0300	rebase (start): checkout HEAD~1
+3eb14080ab69f4f00f646ed9e83ce9cd546f9803 3eb14080ab69f4f00f646ed9e83ce9cd546f9803 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743467888 -0300	rebase (finish): returning to refs/heads/master
+3eb14080ab69f4f00f646ed9e83ce9cd546f9803 e7da3247c8c3671075b3d4d5b1590ee2aa94ae42 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743469270 -0300	checkout: moving from master to e7da324
+e7da3247c8c3671075b3d4d5b1590ee2aa94ae42 e7da3247c8c3671075b3d4d5b1590ee2aa94ae42 José Emerson Otavio da Silva <emersonr8@hotmail.com> 1743469343 -0300	checkout: moving from e7da3247c8c3671075b3d4d5b1590ee2aa94ae42 to restore-files

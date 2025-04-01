@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "ljDx94214eg=",
+  "dgSpecHash": "waroWziFspY=",
   "success": true,
   "projectFilePath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\Gestao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emerson\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\8.0.13\\microsoft.aspnetcore.authentication.facebook.8.0.13.nupkg.sha512",
+    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.13\\microsoft.aspnetcore.authentication.google.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.13\\microsoft.aspnetcore.authorization.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.13\\microsoft.aspnetcore.components.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.13\\microsoft.aspnetcore.components.analyzers.8.0.13.nupkg.sha512",
