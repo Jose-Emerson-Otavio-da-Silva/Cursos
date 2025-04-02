@@ -11,6 +11,7 @@
           "Gestao.Client": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.13",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.13",
+          "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "8.0.13",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.13",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.13",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13",
@@ -78,6 +79,14 @@
       "Microsoft.AspNetCore.Authentication.Google/8.0.13": {
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "8.0.13.0",
+            "fileVersion": "8.0.1325.6610"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.13": {
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
             "assemblyVersion": "8.0.13.0",
             "fileVersion": "8.0.1325.6610"
           }
@@ -1398,6 +1407,13 @@
       "sha512": "sha512-pHL4Q83J6vzE8zz6+fkEwxVW7sXKFeFGiuJysD/Cbvos8CxNZgh/tkKyA6l5J67SQw4TVh+w20OVXcoN+RnaAw==",
       "path": "microsoft.aspnetcore.authentication.google/8.0.13",
       "hashPath": "microsoft.aspnetcore.authentication.google.8.0.13.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v87gAd+GPc1Y4P4ctPVCDEFK9LsuXvZw7qpc0o79uhdju4BijP8KMLyMWNkYsfvScWxOuuechaMcPsurU1QhAg==",
+      "path": "microsoft.aspnetcore.authentication.microsoftaccount/8.0.13",
+      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.8.0.13.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/8.0.13": {
       "type": "package",

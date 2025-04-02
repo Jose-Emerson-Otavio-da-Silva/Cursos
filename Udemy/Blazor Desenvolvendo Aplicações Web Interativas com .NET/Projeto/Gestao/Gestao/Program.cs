@@ -39,6 +39,13 @@ builder.Services.AddAuthentication(options =>
        options.ClientSecret = builder.Configuration.GetValue<String>("OAuth:Facebook:ClientSecret")!;
    })
     //------------------------------------------------------------------------------------------------
+    //Autenticacao do Microsoft
+    .AddMicrosoftAccount(options =>
+   {
+       options.ClientId = builder.Configuration.GetValue<String>("OAuth:Microsoft:ClientId")!;
+       options.ClientSecret = builder.Configuration.GetValue<String>("OAuth:Microsoft:ClientSecret")!;
+   })
+    //------------------------------------------------------------------------------------------------
     .AddIdentityCookies();
 
 
