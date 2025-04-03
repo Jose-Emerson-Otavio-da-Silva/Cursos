@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cODVIAIQPzzPJfvNrCeVvknslVyGzmIdpT0H011SA/Q=",
+  "Hash": "sBYvh+ui8px9LE/kPBVU9BYMx4csE5m7NElZ1aI63IU=",
   "Source": "Gestao.Client",
   "BasePath": "/",
   "Mode": "Default",
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "qauo5lt1pk",
-      "Integrity": "nqcSpPHXeQKJTODgHeHKsoHxKlPD1YZpoPIhSDV8HFw=",
+      "Fingerprint": "acht516e6i",
+      "Integrity": "9lkAfMV9OK+kj8qwezUhU+GBZHLaaqEDqo9P3tDyiUI=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\blazor.boot.json"
@@ -241,8 +241,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "iyqleazlua",
-      "Integrity": "Rt4OJDmIOTig0fOvCYm0ohoxhbHJxnyNVyMXwDYs1yk=",
+      "Fingerprint": "45gbbe5jss",
+      "Integrity": "eBndewFADAcKcGPg3EhqP2zH0I4yywo68aQY1tsJsyY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\Gestao.Client.pdb"
@@ -262,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "9xnpuzfzfe",
-      "Integrity": "o8D8zAUfLgaM1DIeCUXtXoemBZzifHnHOd1cFtLNLtU=",
+      "Fingerprint": "afq6k6mhxa",
+      "Integrity": "uihkr7ppZEP3m1A+r5PfBtkfSWzLTE9TcxIkiti0Ls8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\webcil\\Gestao.Client.wasm"
@@ -5414,7 +5414,7 @@
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.FileVersionInfo.wasm"
     },
     {
-      "Identity": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\7gkwprjboy-iyqleazlua.gz",
+      "Identity": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\7gkwprjboy-45gbbe5jss.gz",
       "SourceId": "Gestao.Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\",
@@ -5428,8 +5428,8 @@
       "RelatedAsset": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Gestao.Client.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "bw0t7h81r9",
-      "Integrity": "y7TidXwJIGVdbZo5BmV18nejhuJAMvyENN1QlACYxSE=",
+      "Fingerprint": "z39spnziop",
+      "Integrity": "4b2KjRRTI6jg8Ejac1MNftW1rMTmJ1qZHIW0CwElk9E=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Gestao.Client.pdb"
@@ -5813,7 +5813,7 @@
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Extensions.wasm"
     },
     {
-      "Identity": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\bgh0hcnqip-9xnpuzfzfe.gz",
+      "Identity": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\bgh0hcnqip-afq6k6mhxa.gz",
       "SourceId": "Gestao.Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\",
@@ -5827,8 +5827,8 @@
       "RelatedAsset": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Gestao.Client.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "bo7d60qpnw",
-      "Integrity": "Gw52d8VryZYIp6ZEhaLFMSD8pSL69BpPhJzOrkcxWz4=",
+      "Fingerprint": "9wf2y8rekm",
+      "Integrity": "+W7IY1gNuH1FIGMoqJhAL4mmkBERfOl6Cn7L27qZUgY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Gestao.Client.wasm"
@@ -6947,7 +6947,7 @@
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.wasm"
     },
     {
-      "Identity": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\k44zvoq31s-qauo5lt1pk.gz",
+      "Identity": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\k44zvoq31s-acht516e6i.gz",
       "SourceId": "Gestao.Client",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\",
@@ -6961,8 +6961,8 @@
       "RelatedAsset": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "0azb2pqj8k",
-      "Integrity": "WC1EV/miJ/p3hNfRZ2Goh6xXYMySNWeG4wADHx/s/lc=",
+      "Fingerprint": "1cpd9tbohe",
+      "Integrity": "f1FGg7laicH5Ve7qXvIGGz06rTFw3YA33/xZqlODsBk=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -8831,11 +8831,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"nqcSpPHXeQKJTODgHeHKsoHxKlPD1YZpoPIhSDV8HFw=\""
+          "Value": "\"9lkAfMV9OK+kj8qwezUhU+GBZHLaaqEDqo9P3tDyiUI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:47:10 GMT"
+          "Value": "Thu, 03 Apr 2025 16:34:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8845,18 +8845,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nqcSpPHXeQKJTODgHeHKsoHxKlPD1YZpoPIhSDV8HFw="
+          "Value": "sha256-9lkAfMV9OK+kj8qwezUhU+GBZHLaaqEDqo9P3tDyiUI="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\k44zvoq31s-qauo5lt1pk.gz",
+      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\k44zvoq31s-acht516e6i.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000113352981"
+          "Quality": "0.000113365832"
         }
       ],
       "ResponseHeaders": [
@@ -8866,15 +8866,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8821"
+          "Value": "8820"
         },
         {
           "Name": "ETag",
-          "Value": "\"WC1EV/miJ/p3hNfRZ2Goh6xXYMySNWeG4wADHx/s/lc=\""
+          "Value": "\"f1FGg7laicH5Ve7qXvIGGz06rTFw3YA33/xZqlODsBk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:43 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8894,19 +8894,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"nqcSpPHXeQKJTODgHeHKsoHxKlPD1YZpoPIhSDV8HFw=\""
+          "Value": "W/\"9lkAfMV9OK+kj8qwezUhU+GBZHLaaqEDqo9P3tDyiUI=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-nqcSpPHXeQKJTODgHeHKsoHxKlPD1YZpoPIhSDV8HFw="
+          "Value": "sha256-9lkAfMV9OK+kj8qwezUhU+GBZHLaaqEDqo9P3tDyiUI="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\k44zvoq31s-qauo5lt1pk.gz",
+      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\k44zvoq31s-acht516e6i.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -8915,7 +8915,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8821"
+          "Value": "8820"
         },
         {
           "Name": "Content-Type",
@@ -8923,11 +8923,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"WC1EV/miJ/p3hNfRZ2Goh6xXYMySNWeG4wADHx/s/lc=\""
+          "Value": "\"f1FGg7laicH5Ve7qXvIGGz06rTFw3YA33/xZqlODsBk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:43 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:15 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8945,7 +8945,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-WC1EV/miJ/p3hNfRZ2Goh6xXYMySNWeG4wADHx/s/lc="
+          "Value": "sha256-f1FGg7laicH5Ve7qXvIGGz06rTFw3YA33/xZqlODsBk="
         }
       ]
     },
@@ -10064,11 +10064,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Rt4OJDmIOTig0fOvCYm0ohoxhbHJxnyNVyMXwDYs1yk=\""
+          "Value": "\"eBndewFADAcKcGPg3EhqP2zH0I4yywo68aQY1tsJsyY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:37 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10078,18 +10078,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Rt4OJDmIOTig0fOvCYm0ohoxhbHJxnyNVyMXwDYs1yk="
+          "Value": "sha256-eBndewFADAcKcGPg3EhqP2zH0I4yywo68aQY1tsJsyY="
         }
       ]
     },
     {
       "Route": "_framework/Gestao.Client.pdb",
-      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\7gkwprjboy-iyqleazlua.gz",
+      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\7gkwprjboy-45gbbe5jss.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000077291699"
+          "Quality": "0.000077285725"
         }
       ],
       "ResponseHeaders": [
@@ -10099,15 +10099,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12937"
+          "Value": "12938"
         },
         {
           "Name": "ETag",
-          "Value": "\"y7TidXwJIGVdbZo5BmV18nejhuJAMvyENN1QlACYxSE=\""
+          "Value": "\"4b2KjRRTI6jg8Ejac1MNftW1rMTmJ1qZHIW0CwElk9E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:37 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10127,19 +10127,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Rt4OJDmIOTig0fOvCYm0ohoxhbHJxnyNVyMXwDYs1yk=\""
+          "Value": "W/\"eBndewFADAcKcGPg3EhqP2zH0I4yywo68aQY1tsJsyY=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Rt4OJDmIOTig0fOvCYm0ohoxhbHJxnyNVyMXwDYs1yk="
+          "Value": "sha256-eBndewFADAcKcGPg3EhqP2zH0I4yywo68aQY1tsJsyY="
         }
       ]
     },
     {
       "Route": "_framework/Gestao.Client.pdb.gz",
-      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\7gkwprjboy-iyqleazlua.gz",
+      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\7gkwprjboy-45gbbe5jss.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10148,7 +10148,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12937"
+          "Value": "12938"
         },
         {
           "Name": "Content-Type",
@@ -10156,11 +10156,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"y7TidXwJIGVdbZo5BmV18nejhuJAMvyENN1QlACYxSE=\""
+          "Value": "\"4b2KjRRTI6jg8Ejac1MNftW1rMTmJ1qZHIW0CwElk9E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:37 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10178,7 +10178,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-y7TidXwJIGVdbZo5BmV18nejhuJAMvyENN1QlACYxSE="
+          "Value": "sha256-4b2KjRRTI6jg8Ejac1MNftW1rMTmJ1qZHIW0CwElk9E="
         }
       ]
     },
@@ -10201,11 +10201,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"o8D8zAUfLgaM1DIeCUXtXoemBZzifHnHOd1cFtLNLtU=\""
+          "Value": "\"uihkr7ppZEP3m1A+r5PfBtkfSWzLTE9TcxIkiti0Ls8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:39 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10215,18 +10215,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-o8D8zAUfLgaM1DIeCUXtXoemBZzifHnHOd1cFtLNLtU="
+          "Value": "sha256-uihkr7ppZEP3m1A+r5PfBtkfSWzLTE9TcxIkiti0Ls8="
         }
       ]
     },
     {
       "Route": "_framework/Gestao.Client.wasm",
-      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\bgh0hcnqip-9xnpuzfzfe.gz",
+      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\bgh0hcnqip-afq6k6mhxa.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000173520736"
+          "Quality": "0.000173400381"
         }
       ],
       "ResponseHeaders": [
@@ -10236,15 +10236,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5762"
+          "Value": "5766"
         },
         {
           "Name": "ETag",
-          "Value": "\"Gw52d8VryZYIp6ZEhaLFMSD8pSL69BpPhJzOrkcxWz4=\""
+          "Value": "\"+W7IY1gNuH1FIGMoqJhAL4mmkBERfOl6Cn7L27qZUgY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:39 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10264,19 +10264,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"o8D8zAUfLgaM1DIeCUXtXoemBZzifHnHOd1cFtLNLtU=\""
+          "Value": "W/\"uihkr7ppZEP3m1A+r5PfBtkfSWzLTE9TcxIkiti0Ls8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-o8D8zAUfLgaM1DIeCUXtXoemBZzifHnHOd1cFtLNLtU="
+          "Value": "sha256-uihkr7ppZEP3m1A+r5PfBtkfSWzLTE9TcxIkiti0Ls8="
         }
       ]
     },
     {
       "Route": "_framework/Gestao.Client.wasm.gz",
-      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\bgh0hcnqip-9xnpuzfzfe.gz",
+      "AssetFile": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\Debug\\net8.0\\compressed\\bgh0hcnqip-afq6k6mhxa.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10285,7 +10285,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5762"
+          "Value": "5766"
         },
         {
           "Name": "Content-Type",
@@ -10293,11 +10293,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Gw52d8VryZYIp6ZEhaLFMSD8pSL69BpPhJzOrkcxWz4=\""
+          "Value": "\"+W7IY1gNuH1FIGMoqJhAL4mmkBERfOl6Cn7L27qZUgY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 03 Apr 2025 15:05:39 GMT"
+          "Value": "Thu, 03 Apr 2025 16:31:14 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10315,7 +10315,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Gw52d8VryZYIp6ZEhaLFMSD8pSL69BpPhJzOrkcxWz4="
+          "Value": "sha256-+W7IY1gNuH1FIGMoqJhAL4mmkBERfOl6Cn7L27qZUgY="
         }
       ]
     },
