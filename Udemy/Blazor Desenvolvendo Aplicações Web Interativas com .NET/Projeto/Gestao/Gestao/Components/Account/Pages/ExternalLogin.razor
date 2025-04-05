@@ -131,6 +131,48 @@
 
     private async Task OnValidSubmitAsync()
     {
+        // obtem o email do usuário logado
+        var appUser = await UserManager.FindByEmailAsync(Input.Email);
+
+        if (appUser is not null)
+        {
+            // Localiza > Localiza o usuário social > Associa o login social ao usuário
+            var socialLoginAppUser = await UserManager.FindByLoginAsync(externalLoginInfo.LoginProvider,
+            externalLoginInfo.ProviderKey);
+
+            if (socialLoginAppUser is not null)
+            {
+                await SignInManager.SignInAsync(socialLoginAppUser, isPersistent: false, externalLoginInfo.LoginProvider);
+                RedirectManager.RedirectTo(ReturnUrl);
+            }
+            else
+            {
+                // Associa a conta Social logada.
+                var result = await UserManager.AddLoginAsync(appUser, externalLoginInfo);
+                if (result.Succeeded)
+                {
+                    await SignInManager.SignInAsync(appUser, isPersistent: false, externalLoginInfo.LoginProvider);
+                    if (UserManager.Options.SignIn.RequireConfirmedAccount)
+                    {
+                        RedirectManager.RedirectTo("Account/RegisterConfirmation", new() { ["email"] = Input.Email });
+                    }
+                    else
+                    {
+                        // Enviar usuario para o Painel de Controle
+                        RedirectManager.RedirectTo(ReturnUrl);
+                    }
+                }
+            }
+        }
+        else
+        {
+            // cadastro de novo usuário
+            await CreateUserInStore();
+        }
+    }
+
+    private async Task CreateUserInStore()
+    {
         var emailStore = GetEmailStore();
         var user = CreateUser();
 
@@ -164,7 +206,6 @@
                 RedirectManager.RedirectTo(ReturnUrl);
             }
         }
-
         message = $"Error: {string.Join(",", result.Errors.Select(error => error.Description))}";
     }
 
