@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Gestao.Client",
   "resources": {
-    "hash": "sha256-sIU8je4XfsQdirBdp4jXkSYK4NOrizwHym4EvFb7/6w=",
+    "hash": "sha256-VXGifjqIj5+DrdUvzvOZcEjHTTPnvH0YB+N+4KXiyiA=",
     "jsModuleNative": {
       "dotnet.native.8.0.13.s0bazgkbva.js": "sha256-xNQsYHtL1vcbrVTHDZAwJM4WovpoyjsrM2C6FQ8cW1w="
     },
@@ -210,10 +210,10 @@
       "mscorlib.wasm": "sha256-RAf5jgXLg+06C4tJ3CabxAZaVjCN2/+E6fxRjRN8yHk=",
       "netstandard.wasm": "sha256-KCAE8RQwTurP5pGnGF819qf9sK++2O0rXzt6tOjlfi8=",
       "System.Private.CoreLib.wasm": "sha256-LQqLbHgeEX4HONx7GwIxGgmzIXP6n2OPxqnq+/4Tyqk=",
-      "Gestao.Client.wasm": "sha256-Z3HepboEp1+Ur9MUUI5QPRNZ2uYJDPC8DxWW29YWSOw="
+      "Gestao.Client.wasm": "sha256-HRfe0iNgeaqdPkLa8InOfMajVoxEwG6yXloqBuiljeg="
     },
     "pdb": {
-      "Gestao.Client.pdb": "sha256-mIEbfz2ajLOTJUVdoFUyha/+ULlovrjxwTI2mJ7TvZw="
+      "Gestao.Client.pdb": "sha256-Gp53JLfytXqeiX4pD9/M/G2EW+8RgMS8/XFXOnKr4Us="
     }
   },
   "cacheBootResources": true,
