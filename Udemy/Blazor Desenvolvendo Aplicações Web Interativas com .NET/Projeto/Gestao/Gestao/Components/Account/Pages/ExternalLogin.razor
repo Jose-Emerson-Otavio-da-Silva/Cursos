@@ -17,7 +17,7 @@
 @inject ILogger<ExternalLogin> Logger
 @layout Gestao.Components.Layout.Default.DefaultLayout
 
-<PageTitle>Register</PageTitle>
+@*<PageTitle>Register</PageTitle>
 
 <div class="p-lg-5 p-4">
     <div>
@@ -34,7 +34,7 @@
             Por favor, confirme o endereço de e-mail a abaixo e clique no botão Cadastrar para finalizar.
         </div>
 
-        <EditForm Model="Input" OnValidSubmit="OnValidSubmitAsync" FormName="confirmation" method="post">
+        <EditForm Model="Input" OnValidSubmit="OnAutomaticLoginAsync" FormName="confirmation" method="post">
             <DataAnnotationsValidator />
             <ValidationSummary class="text-danger" role="alert" />
             <div class="form-floating mb-3">
@@ -46,9 +46,10 @@
             <button type="submit" class="w-100 btn btn-lg btn-primary">Cadastrar</button>
         </EditForm>
     </div>
-</div>
+</div>*@
 
 @code {
+
     public const string LoginCallbackAction = "LoginCallback";
 
     private string? message;
@@ -98,6 +99,8 @@
             // the login page if we get here some other way.
             RedirectManager.RedirectTo("Account/Login");
         }
+
+        await OnAutomaticLoginAsync();
     }
 
     private async Task OnLoginCallbackAsync()
@@ -129,7 +132,7 @@
         }
     }
 
-    private async Task OnValidSubmitAsync()
+    private async Task OnAutomaticLoginAsync()
     {
         // obtem o email do usuário logado
         var appUser = await UserManager.FindByEmailAsync(Input.Email);
@@ -161,6 +164,7 @@
                 {
                     if (UserManager.Options.SignIn.RequireConfirmedAccount)
                     {
+                        await sendConfirmationEmailAsync(appUser);
                         RedirectManager.RedirectTo("Account/RegisterConfirmation", new() { ["email"] = Input.Email });
                     }
                     else
