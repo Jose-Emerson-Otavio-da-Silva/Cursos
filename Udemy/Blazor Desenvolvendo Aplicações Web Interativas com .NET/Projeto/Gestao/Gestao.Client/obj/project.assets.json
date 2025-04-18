@@ -1781,23 +1781,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\emerson.sap09\\.nuget\\packages\\": {},
+    "C:\\Users\\Emerson\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
+      "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
       "projectName": "Gestao.Client",
-      "projectPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
-      "packagesPath": "C:\\Users\\emerson.sap09\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emerson.sap09\\source\\repos\\Jose-Emerson-Otavio-da-Silva\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\",
+      "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
+      "packagesPath": "C:\\Users\\Emerson\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\emerson.sap09\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Emerson\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
