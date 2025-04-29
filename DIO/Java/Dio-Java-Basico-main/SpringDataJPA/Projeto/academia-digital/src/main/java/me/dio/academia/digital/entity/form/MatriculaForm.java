@@ -9,4 +9,9 @@ public class MatriculaForm {
   @Positive(message = "O Id do aluno deve ser positivo.")
   private Long alunoId;
 
+  public Long getAlunoId() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getAlunoId'");
+  }
+
 }
