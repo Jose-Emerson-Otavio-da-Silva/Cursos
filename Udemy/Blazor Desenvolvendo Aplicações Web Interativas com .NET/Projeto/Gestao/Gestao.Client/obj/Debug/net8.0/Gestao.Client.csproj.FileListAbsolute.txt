@@ -3132,6 +3132,6 @@ C:\Users\emerson.sap09\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Intera
 C:\Users\emerson.sap09\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\refint\Gestao.Client.dll
 C:\Users\emerson.sap09\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\Gestao.Client.pdb
 C:\Users\emerson.sap09\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\ref\Gestao.Client.dll
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bgh0hcnqip-e830qh67zp.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\7gkwprjboy-438dxrylmd.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\k44zvoq31s-leqmw8f91u.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bgh0hcnqip-18fr7l2lxj.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\7gkwprjboy-ewscyfcruk.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\k44zvoq31s-3bd1pn7bt7.gz
