@@ -1,3 +1,4 @@
+
 using System.Security.Claims;
 using System.Text.Json;
 using Microsoft.AspNetCore.Authentication;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
 using Gestao.Components.Account.Pages;
 using Gestao.Components.Account.Pages.Manage;
+using Gestao.Domain;
 using Gestao.Data;
 
 namespace Microsoft.AspNetCore.Routing;

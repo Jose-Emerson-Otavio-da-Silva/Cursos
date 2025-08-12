@@ -9,6 +9,7 @@
       "Gestao/1.0.0": {
         "dependencies": {
           "Gestao.Client": "1.0.0",
+          "Gestao.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.13",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.13",
           "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "8.0.13",
@@ -1355,11 +1356,23 @@
       },
       "Gestao.Client/1.0.0": {
         "dependencies": {
+          "Gestao.Domain": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.13",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.13"
         },
         "runtime": {
           "Gestao.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Gestao.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13"
+        },
+        "runtime": {
+          "Gestao.Domain.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -2151,6 +2164,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Gestao.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Gestao.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

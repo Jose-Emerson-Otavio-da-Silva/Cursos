@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Gestao.Components;
 using Gestao.Components.Account;
 using Gestao.Data;
+using Gestao.Domain;
 using System.Net.Mail;
 using Gestao.Libraries.Mail;
 

@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity;
-using Gestao.Data;
+using Gestao.Domain;
 
 namespace Gestao.Components.Account;
 

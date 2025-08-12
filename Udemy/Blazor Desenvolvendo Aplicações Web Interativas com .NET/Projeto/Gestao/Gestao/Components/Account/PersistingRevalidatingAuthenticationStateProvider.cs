@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Gestao.Client;
-using Gestao.Data;
+using Gestao.Domain;
 
 namespace Gestao.Components.Account;
 
