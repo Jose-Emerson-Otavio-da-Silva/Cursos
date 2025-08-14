@@ -10,7 +10,7 @@ namespace Gestao.Data.Repositories
 {
     /// <summary>
     /// Interface para o repositório de empresas
-    /// Define os métodos para manipulação de dados de empresas no banco de dados
+    /// Define métodos para gerenciar dados de empresas no banco de dados
     /// </summary>
     public interface ICompanyRepository
     {
@@ -35,22 +35,22 @@ namespace Gestao.Data.Repositories
         }
 
         /// <summary>
-        /// Método para obter uma lista paginada de empresas associadas a um usuário
+        /// Obtém uma lista paginada de empresas associadas a um usuário
         /// </summary>
-        /// <param name="applicationUserId"></param>
-        /// <param name="pageIndex"></param>
-        /// <param name="pageSize"></param>
-        /// <returns></returns>
+        /// <param name="applicationUserId">O ID do usuário</param>
+        /// <param name="pageIndex">O índice da página atual</param>
+        /// <param name="pageSize">O número de itens por página</param>
+        /// <returns>Uma lista paginada de empresas</returns>
         public async Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize)
         {
-            // Obtém os itens da página atual
+            // Obtém os itens para a página atual
             var items = await _context.Companies
                 .Where(a => a.UserId == applicationUserId) // Filtra as empresas pelo ID do usuário
                 .Skip((pageIndex - 1) * pageSize) // Ignora os itens das páginas anteriores
-                .Take(pageSize) // Seleciona os itens da página atual
+                .Take(pageSize) // Seleciona os itens para a página atual
                 .ToListAsync();
 
-            // Conta o total de empresas associadas ao usuário
+            // Conta o número total de empresas associadas ao usuário
             var count = await _context.Companies
                 .Where(a => a.UserId == applicationUserId).CountAsync();
 
@@ -62,48 +62,48 @@ namespace Gestao.Data.Repositories
         }
 
         /// <summary>
-        /// Método para obter uma empresa pelo ID
+        /// Obtém uma empresa pelo ID
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">O ID da empresa</param>
+        /// <returns>A empresa, se encontrada, caso contrário, null</returns>
         public async Task<Company?> Get(int id)
         {
             return await _context.Companies.SingleOrDefaultAsync(a => a.Id == id);
         }
 
         /// <summary>
-        /// Método para adicionar uma nova empresa
+        /// Adiciona uma nova empresa
         /// </summary>
-        /// <param name="company"></param>
-        /// <returns></returns>
-        public async Task Add(Company company)
+        /// <param name="entity">A entidade da empresa a ser adicionada</param>
+        /// <returns>Uma tarefa que representa a operação assíncrona</returns>
+        public async Task Add(Company entity)
         {
-            _context.Companies.Add(company); // Adiciona a empresa ao contexto
+            _context.Companies.Add(entity); // Adiciona a empresa ao contexto
             await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
         }
 
         /// <summary>
-        /// Método para atualizar os dados de uma empresa
+        /// Atualiza os dados de uma empresa
         /// </summary>
-        /// <param name="company"></param>
-        /// <returns></returns>
-        public async Task Update(Company company)
+        /// <param name="entity">A entidade da empresa a ser atualizada</param>
+        /// <returns>Uma tarefa que representa a operação assíncrona</returns>
+        public async Task Update(Company entity)
         {
-            _context.Companies.Update(company); // Atualiza a empresa no contexto
+            _context.Companies.Update(entity); // Atualiza a empresa no contexto
             await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
         }
 
         /// <summary>
-        /// Método para remover uma empresa pelo ID
+        /// Remove uma empresa pelo ID
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">O ID da empresa a ser removida</param>
+        /// <returns>Uma tarefa que representa a operação assíncrona</returns>
         public async Task Delete(int id)
         {
-            var company = await Get(id); // Obtém a empresa pelo ID
-            if (company is not null) // Verifica se a empresa existe
+            var entity = await Get(id); // Obtém a empresa pelo ID
+            if (entity is not null) // Verifica se a empresa existe
             {
-                _context.Companies.Remove(company); // Remove a empresa do contexto
+                _context.Companies.Remove(entity); // Remove a empresa do contexto
                 await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
             }
         }
