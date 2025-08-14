@@ -10,8 +10,21 @@ namespace Gestao.Data
             : base(options)
         {
         }
-
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<FinancialTransaction> FinancialTransactions { get; set; }
+        public DbSet<DocumentAttachment> DocumentAttachments { get; set; }
         // Adicione seus DbSets aqui, por exemplo:
         // public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<FinancialTransaction>()
+                .Property(f => f.Repeat)
+                .HasConversion<string>();
+        }
     }
 }
