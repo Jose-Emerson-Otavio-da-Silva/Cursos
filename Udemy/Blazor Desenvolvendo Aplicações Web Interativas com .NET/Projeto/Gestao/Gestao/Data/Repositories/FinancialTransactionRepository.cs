@@ -69,7 +69,7 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task<FinancialTransaction?> Get(int id)
         {
-            return await _context.FinancialTransactions.SingleOrDefaultAsync(a => a.Id == id);
+            return await _context.FinancialTransactions.Include(a => a.Documents).SingleOrDefaultAsync(a => a.Id == id);
         }
 
         /// <summary>
