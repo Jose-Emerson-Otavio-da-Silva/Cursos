@@ -9,6 +9,7 @@ namespace Gestao.Domain
     public class FinancialTransaction
     {
         public int Id { get; set; }
+        public TypeFinancialTransaction TypeFinancialTransaction { get; set; }
         public string Description { get; set; } = string.Empty;
         public DateTimeOffset ReferenceDate { get; set; }
         public DateTimeOffset DuoDate { get; set; }

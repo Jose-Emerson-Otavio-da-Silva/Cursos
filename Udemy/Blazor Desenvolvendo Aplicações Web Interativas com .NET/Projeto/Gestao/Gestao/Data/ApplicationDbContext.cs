@@ -23,7 +23,11 @@ namespace Gestao.Data
             base.OnModelCreating(builder);
 
             builder.Entity<FinancialTransaction>()
-                .Property(f => f.Repeat)
+                .Property(a => a.Repeat)
+                .HasConversion<string>();
+
+            builder.Entity<FinancialTransaction>()
+                .Property(a => a.TypeFinancialTransaction)
                 .HasConversion<string>();
         }
     }
