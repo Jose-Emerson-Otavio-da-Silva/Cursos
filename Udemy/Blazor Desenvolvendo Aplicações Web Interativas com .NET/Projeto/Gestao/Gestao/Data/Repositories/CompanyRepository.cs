@@ -17,7 +17,7 @@ namespace Gestao.Data.Repositories
         Task Add(Company company); // Adiciona uma nova empresa
         Task Delete(int id); // Remove uma empresa pelo ID
         Task<Company?> Get(int id); // Obtém uma empresa pelo ID
-        Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize); // Obtém uma lista paginada de empresas associadas a um usuário
+        Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize, string searchWord); // Obtém uma lista paginada de empresas associadas a um usuário
         Task Update(Company company); // Atualiza os dados de uma empresa
     }
 
@@ -41,18 +41,20 @@ namespace Gestao.Data.Repositories
         /// <param name="pageIndex">O índice da página atual</param>
         /// <param name="pageSize">O número de itens por página</param>
         /// <returns>Uma lista paginada de empresas</returns>
-        public async Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize)
+        public async Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize, string searchWord = "")
         {
             // Obtém os itens para a página atual
             var items = await _context.Companies
                 .Where(a => a.UserId == applicationUserId) // Filtra as empresas pelo ID do usuário
+                .Where(a => a.TradeName.Contains(searchWord) || a.LegalName.Contains(searchWord))
+                .OrderBy(a => a.TradeName)
                 .Skip((pageIndex - 1) * pageSize) // Ignora os itens das páginas anteriores
                 .Take(pageSize) // Seleciona os itens para a página atual
                 .ToListAsync();
 
             // Conta o número total de empresas associadas ao usuário
             var count = await _context.Companies
-                .Where(a => a.UserId == applicationUserId).CountAsync();
+                .Where(a => a.UserId == applicationUserId).Where(a => a.TradeName.Contains(searchWord) || a.LegalName.Contains(searchWord)).CountAsync();
 
             // Calcula o número total de páginas
             int totalPages = (int)Math.Ceiling((decimal)count / pageSize);

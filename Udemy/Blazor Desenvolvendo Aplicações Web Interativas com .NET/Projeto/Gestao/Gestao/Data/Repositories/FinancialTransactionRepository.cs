@@ -17,7 +17,7 @@ namespace Gestao.Data.Repositories
         Task Add(FinancialTransaction entity); // Adicionar uma nova transação financeira
         Task Delete(int id); // Deletar uma transação financeira pelo ID
         Task<FinancialTransaction?> Get(int id); // Obter uma transação financeira pelo ID
-        Task<PaginatedList<FinancialTransaction>> GetAll(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize); // Obter uma lista paginada de transações financeiras
+        Task<PaginatedList<FinancialTransaction>> GetAll(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize, string searchWord); // Obter uma lista paginada de transações financeiras
         Task Update(FinancialTransaction entity); // Atualizar uma transação financeira existente
     }
 
@@ -42,18 +42,19 @@ namespace Gestao.Data.Repositories
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public async Task<PaginatedList<FinancialTransaction>> GetAll(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize)
+        public async Task<PaginatedList<FinancialTransaction>> GetAll(int companyId, TypeFinancialTransaction type, int pageIndex, int pageSize, string searchWord = "")
         {
             // Filtra as transações financeiras pelo ID da empresa e tipo de transação
             var items = await _context.FinancialTransactions
                 .Where(a => a.CompanyId == companyId && a.TypeFinancialTransaction == type)
+                .Where(a => a.Description.Contains(searchWord))
                 .Skip((pageIndex - 1) * pageSize) // Pula os itens das páginas anteriores
                 .Take(pageSize) // Pega a quantidade de itens da página atual
                 .ToListAsync();
 
             // Conta o total de transações financeiras que atendem aos critérios
             var count = await _context.FinancialTransactions
-                .Where(a => a.CompanyId == companyId && a.TypeFinancialTransaction == type).CountAsync();
+                .Where(a => a.CompanyId == companyId && a.TypeFinancialTransaction == type).Where(a => a.Description.Contains(searchWord)).CountAsync();
 
             // Calcula o total de páginas
             int totalPages = (int)Math.Ceiling((decimal)count / pageSize);
@@ -69,7 +70,7 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task<FinancialTransaction?> Get(int id)
         {
-            return await _context.FinancialTransactions.Include(a => a.Documents).SingleOrDefaultAsync(a => a.Id == id);
+            return await _context.FinancialTransactions.OrderByDescending(a => a.ReferenceDate).Include(a => a.Documents).SingleOrDefaultAsync(a => a.Id == id);
         }
 
         /// <summary>

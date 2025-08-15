@@ -16,7 +16,7 @@ namespace Gestao.Data.Repositories
         Task Add(Account entity); // Adicionar uma nova conta
         Task Delete(int id); // Deletar uma conta pelo ID
         Task<Account?> Get(int id); // Obter uma conta pelo ID
-        Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize); // Obter uma lista paginada de contas de uma empresa
+        Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize, string searchWord); // Obter uma lista paginada de contas de uma empresa
         Task<List<Account>> GetAll(int companyId); // Obter todas as contas de uma empresa
         Task Update(Account entity); // Atualizar uma conta
     }
@@ -44,18 +44,20 @@ namespace Gestao.Data.Repositories
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public async Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize)
+        public async Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize, string searchWord = "")
         {
             // Obtém os itens da página atual
             var items = await _context.Accounts
                 .Where(a => a.CompanyId == companyId)
+                .Where(a => a.Description.Contains(searchWord))
+                .OrderBy(a => a.Description)
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
 
             // Conta o total de itens
             var count = await _context.Accounts
-                .Where(a => a.CompanyId == companyId).CountAsync();
+                .Where(a => a.CompanyId == companyId).Where(a => a.Description.Contains(searchWord)).CountAsync();
 
             // Calcula o número total de páginas
             int totalPages = (int)Math.Ceiling((decimal)count / pageSize);

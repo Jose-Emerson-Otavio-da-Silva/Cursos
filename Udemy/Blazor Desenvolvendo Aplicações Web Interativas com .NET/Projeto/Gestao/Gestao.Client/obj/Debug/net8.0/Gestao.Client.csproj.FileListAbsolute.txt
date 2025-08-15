@@ -3189,8 +3189,8 @@ C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativa
 C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\pxwmjlen6c-mg3y19k9xu.gz
 C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\5hi06czhgg-umbcd11nnh.gz
 C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bb5fzclwlt-vrjjxh8onp.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\vibb7oz1mv-8k4e9alstw.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\9y7inlh8fc-qdgr1nld2x.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bgh0hcnqip-gjie6w2lb8.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\7gkwprjboy-q1n35at2hb.gz
-C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\k44zvoq31s-xgjgazrb45.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\vibb7oz1mv-vmib7gsogc.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\9y7inlh8fc-7qpszy18tk.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bgh0hcnqip-zxivj8jg2k.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\7gkwprjboy-rxbv2lwogd.gz
+C:\Users\Emerson\Cursos-1\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\k44zvoq31s-f644d66buu.gz
