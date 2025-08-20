@@ -41,7 +41,7 @@ namespace Gestao.Data.Repositories
         /// <param name="pageIndex">O índice da página atual</param>
         /// <param name="pageSize">O número de itens por página</param>
         /// <returns>Uma lista paginada de empresas</returns>
-        public async Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize, string searchWord = "")
+        public async Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize, string searchWord)
         {
             // Obtém os itens para a página atual
             var items = await _context.Companies

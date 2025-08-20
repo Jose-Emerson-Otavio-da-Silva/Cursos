@@ -7,6 +7,7 @@ using Gestao.Data;
 using Gestao.Domain;
 using System.Net.Mail;
 using Gestao.Libraries.Mail;
+using Gestao.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+#region Config of Authentication
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
@@ -47,8 +49,9 @@ builder.Services.AddAuthentication(options =>
    })
     //------------------------------------------------------------------------------------------------
     .AddIdentityCookies();
+#endregion
 
-
+#region Config of Entity Framework
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -58,7 +61,9 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
-//------------------------------Config Envio Email----------------------------------
+#endregion
+
+#region Dependency Injection
 builder.Services.AddSingleton<SmtpClient>(options =>
 {
     var smtp = new SmtpClient();
@@ -69,11 +74,17 @@ builder.Services.AddSingleton<SmtpClient>(options =>
     smtp.Credentials = new System.Net.NetworkCredential(
         builder.Configuration.GetValue<string>("EmailSender:User")!,
         builder.Configuration.GetValue<string>("EmailSender:Password")!);
-
     return smtp;
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
-//----------------------------------------------------------------------------------
+
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
+builder.Services.AddScoped<IFinancialTransactionRepository, FinancialTransactionRepository>();
+#endregion
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
