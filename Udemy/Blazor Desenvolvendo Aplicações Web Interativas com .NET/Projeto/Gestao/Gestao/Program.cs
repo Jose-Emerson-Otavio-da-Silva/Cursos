@@ -9,6 +9,7 @@ using System.Net.Mail;
 using Gestao.Libraries.Mail;
 using Gestao.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Gestao.Domain.Enums;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -118,10 +119,49 @@ app.MapAdditionalIdentityEndpoints();
 #region Minimal APIs
 int pageSize = builder.Configuration.GetValue<int>("Pagination:PageSize");
 
-//API -> GET -> Lista Paginada de Categorias
-app.MapGet("/api/categories", async (ICategoryRepository repository, [FromQuery] int companyId, [FromQuery] int pageIndex) =>
+app.MapGet("/api/categories", async (
+    ICategoryRepository repository,
+    [FromQuery] int companyId,
+    [FromQuery] int pageIndex
+) =>
 {
     var data = await repository.GetAll(companyId, pageIndex, pageSize);
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/companies", async (
+    ICompanyRepository repository,
+    [FromQuery] Guid applicationUserId,
+    [FromQuery] int pageIndex,
+    [FromQuery] string searchWord
+) =>
+{
+    var data = await repository.GetAll(applicationUserId, pageIndex, pageSize, searchWord);
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/daccounts", async (
+    IAccountRepository repository,
+    [FromQuery] int companyId,
+    [FromQuery] int pageIndex,
+    [FromQuery] string searchWord
+
+
+) =>
+{
+    var data = await repository.GetAll(companyId, pageIndex, pageSize, searchWord);
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/financialtransactions", async (
+    IFinancialTransactionRepository repository,
+    [FromQuery] TypeFinancialTransaction type,
+    [FromQuery] int companyId,
+    [FromQuery] int pageIndex,
+    [FromQuery] string searchWord
+) =>
+{
+    var data = await repository.GetAll(companyId, type, pageIndex, pageSize, searchWord);
     return Results.Ok(data);
 });
 
