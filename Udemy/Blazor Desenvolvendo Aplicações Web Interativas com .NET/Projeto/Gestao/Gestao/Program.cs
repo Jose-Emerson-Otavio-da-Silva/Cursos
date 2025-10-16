@@ -8,6 +8,7 @@ using Gestao.Domain;
 using System.Net.Mail;
 using Gestao.Libraries.Mail;
 using Gestao.Data.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -105,6 +106,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
+//Módulo Blazor Server/WebAssembly sendo habilitado
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
@@ -112,5 +114,17 @@ app.MapRazorComponents<App>()
 
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
+
+#region Minimal APIs
+int pageSize = builder.Configuration.GetValue<int>("Pagination:PageSize");
+
+//API -> GET -> Lista Paginada de Categorias
+app.MapGet("/api/categories", async (ICategoryRepository repository, [FromQuery] int companyId, [FromQuery] int pageIndex) =>
+{
+    var data = await repository.GetAll(companyId, pageIndex, pageSize);
+    return Results.Ok(data);
+});
+
+#endregion
 
 app.Run();
