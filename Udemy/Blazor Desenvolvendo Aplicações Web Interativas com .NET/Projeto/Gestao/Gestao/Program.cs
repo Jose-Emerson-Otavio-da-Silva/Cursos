@@ -117,7 +117,8 @@ app.MapRazorComponents<App>()
 app.MapAdditionalIdentityEndpoints();
 
 #region Minimal APIs
-int pageSize = builder.Configuration.GetValue<int>("Pagination:PageSize");
+int pageSize = builder.Configuration.GetValue<int>("Pagination:PageSize", 10);
+if (pageSize <= 0) pageSize = 10;
 
 app.MapGet("/api/categories", async (
     ICategoryRepository repository,
@@ -140,7 +141,7 @@ app.MapGet("/api/companies", async (
     return Results.Ok(data);
 });
 
-app.MapGet("/api/daccounts", async (
+app.MapGet("/api/accounts", async (
     IAccountRepository repository,
     [FromQuery] int companyId,
     [FromQuery] int pageIndex,
