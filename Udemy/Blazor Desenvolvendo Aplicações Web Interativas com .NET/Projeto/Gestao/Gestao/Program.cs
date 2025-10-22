@@ -10,6 +10,7 @@ using Gestao.Libraries.Mail;
 using Gestao.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Gestao.Domain.Enums;
+using Gestao.Domain.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Gestao.Client.Libraries.Utilities;
-using Gestao.Domain;
-using Microsoft.EntityFrameworkCore;
+using Gestao.Domain.Libraries.Utilities;
 
 namespace Gestao.Domain.Repositories
 {

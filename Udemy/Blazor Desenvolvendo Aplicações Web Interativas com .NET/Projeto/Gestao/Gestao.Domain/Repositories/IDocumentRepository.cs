@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Gestao.Domain;
-
 namespace Gestao.Domain.Repositories
 {
     /// <summary>
