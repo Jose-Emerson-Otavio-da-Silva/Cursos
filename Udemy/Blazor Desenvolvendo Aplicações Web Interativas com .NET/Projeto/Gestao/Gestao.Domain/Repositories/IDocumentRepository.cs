@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Gestao.Domain;
 
-namespace Gestao.Data.Repositories
+namespace Gestao.Domain.Repositories
 {
     /// <summary>
     /// Interface que define os métodos para manipulação de documentos no repositório

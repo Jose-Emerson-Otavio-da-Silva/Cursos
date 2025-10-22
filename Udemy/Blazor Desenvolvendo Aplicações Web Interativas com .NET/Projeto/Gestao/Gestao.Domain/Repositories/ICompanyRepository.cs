@@ -6,7 +6,7 @@ using Gestao.Client.Libraries.Utilities;
 using Gestao.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Gestao.Data.Repositories
+namespace Gestao.Domain.Repositories
 {
     /// <summary>
     /// Interface para o repositório de empresas

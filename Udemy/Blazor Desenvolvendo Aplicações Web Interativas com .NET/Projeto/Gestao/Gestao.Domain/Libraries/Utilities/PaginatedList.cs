@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gestao.Client.Libraries.Utilities
+namespace Gestao.Domain.Libraries.Utilities
 {
     public class PaginatedList<T>
     {

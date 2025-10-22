@@ -7,7 +7,7 @@ using Gestao.Domain;
 using Gestao.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 
-namespace Gestao.Data.Repositories
+namespace Gestao.Domain.Repositories
 {
     /// <summary>
     /// Interface que define os métodos para manipulação de transações financeiras
