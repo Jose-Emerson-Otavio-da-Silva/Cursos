@@ -53,7 +53,7 @@ builder.Services.AddAuthentication(options =>
     .AddIdentityCookies();
 #endregion
 
-#region Config of Entity Framework
+#region Config of Database & Authentication
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
