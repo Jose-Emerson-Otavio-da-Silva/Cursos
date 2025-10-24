@@ -1,22 +1,26 @@
 @page "/Company/List"
+@using Gestao.Domain.Repositories
+@using System.Security.Claims
 @attribute [Authorize]
 @rendermode InteractiveAuto
+@inject ICompanyRepository repository
+@inject AuthenticationStateProvider provider
 
 <div class="card shadow-sm border-0">
     <div class="card-header d-flex align-items-center justify-content-between bg-light">
         <h4 class="card-title mb-0">Empresas</h4>
-        <button type="button" class="btn btn-primary btn-sm">
+        <a href="/Company/Add" class="btn btn-primary btn-sm">
             <i class="ri-add-line me-1"></i> Cadastrar
-        </button>
+        </a>
     </div>
 
     <div class="card-body">
         <div class="d-flex justify-content-between flex-wrap gap-2 mb-3">
             <div class="col-lg-4 p-0">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar por nome ou CNPJ...">
-                    <button class="btn btn-outline-success" type="button">
-                        <i class="ri-search-line"></i>
+                    <input type="text" class="form-control" placeholder="Buscar por nome ou CNPJ..." @bind="SearchWord">
+                    <button class="btn btn-outline-success" type="button" @onclick="OnSearch">
+                        <i class="ri-search-line"></i> Pesquisar
                     </button>
                 </div>
             </div>
@@ -33,22 +37,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Mercado Costa</td>
-                        <td>11.111.111/0001-11</td>
-                        <td>Quadra 1 Bloco 2 LT 5</td>
-                        <td class="text-center">
-                            <button class="btn btn-sm btn-soft-success me-1" title="Selecionar">
-                                <i class="ri-check-line"></i>
-                            </button>
-                            <button class="btn btn-sm btn-soft-info me-1" title="Editar">
-                                <i class="ri-pencil-line"></i>
-                            </button>
-                            <button class="btn btn-sm btn-soft-danger" title="Excluir">
-                                <i class="ri-delete-bin-line"></i>
-                            </button>
-                        </td>
-                    </tr>
+                    @if (Paginated == null)
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">Carregando...</td>
+                        </tr>
+                    }
+                    else if (Paginated.Items.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">Nenhum registro!</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>Mercado Costa</td>
+                            <td>11.111.111/0001-11</td>
+                            <td>Quadra 1 Bloco 2 LT 5</td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-soft-success me-1" title="Selecionar">
+                                    <i class="ri-check-line"></i> Selecionar
+                                </button>
+                                <button class="btn btn-sm btn-soft-info me-1" title="Editar">
+                                    <i class="ri-pencil-line"></i>
+                                </button>
+                                <button class="btn btn-sm btn-soft-danger" title="Excluir">
+                                    <i class="ri-delete-bin-line"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
@@ -72,8 +91,31 @@
 
 
 @code {
-    // This is a placeholder for the List page logic.
-    // You can implement the logic to display a list of accounts here.
+    private Guid applicationUserId;
+    private PaginatedList<Company>? Paginated;
+    private string SearchWord { get; set; } = string.Empty;
+
+    private void OnSearch()
+    {
+        // Implement search logic here
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Blazor Server pega o usuário logado via SignInManager
+        //Blazor WebAssembly pega o usuário logado via AuthenticationStateProvider
+        await GetAuthenticatedUserId();
+        Paginated = await repository.GetAll(applicationUserId, 1, 0, SearchWord);
+    }
+
+    private async Task GetAuthenticatedUserId()
+    {
+        var authenticationState = await provider.GetAuthenticationStateAsync();
+        var userId = authenticationState.User.Claims.FirstOrDefault(a => a.Type == ClaimTypes.NameIdentifier);
+
+        if (userId != null)
+            Guid.TryParse(userId?.Value, out applicationUserId);
+    }
 }
 
 

@@ -1,3 +1,4 @@
+using System.Net.Http.Json;
 using Gestao.Domain;
 using Gestao.Domain.Libraries.Utilities;
 using Gestao.Domain.Repositories;
@@ -6,6 +7,13 @@ namespace Gestao.Client.Services
 {
     public class AccountService : IAccountRepository
     {
+        private readonly HttpClient _httpClient;
+
+        public AccountService(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
         public Task Add(Account entity)
         {
             throw new NotImplementedException();
@@ -21,9 +29,12 @@ namespace Gestao.Client.Services
             throw new NotImplementedException();
         }
 
-        public Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize, string searchWord)
+        public async Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize, string searchWord)
         {
-            throw new NotImplementedException();
+            var url = $"api/accounts?companyId={companyId}&pageIndex={pageIndex}&searchWord={searchWord}";
+            var entities = await _httpClient.GetFromJsonAsync<PaginatedList<Account>>(url);
+
+            return entities!;
         }
 
         public Task<List<Account>> GetAll(int companyId)
