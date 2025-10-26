@@ -12,7 +12,7 @@ namespace Gestao.Domain
         public string State { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string Neighborhood { get; set; } = string.Empty;
-        public string Adress { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
         public string Complement { get; set; } = string.Empty;
         public DateTimeOffset CreatedAt { get; set; }
         public Guid UserId { get; set; }
