@@ -91,7 +91,7 @@
     {
         //Blazor Server pega o usuário logado via SignInManager
         //Blazor WebAssembly pega o usuário logado via AuthenticationStateProvider
-        PageSize = configuration.GetValue<int>("Pagination:PageSize", 10);
+        PageSize = configuration.GetValue<int>("Pagination:PageSize", 1);
         await GetAuthenticatedUserId();
         await LoadDataAsync();
     }

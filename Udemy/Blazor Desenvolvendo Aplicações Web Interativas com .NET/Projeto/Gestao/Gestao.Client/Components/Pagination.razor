@@ -13,17 +13,17 @@ else if (Paginated.TotalPages > 0 && Paginated != null)
         </div>
         <nav>
             <ul class="pagination pagination-sm mb-0">
-                <li class="page-item @(Paginated.PageIndex == 1 ? "disabled" : "")"><a
-                        @onclick="() => NavigateToPage(Paginated.PageIndex - 1)" class="page-link">←</a></li>
+                <li class="page-item @(Paginated.PageIndex == 1 ? "disabled" : "")"><button
+                        @onclick="() => NavigateToPage(Paginated.PageIndex - 1)" class="page-link">←</button></li>
                 @for (int i = 1; i <= Paginated.TotalPages; i++)
                 {
-                    <li class="page-item @(Paginated.PageIndex == i ? "active" : "")">
-                        <a @onclick="() => NavigateToPage(i)" class="page-link">@i</a>
+                    var j = i;
+                    <li class="page-item @(Paginated.PageIndex == j ? "active" : "")">
+                        <button @onclick="() => NavigateToPage(j)" class="page-link">@j</button>
                     </li>
                 }
-                <li class="page-item"><a class="page-link">1</a></li>
-                <li class="page-item @(Paginated.PageIndex == Paginated.TotalPages ? "disabled" : "")"><a
-                        @onclick="() => NavigateToPage(Paginated.PageIndex + 1)" class="page-link">→</a></li>
+                <li class="page-item @(Paginated.PageIndex == Paginated.TotalPages ? "disabled" : "")"><button
+                        @onclick="() => NavigateToPage(Paginated.PageIndex + 1)" class="page-link">→</button></li>
             </ul>
         </nav>
     </div>
