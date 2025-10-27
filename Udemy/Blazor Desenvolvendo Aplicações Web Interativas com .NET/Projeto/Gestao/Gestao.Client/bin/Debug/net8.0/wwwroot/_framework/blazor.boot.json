@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "Gestao.Client",
   "resources": {
-    "hash": "sha256-MOeW8EztBCxPB3jz0qGbNFFKEEr49A4TKfgnRBC1Qhg=",
+    "hash": "sha256-kQ61kwRLXo0WgujjK/R9SehUU3ROy9LJUKrqKVdfipM=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-9Fzd5We95Rp03dEKIAbYjPDR3eWyLbmjMlYStvxyiok="
+      "dotnet.native.8.0.21.v7aynqgpur.js": "sha256-9Fzd5We95Rp03dEKIAbYjPDR3eWyLbmjMlYStvxyiok="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.js": "sha256-aLf0XK8bqX83FXyXydFPTC1FOTq3PaeGDyoDn3uz194="
+      "dotnet.runtime.8.0.21.bvv81bvscr.js": "sha256-aLf0XK8bqX83FXyXydFPTC1FOTq3PaeGDyoDn3uz194="
     },
     "wasmNative": {
       "dotnet.native.wasm": "sha256-Y1pDEFNAqpzUmFk5FuVUzruqNloBnByUMhlQ96dqto4="
@@ -16,7 +16,6 @@
       "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
-    "coreAssembly": {},
     "assembly": {
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-g81inugSrrLKEtyxg9JkSxiBc3dly3FZcTKaz72rU/U=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-4/ecRnxEzB060rvNFk3n/GL1s3361WaHeLmfoea+Mp8=",
@@ -221,19 +220,19 @@
       "mscorlib.wasm": "sha256-MZJ1V6miMP318lQowft4FPkcszcibPLDTwKj235fSAc=",
       "netstandard.wasm": "sha256-RYAURbR1AHkUZYjKgu+B/i3N3VP4abnAaH+vxwJ8d3c=",
       "System.Private.CoreLib.wasm": "sha256-4YzdATaWUDkUkRpe+hl+T61TaCjRVapVUtqTIai3Gd8=",
-      "Gestao.Domain.wasm": "sha256-4hUbohB7pHIJEm24OK0tuZBzXrEWk1OaDORZVPQW+oY=",
-      "Gestao.Client.wasm": "sha256-OY0XNvVBg9CFyqEN9b7jFITNi1F10ZivEd29wawqzk0="
+      "Gestao.Domain.wasm": "sha256-SvXT771VZLhc/LYASrPsxDMS1frHGBqPowNJHQOh7Ws=",
+      "Gestao.Client.wasm": "sha256-juHU/eLqhGGLeUrMAJIs+Zn06tI/tlK7Kf9gwAdzBOs="
     },
     "pdb": {
-      "Gestao.Domain.pdb": "sha256-91RE2b+ALZ2qF8fNxJ/V4QtH5NvuKAebIKBPYfvSBqc=",
-      "Gestao.Client.pdb": "sha256-08YPTrJJ7NcOaTLSBNoWoaKIKmw+uN+sr3MnC9yq8/c="
+      "Gestao.Domain.pdb": "sha256-1eI1nkqWYeUoOxQOxWE/g0CAq730RpvP+mSVBLAa8sc=",
+      "Gestao.Client.pdb": "sha256-FlHa+/5XSnocZuR7FPJibzT3f7ByXNQf8uMlKnJ+JoQ="
     }
   },
   "cacheBootResources": true,
   "debugLevel": -1,
   "appsettings": [
-    "../appsettings.json",
-    "../appsettings.Development.json"
+    "../appsettings.Development.json",
+    "../appsettings.json"
   ],
   "globalizationMode": "sharded",
   "extensions": {

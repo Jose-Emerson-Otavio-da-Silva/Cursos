@@ -646,7 +646,7 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.10": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.21": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -1328,7 +1328,7 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.10": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.21": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -2308,10 +2308,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.10": {
-      "sha512": "Ye7Zr/1d5cMeXyqv2uaEYrZjgRAcZKTXE/dJByxhicD7jLQSQcwmuBZzIXi+SY5sZbvKeH7nSTcVa7fOrJArfw==",
+    "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.21": {
+      "sha512": "sLWQiA3ZNnGWDqfbTajbIM+K8RkhEWpm8eJgFEI5ph//wdbR/nEVEj3KXOJ5+IB3Z0QddZxVY1FyY1rR9uwlmQ==",
       "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/9.0.10",
+      "path": "microsoft.net.sdk.webassembly.pack/8.0.21",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2322,7 +2322,6 @@
         "WasmAppHost/BrowserDebugHost.deps.json",
         "WasmAppHost/BrowserDebugHost.dll",
         "WasmAppHost/BrowserDebugHost.runtimeconfig.json",
-        "WasmAppHost/BrowserDebugHost.staticwebassets.endpoints.json",
         "WasmAppHost/BrowserDebugProxy.dll",
         "WasmAppHost/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
         "WasmAppHost/Microsoft.CodeAnalysis.CSharp.dll",
@@ -2335,19 +2334,17 @@
         "WasmAppHost/WasmAppHost.deps.json",
         "WasmAppHost/WasmAppHost.dll",
         "WasmAppHost/WasmAppHost.runtimeconfig.json",
-        "WasmAppHost/WasmAppHost.staticwebassets.endpoints.json",
         "build/Microsoft.NET.Sdk.WebAssembly.Browser.props",
         "build/Microsoft.NET.Sdk.WebAssembly.Browser.targets",
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.props",
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
         "build/Wasm.web.config",
-        "build/browser.runtimeconfig.template.json",
-        "microsoft.net.sdk.webassembly.pack.9.0.10.nupkg.sha512",
+        "microsoft.net.sdk.webassembly.pack.8.0.21.nupkg.sha512",
         "microsoft.net.sdk.webassembly.pack.nuspec",
         "tools/net472/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
         "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll",
-        "tools/net9.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
-        "tools/net9.0/Microsoft.NET.WebAssembly.Webcil.dll"
+        "tools/net8.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
+        "tools/net8.0/Microsoft.NET.WebAssembly.Webcil.dll"
       ]
     },
     "System.IO.Pipelines/8.0.0": {
@@ -2391,23 +2388,23 @@
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.13",
       "Microsoft.AspNetCore.Components.WebAssembly.Authentication >= 8.0.13",
       "Microsoft.NET.ILLink.Tasks >= 8.0.21",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.10"
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.21"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emerson\\.nuget\\packages\\": {}
+    "C:\\Users\\emerson.sap09\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
+      "projectUniqueName": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
       "projectName": "Gestao.Client",
-      "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
-      "packagesPath": "C:\\Users\\Emerson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\",
+      "projectPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj",
+      "packagesPath": "C:\\Users\\emerson.sap09\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Emerson\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\emerson.sap09\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2419,8 +2416,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj": {
-              "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj"
+            "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj": {
+              "projectPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj"
             }
           }
         }
@@ -2429,13 +2426,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -2458,7 +2449,7 @@
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.10, )",
+            "version": "[8.0.21, )",
             "autoReferenced": true
           }
         },
@@ -2475,19 +2466,7 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.21, 8.0.21]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.21, 8.0.21]"
-          },
-          {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[8.0.21, 8.0.21]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[8.0.21, 8.0.21]"
           }
         ],
@@ -2496,7 +2475,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.121/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
