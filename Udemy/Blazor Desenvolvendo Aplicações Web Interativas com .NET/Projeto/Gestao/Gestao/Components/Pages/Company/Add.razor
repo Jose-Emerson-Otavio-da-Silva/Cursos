@@ -1,5 +1,7 @@
 @page "/Company/Add"
 @rendermode InteractiveServer
+@inject IJSRuntime JS
+
 <PageTitle>Cadastro de Empresa</PageTitle>
 
 <div class="container-fluid py-4">
@@ -132,9 +134,15 @@
             </div>
         </div>
     </div>
-</div>
+</div>y
  *@
 
 @code {
-
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("CompanyMaskInit");
+        }
+    }
 }

@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "Gestao.Client",
   "resources": {
-    "hash": "sha256-P2at3gHe4xLq3G5YM2ov7YBe1h5s2Pz9qaQtBjam1YI=",
+    "hash": "sha256-vpqtA7E2TFq4qQfTT2MKf4Lk6Hy4vI7ygZHup1Wxyjc=",
     "jsModuleNative": {
-      "dotnet.native.8.0.21.v7aynqgpur.js": "sha256-9Fzd5We95Rp03dEKIAbYjPDR3eWyLbmjMlYStvxyiok="
+      "dotnet.native.js": "sha256-9Fzd5We95Rp03dEKIAbYjPDR3eWyLbmjMlYStvxyiok="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.21.bvv81bvscr.js": "sha256-aLf0XK8bqX83FXyXydFPTC1FOTq3PaeGDyoDn3uz194="
+      "dotnet.runtime.js": "sha256-aLf0XK8bqX83FXyXydFPTC1FOTq3PaeGDyoDn3uz194="
     },
     "wasmNative": {
       "dotnet.native.wasm": "sha256-Y1pDEFNAqpzUmFk5FuVUzruqNloBnByUMhlQ96dqto4="
@@ -16,6 +16,7 @@
       "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
+    "coreAssembly": {},
     "assembly": {
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-g81inugSrrLKEtyxg9JkSxiBc3dly3FZcTKaz72rU/U=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-4/ecRnxEzB060rvNFk3n/GL1s3361WaHeLmfoea+Mp8=",
@@ -220,12 +221,12 @@
       "mscorlib.wasm": "sha256-MZJ1V6miMP318lQowft4FPkcszcibPLDTwKj235fSAc=",
       "netstandard.wasm": "sha256-RYAURbR1AHkUZYjKgu+B/i3N3VP4abnAaH+vxwJ8d3c=",
       "System.Private.CoreLib.wasm": "sha256-4YzdATaWUDkUkRpe+hl+T61TaCjRVapVUtqTIai3Gd8=",
-      "Gestao.Domain.wasm": "sha256-Aez7klQNLQ47+iYEJvKmRjMh35TaTDDPU58vHJptYLg=",
-      "Gestao.Client.wasm": "sha256-BFzRgf5/lbej/OwT0TjjulG2pF4cCXTQyJQ9WWuowK0="
+      "Gestao.Domain.wasm": "sha256-fHTAAbG8E+K57E63KA7F1hwJprwgo4uzxXxagTgkTKs=",
+      "Gestao.Client.wasm": "sha256-zlyI5LXwn+zZTgj9eF0use4OG8iTqqFU/s/T65LVB6A="
     },
     "pdb": {
-      "Gestao.Domain.pdb": "sha256-ThVzo8KFEEiyZR99TkGc0jphOxWhVzkDTa+S5vvZGVQ=",
-      "Gestao.Client.pdb": "sha256-wqhXFeYRrqHvA3hib0mDsqfUMmMVGSRAxNl/6UyCCfI="
+      "Gestao.Domain.pdb": "sha256-HI+6qeonyZXHF+aQd5xavMV7n+Pp+0h915zwVxbRgHI=",
+      "Gestao.Client.pdb": "sha256-enEowF5R0nkw/7GZYToHrynox9a5LZ8Bk/vXQzxZGVM="
     }
   },
   "cacheBootResources": true,

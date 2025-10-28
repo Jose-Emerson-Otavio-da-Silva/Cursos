@@ -1361,7 +1361,10 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.13"
         },
         "runtime": {
-          "Gestao.Client.dll": {}
+          "Gestao.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Gestao.Domain/1.0.0": {
@@ -1369,7 +1372,10 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.13"
         },
         "runtime": {
-          "Gestao.Domain.dll": {}
+          "Gestao.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
