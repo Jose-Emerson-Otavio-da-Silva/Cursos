@@ -1,5 +1,4 @@
 function CompanyMaskInit(params) {
-    alert("Inicializando máscaras de CNPJ e CEP");
     var cleaveCNPJ, cleaveCEP;
     document.querySelector("#cnpj") && (cleaveDelimiters = new Cleave("#cnpj", {
         delimiters: [".", ".", "/", "-"],
