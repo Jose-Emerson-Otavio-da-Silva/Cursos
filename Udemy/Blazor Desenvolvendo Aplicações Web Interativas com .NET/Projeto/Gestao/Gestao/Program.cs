@@ -11,6 +11,7 @@ using Gestao.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Gestao.Domain.Enums;
 using Gestao.Domain.Repositories;
+using Gestao.Libraries.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,6 +81,7 @@ builder.Services.AddSingleton<SmtpClient>(options =>
     return smtp;
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
+builder.Services.AddScoped<ICepService, CepService>();
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
