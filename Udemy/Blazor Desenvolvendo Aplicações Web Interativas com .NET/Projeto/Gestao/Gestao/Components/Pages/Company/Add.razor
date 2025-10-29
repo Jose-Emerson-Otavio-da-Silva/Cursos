@@ -40,7 +40,8 @@
                             <div class="col-xxl-3 col-md-6">
                                 <label for="cep" class="form-label fw-semibold">CEP</label>
                                 <InputText @bind-Value="Company!.PostalCode" type="text" autocomplete="off"
-                                    class="form-control" id="cep" placeholder="00000-000" />
+                                    class="form-control" id="cep" placeholder="00000-000"
+                                    @oninput="OnPostalCodeChanged" />
                                 <ValidationMessage For="() => Company!.PostalCode" />
                             </div>
 
@@ -111,6 +112,22 @@
     private void Submit()
     {
         //Salvar
+    }
+    private async Task OnPostalCodeChanged(ChangeEventArgs e)
+    {
+        var postalCode = e.Value?.ToString() ?? string.Empty;
+        if (postalCode.Length == 9) // Formato 00000-000
+        {
+            var address = await CepService.SearchByPostalCode(postalCode);
+            if (address != null)
+            {
+                Company!.State = address.Uf;
+                Company!.City = address.Localidade;
+                Company!.Neighborhood = address.Bairro;
+                Company!.Address = address.Logradouro;
+                StateHasChanged();
+            }
+        }
     }
 }
 
