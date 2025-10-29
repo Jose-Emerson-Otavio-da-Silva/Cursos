@@ -39,10 +39,19 @@
 
                             <div class="col-xxl-3 col-md-6">
                                 <label for="cep" class="form-label fw-semibold">CEP</label>
-                                <InputText @bind-Value="Company!.PostalCode" type="text" autocomplete="off"
-                                    class="form-control" id="cep" placeholder="00000-000"
-                                    @oninput="OnPostalCodeChanged" />
-                                <ValidationMessage For="() => Company!.PostalCode" />
+                                <div class="input-group">
+                                    <InputText @bind-Value="Company!.PostalCode" type="text" autocomplete="off"
+                                        class="form-control" border-right-none id="cep" placeholder="00000-000"
+                                        @oninput="OnPostalCodeChanged" />
+                                    @if (IsLoadingAddress)
+                                    {
+                                        <span class="input-group-text input-group-text-bg-transparent">
+                                            <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                                            <span class="sr-only">Loading...</span>
+                                        </span>
+                                    }
+                                    <ValidationMessage For="() => Company!.PostalCode" />
+                                </div>
                             </div>
 
                             <div class="col-xxl-3 col-md-6">
@@ -97,10 +106,10 @@
 
 @code {
     [SupplyParameterFromForm]
-    private Company? Company { get; set; }
+    private Company? Company { get; set; } = new();
+    private bool IsLoadingAddress { get; set; } = false;
     protected override void OnInitialized()
     {
-        Company = new();
     }
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -118,13 +127,26 @@
         var postalCode = e.Value?.ToString() ?? string.Empty;
         if (postalCode.Length == 9) // Formato 00000-000
         {
+            IsLoadingAddress = true;
+            StateHasChanged();
+            Company!.State = string.Empty;
+            Company!.City = string.Empty;
+            Company!.Neighborhood = string.Empty;
+            Company!.Address = string.Empty;
+            await Task.Delay(800); // Simular tempo de carregamento
             var address = await CepService.SearchByPostalCode(postalCode);
-            if (address != null)
+            if (address is null)
+            {
+                IsLoadingAddress = false;
+                StateHasChanged();
+                return;
+            }
             {
                 Company!.State = address.Uf;
                 Company!.City = address.Localidade;
                 Company!.Neighborhood = address.Bairro;
                 Company!.Address = address.Logradouro;
+                IsLoadingAddress = false;
                 StateHasChanged();
             }
         }
