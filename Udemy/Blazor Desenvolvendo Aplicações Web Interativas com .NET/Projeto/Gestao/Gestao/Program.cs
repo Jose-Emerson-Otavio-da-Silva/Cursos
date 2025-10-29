@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Gestao.Domain.Enums;
 using Gestao.Domain.Repositories;
 using Gestao.Libraries.Services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
 
 #region Config of Authentication
 builder.Services.AddCascadingAuthenticationState();
@@ -91,6 +96,15 @@ builder.Services.AddScoped<IFinancialTransactionRepository, FinancialTransaction
 #endregion
 
 var app = builder.Build();
+
+// ✅ Define a cultura padrão pt-BR
+var supportedCultures = new[] { new CultureInfo("pt-BR") };
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("pt-BR"),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+};
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
