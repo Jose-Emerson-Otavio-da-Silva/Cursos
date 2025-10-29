@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Identity;
+using Gestao.Domain.Libraries.Validations;
 
 namespace Gestao.Domain
 {
@@ -9,7 +9,7 @@ namespace Gestao.Domain
         {
         }
 
-        [RequiredAttribute] public int Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo Razão Social é obrigatório.")]
         [StringLength(150, ErrorMessage = "O campo Razão Social deve ter no máximo {1} caracteres.")]
@@ -21,6 +21,7 @@ namespace Gestao.Domain
 
         [Required(ErrorMessage = "O campo CNPJ é obrigatório.")]
         [RegularExpression(@"^\d{14}$", ErrorMessage = "O CNPJ deve conter exatamente 14 dígitos, apenas números.")]
+        [CNPJ(ErrorMessage = "O CNPJ informado é inválido.")]
         public string TaxId { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "O campo CEP é obrigatório.")]
