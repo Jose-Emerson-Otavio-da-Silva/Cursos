@@ -1,7 +1,12 @@
 @page "/Company/Add"
+
 @rendermode InteractiveServer
 @inject IJSRuntime JS
+@inject NavigationManager NavigationManager
 @inject ICepService CepService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ICompanyRepository CompanyRepository
+
 
 <PageTitle>Cadastro de Empresa</PageTitle>
 
@@ -118,9 +123,24 @@
             await JS.InvokeVoidAsync("CompanyMaskInit");
         }
     }
-    private void Submit()
+    private async Task Submit()
     {
+        //Tratar dados
+        Company!.CreatedAt = DateTimeOffset.Now;
+        Company!.UserId = (await AuthenticationHelper.GetAuthenticationdUserIdAsync(AuthenticationStateProvider)).Value;
+
         //Salvar
+        await CompanyRepository.Add(Company);
+
+        //Informar e redirecionar
+        // Exibir toast e redirecionar depois que o usuário fechar
+        await JS.InvokeVoidAsync("ShowToast",
+        "Sucesso", "Empresa cadastrada com sucesso!", "success", "/Company/List");
+
+
+        @*     NavigationManager.NavigateTo("/Company/List");
+        await JS.InvokeVoidAsync("ShowToast", "Sucesso", "Empresa cadastrada com sucesso!", "success");
+        *@
     }
     private async Task OnPostalCodeChanged(ChangeEventArgs e)
     {
