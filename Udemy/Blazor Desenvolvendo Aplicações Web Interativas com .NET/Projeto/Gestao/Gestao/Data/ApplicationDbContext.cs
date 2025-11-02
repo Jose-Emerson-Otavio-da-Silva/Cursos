@@ -29,9 +29,8 @@ namespace Gestao.Data
                 .HasConversion<string>();
 
             builder.Entity<Company>()
-                .HasMany(a => a.Accounts)
-                .WithOne(b => b.Company)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasIndex(a => a.TaxId)
+                .IsUnique();
         }
     }
 }

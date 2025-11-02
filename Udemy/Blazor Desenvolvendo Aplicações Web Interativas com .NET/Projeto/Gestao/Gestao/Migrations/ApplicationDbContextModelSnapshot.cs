@@ -39,6 +39,12 @@ namespace Gestao.Migrations
                     b.Property<int?>("CompanyId")
                         .HasColumnType("int");
 
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -61,6 +67,9 @@ namespace Gestao.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -126,6 +135,12 @@ namespace Gestao.Migrations
                     b.Property<int?>("CompanyId")
                         .HasColumnType("int");
 
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -160,9 +175,13 @@ namespace Gestao.Migrations
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetimeoffset");
+
                     b.Property<string>("LegalName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Neighborhood")
                         .IsRequired()
@@ -178,11 +197,12 @@ namespace Gestao.Migrations
 
                     b.Property<string>("TaxId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TradeName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -191,6 +211,9 @@ namespace Gestao.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TaxId")
+                        .IsUnique();
 
                     b.HasIndex("UserId1");
 
@@ -204,6 +227,12 @@ namespace Gestao.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<int?>("FinancialTransactionId")
                         .HasColumnType("int");
@@ -243,6 +272,9 @@ namespace Gestao.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTimeOffset>("CreatedAt")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Description")
@@ -425,7 +457,7 @@ namespace Gestao.Migrations
             modelBuilder.Entity("Gestao.Domain.Account", b =>
                 {
                     b.HasOne("Gestao.Domain.Company", "Company")
-                        .WithMany()
+                        .WithMany("Accounts")
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("Company");
@@ -434,7 +466,7 @@ namespace Gestao.Migrations
             modelBuilder.Entity("Gestao.Domain.Category", b =>
                 {
                     b.HasOne("Gestao.Domain.Company", "Company")
-                        .WithMany()
+                        .WithMany("Categories")
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("Company");
@@ -469,7 +501,7 @@ namespace Gestao.Migrations
                         .HasForeignKey("CategoryId");
 
                     b.HasOne("Gestao.Domain.Company", "Company")
-                        .WithMany()
+                        .WithMany("FinancialTransactionsS")
                         .HasForeignKey("CompanyId");
 
                     b.Navigation("Account");
@@ -528,6 +560,15 @@ namespace Gestao.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Gestao.Domain.Company", b =>
+                {
+                    b.Navigation("Accounts");
+
+                    b.Navigation("Categories");
+
+                    b.Navigation("FinancialTransactionsS");
                 });
 
             modelBuilder.Entity("Gestao.Domain.FinancialTransaction", b =>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Gestao.Domain
 {
-    public class Account
+    public class Account : Interfaces.SoftDelete
     {
         public int Id { get; set; }
         public string Description { get; set; } = string.Empty;
@@ -13,5 +13,7 @@ namespace Gestao.Domain
         public DateTimeOffset BalanceDate { get; set; }
         public int? CompanyId { get; set; }
         public Company? Company { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
+        public DateTimeOffset? DeletedAt { get; set; }
     }
 }

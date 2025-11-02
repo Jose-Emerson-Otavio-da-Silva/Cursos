@@ -3,11 +3,12 @@ using Gestao.Domain.Libraries.Validations;
 
 namespace Gestao.Domain
 {
-    public class Company
+    public class Company : Interfaces.SoftDelete
     {
         public Company()
         {
         }
+
 
         public int Id { get; set; }
 
@@ -43,6 +44,7 @@ namespace Gestao.Domain
         public string Address { get; set; } = string.Empty;
         public string Complement { get; set; } = string.Empty;
         public DateTimeOffset CreatedAt { get; set; }
+        public DateTimeOffset? DeletedAt { get; set; }
         public Guid UserId { get; set; }
         public ApplicationUser? User { get; set; }
         public ICollection<Account>? Accounts { get; set; }
