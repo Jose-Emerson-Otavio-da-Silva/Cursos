@@ -45,5 +45,8 @@ namespace Gestao.Domain
         public DateTimeOffset CreatedAt { get; set; }
         public Guid UserId { get; set; }
         public ApplicationUser? User { get; set; }
+        public ICollection<Account>? Accounts { get; set; }
+        public ICollection<Category>? Categories { get; set; }
+        public ICollection<FinancialTransaction>? FinancialTransactionsS { get; set; }
     }
 }

@@ -4,7 +4,8 @@
 @inject ICompanyRepository CompanyRepository
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IConfiguration Configuration
-<PageTitle>Empresas</PageTitle>
+
+<PageTitle>Empresa - Listar</PageTitle>
 
 
 <div class="container-fluid py-2">
@@ -60,23 +61,24 @@
                                 }
                                 else
                                 {
-                                    foreach (var itens in Paginated.Items)
+                                    foreach (var item in Paginated.Items)
                                     {
                                         <tr>
-                                            <td>@itens.TradeName</td>
-                                            <td>@itens.TaxId</td>
-                                            <td>@itens.Address</td>
+                                            <td>@item.TradeName</td>
+                                            <td>@item.TaxId</td>
+                                            <td>@item.Address</td>
                                             <td class="text-center">
                                                 <button class="btn btn-sm btn-soft-success me-1" title="Selecionar">
                                                     <i class="ri-check-line"></i> Selecionar
                                                 </button>
-                                                <a href="/Company/Edit/@itens.Id" class="btn btn-sm btn-soft-info me-1"
+                                                <a href="/Company/Edit/@item.Id" class="btn btn-sm btn-soft-info me-1"
                                                     title="Editar">
                                                     <i class="ri-pencil-line"></i>
                                                 </a>
-                                                <button class="btn btn-sm btn-soft-danger" title="Excluir">
+                                                <a href="/Company/Detail/@item.Id" class="btn btn-sm btn-soft-danger"
+                                                    title="Excluir">
                                                     <i class="ri-delete-bin-line"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                         </tr>
                                     }

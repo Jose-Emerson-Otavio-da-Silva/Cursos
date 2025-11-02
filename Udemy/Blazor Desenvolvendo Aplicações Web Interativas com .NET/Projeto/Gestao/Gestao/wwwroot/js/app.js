@@ -48,7 +48,7 @@ window.ShowToast = (title, message, type = 'primary', redirectUrl) => {
     const toast = document.createElement('div');
     toast.className = `toast align-items-center text-bg-${type} border-0 shadow show`;
     toast.role = 'alert';
-    toast.style.minWidth = '340px';
+    toast.style.minWidth = '240px';
     toast.style.animation = 'fadeSlideDown 0.4s ease-out';
     toast.innerHTML = `
         <div class="d-flex align-items-center px-2 py-1">

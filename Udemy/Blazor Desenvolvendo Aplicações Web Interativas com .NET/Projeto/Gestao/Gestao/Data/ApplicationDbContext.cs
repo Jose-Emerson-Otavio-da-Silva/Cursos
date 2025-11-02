@@ -15,8 +15,6 @@ namespace Gestao.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<FinancialTransaction> FinancialTransactions { get; set; }
         public DbSet<Document> Documents { get; set; }
-        // Adicione seus DbSets aqui, por exemplo:
-        // public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -29,6 +27,11 @@ namespace Gestao.Data
             builder.Entity<FinancialTransaction>()
                 .Property(a => a.TypeFinancialTransaction)
                 .HasConversion<string>();
+
+            builder.Entity<Company>()
+                .HasMany(a => a.Accounts)
+                .WithOne(b => b.Company)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
