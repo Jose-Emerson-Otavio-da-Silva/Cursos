@@ -1,0 +1,189 @@
+@page "/Company/Edit/{id:int}"
+
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+@inject ICepService CepService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ICompanyRepository CompanyRepository
+
+
+<PageTitle>Alterar Empresa</PageTitle>
+
+<div class="container-fluid py-2">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white border-bottom-0 d-flex align-items-center justify-content-between">
+                    <h4 class="card-title mb-0 text-primary fw-bold">Cadastrar Empresa</h4>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="Company" OnValidSubmit="Submit" FormName="Update">
+                        <DataAnnotationsValidator />
+                        <div class=" row g-3">
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="razaosocial" class="form-label fw-semibold">Razão Social</label>
+                                <InputText @bind-Value="Company!.LegalName" type="text" autocomplete="off"
+                                    class="form-control" id="razaosocial" placeholder="Digite a razão social" />
+                                <ValidationMessage For="() => Company!.LegalName" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="nomefantasia" class="form-label fw-semibold">Nome Fantasia</label>
+                                <InputText @bind-Value="Company!.TradeName" type="text" autocomplete="off"
+                                    class="form-control" id="nomefantasia" placeholder="Digite o nome fantasia" />
+                                <ValidationMessage For="() => Company!.TradeName" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="cnpj" class="form-label fw-semibold">CNPJ</label>
+                                <InputText @bind-Value="Company!.TaxId" type="text" autocomplete="off"
+                                    class="form-control" id="cnpj" placeholder="00.000.000/0000-00" />
+                                <ValidationMessage For="() => Company!.TaxId" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="cep" class="form-label fw-semibold">CEP</label>
+                                <div class="input-group">
+                                    <InputText @bind-Value="Company!.PostalCode" type="text" autocomplete="off"
+                                        class="form-control" border-right-none id="cep" placeholder="00000-000"
+                                        @oninput="OnPostalCodeChanged" />
+                                    @if (IsLoadingAddress)
+                                    {
+                                        <span class="input-group-text input-group-text-bg-transparent">
+                                            <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                                            <span class="sr-only">Loading...</span>
+                                        </span>
+                                    }
+                                </div>
+                                <ValidationMessage For="() => Company!.PostalCode" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="estado" class="form-label fw-semibold">Estado</label>
+                                <InputText @bind-Value="Company!.State" type="text" aria-readonly="true"
+                                    class="form-control bg-light" id="estado" placeholder="Estado" />
+                                <ValidationMessage For="() => Company!.State" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="cidade" class="form-label fw-semibold">Cidade</label>
+                                <InputText @bind-Value="Company!.City" type="text" aria-readonly="true"
+                                    class="form-control bg-light" id="cidade" placeholder="Cidade" />
+                                <ValidationMessage For="() => Company!.City" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="bairro" class="form-label fw-semibold">Bairro</label>
+                                <InputText @bind-Value="Company!.Neighborhood" type="text" aria-readonly="true"
+                                    class="form-control bg-light" id="bairro" placeholder="Bairro" />
+                                <ValidationMessage For="() => Company!.Neighborhood" />
+                            </div>
+
+                            <div class="col-xxl-6 col-md-6">
+                                <label for="endereco" class="form-label fw-semibold">Endereço</label>
+                                <InputText @bind-Value="Company!.Address" type="text" autocomplete="off"
+                                    class="form-control" id="endereco" placeholder="Digite o endereço" />
+                                <ValidationMessage For="() => Company!.Address" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="complemento" class="form-label fw-semibold">Complemento</label>
+                                <InputText @bind-Value="Company!.Complement" type="text" autocomplete="off"
+                                    class="form-control" id="complemento" placeholder="Apartamento, bloco, etc." />
+                                <ValidationMessage For="() => Company!.Complement" />
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between">
+                            <a href="/Company/List" class="btn btn-outline-secondary px-4">Voltar</a>
+                            <button type="submit" class="btn btn-primary px-4">Salvar</button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Company Company { get; set; } = new();
+    private bool IsLoadingAddress { get; set; } = false;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var UserId = (await AuthenticationHelper.GetAuthenticationdUserIdAsync(AuthenticationStateProvider)).Value;
+        var company = await CompanyRepository.Get(Id);
+
+        if (company is null)
+        {
+            await JS.InvokeVoidAsync("ShowToast", "alert", "Empresa não encontrada!", "alert", "/Company/List");
+        }
+        if (company!.UserId != UserId)
+        {
+            await JS.InvokeVoidAsync("ShowToast",
+            "alert", "Você não tem permissão para editar esta empresa!", "alert", "/Company/List");
+        }
+        Company = company;
+    }
+    protected override void OnInitialized()
+    {
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("CompanyMaskInit");
+        }
+    }
+    private async Task Submit()
+    {
+        //Salvar
+        await CompanyRepository.Update(Company);
+
+        //Informar e redirecionar
+        // Exibir toast e redirecionar depois que o usuário fechar
+        await JS.InvokeVoidAsync("ShowToast",
+        "Sucesso", "Empresa alterada com sucesso!", "success", "/Company/List");
+
+
+        @*     NavigationManager.NavigateTo("/Company/List");
+        await JS.InvokeVoidAsync("ShowToast", "Sucesso", "Empresa cadastrada com sucesso!", "success");
+        *@
+    }
+    private async Task OnPostalCodeChanged(ChangeEventArgs e)
+    {
+        var postalCode = e.Value?.ToString() ?? string.Empty;
+        if (postalCode.Length == 9) // Formato 00000-000
+        {
+            IsLoadingAddress = true;
+            StateHasChanged();
+            Company!.State = string.Empty;
+            Company!.City = string.Empty;
+            Company!.Neighborhood = string.Empty;
+            Company!.Address = string.Empty;
+            await Task.Delay(800); // Simular tempo de carregamento
+            var address = await CepService.SearchByPostalCode(postalCode);
+            if (address is null)
+            {
+                IsLoadingAddress = false;
+                StateHasChanged();
+                return;
+            }
+            {
+                Company!.State = address.Uf;
+                Company!.City = address.Localidade;
+                Company!.Neighborhood = address.Bairro;
+                Company!.Address = address.Logradouro;
+                IsLoadingAddress = false;
+                StateHasChanged();
+            }
+        }
+    }
+}
