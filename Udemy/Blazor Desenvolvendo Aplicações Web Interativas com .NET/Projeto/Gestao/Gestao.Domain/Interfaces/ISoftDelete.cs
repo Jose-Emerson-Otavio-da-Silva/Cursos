@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Gestao.Domain.Interfaces
 {
-    public interface SoftDelete
+    public interface ISoftDelete
     {
         DateTimeOffset? DeletedAt { get; set; }
     }

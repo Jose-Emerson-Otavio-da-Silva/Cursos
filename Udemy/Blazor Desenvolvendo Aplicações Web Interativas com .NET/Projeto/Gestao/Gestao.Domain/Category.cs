@@ -1,6 +1,8 @@
+using Gestao.Domain.Interfaces;
+
 namespace Gestao.Domain
 {
-    public class Category : Interfaces.SoftDelete
+    public class Category : ISoftDelete
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;

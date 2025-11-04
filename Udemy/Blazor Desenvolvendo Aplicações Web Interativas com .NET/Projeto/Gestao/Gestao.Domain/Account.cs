@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Gestao.Domain.Interfaces;
 
 namespace Gestao.Domain
 {
-    public class Account : Interfaces.SoftDelete
+    public class Account : ISoftDelete
     {
         public int Id { get; set; }
         public string Description { get; set; } = string.Empty;

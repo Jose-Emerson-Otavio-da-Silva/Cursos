@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gestao.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
@@ -11,22 +12,27 @@ namespace Gestao.Data.Interceptors
     {
         public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
         {
+            return SoftDeleteAlgorithm(eventData, result);
+        }
 
-            if (eventData.Context is null) return base.SavingChanges(eventData, result);
+        public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default)
+        {
+            return SoftDeleteAlgorithm(eventData, result);
+        }
+
+        private InterceptionResult<int> SoftDeleteAlgorithm(DbContextEventData eventData, InterceptionResult<int> result)
+        {
+            if (eventData.Context is null) return result;
 
             foreach (var entry in eventData.Context.ChangeTracker.Entries())
             {
-                if (entry.Entity is Domain.Interfaces.SoftDelete softDeleteEntity)
+                if (entry.State == EntityState.Deleted && entry.Entity is ISoftDelete)
                 {
-                    if (entry.State == EntityState.Deleted)
-                    {
-                        entry.State = EntityState.Modified;
-                        softDeleteEntity.DeletedAt = DateTimeOffset.UtcNow;
-                    }
+                    entry.State = EntityState.Modified;
+                    ((ISoftDelete)entry.Entity).DeletedAt = DateTimeOffset.UtcNow;
                 }
             }
-
-            return base.SavingChanges(eventData, result);
+            return result;
         }
     }
 }

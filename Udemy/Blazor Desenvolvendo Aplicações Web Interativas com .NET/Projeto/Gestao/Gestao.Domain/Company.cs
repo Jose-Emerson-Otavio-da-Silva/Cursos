@@ -1,9 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using Gestao.Domain.Interfaces;
 using Gestao.Domain.Libraries.Validations;
 
 namespace Gestao.Domain
 {
-    public class Company : Interfaces.SoftDelete
+    public class Company : ISoftDelete
     {
         public Company()
         {

@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Gestao.Domain.Enums;
+using Gestao.Domain.Interfaces;
 
 namespace Gestao.Domain
 {
-    public class FinancialTransaction : Interfaces.SoftDelete
+    public class FinancialTransaction : ISoftDelete
     {
         public int Id { get; set; }
         public TypeFinancialTransaction TypeFinancialTransaction { get; set; }
