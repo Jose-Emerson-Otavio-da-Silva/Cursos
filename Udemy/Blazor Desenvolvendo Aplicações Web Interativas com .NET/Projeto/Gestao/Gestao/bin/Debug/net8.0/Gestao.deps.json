@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "Gestao/1.0.0": {
         "dependencies": {
+          "Blazored.LocalStorage": "4.5.0",
           "Gestao.Client": "1.0.0",
           "Gestao.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.13",
@@ -58,6 +59,17 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.11.4.0",
             "fileVersion": "1.1100.424.31005"
+          }
+        }
+      },
+      "Blazored.LocalStorage/4.5.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.13"
+        },
+        "runtime": {
+          "lib/net8.0/Blazored.LocalStorage.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -1356,6 +1368,7 @@
       },
       "Gestao.Client/1.0.0": {
         "dependencies": {
+          "Blazored.LocalStorage": "4.5.0",
           "Gestao.Domain": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.13",
           "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.13"
@@ -1399,6 +1412,13 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
+    },
+    "Blazored.LocalStorage/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6nZuJwA7zNIKx83IsObiHXZb09ponJOpCClU3en+hI8ZFvrOKXeOw+H7TegQZQrvdR1n9fkrVkEBQZg8vx6ZTw==",
+      "path": "blazored.localstorage/4.5.0",
+      "hashPath": "blazored.localstorage.4.5.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

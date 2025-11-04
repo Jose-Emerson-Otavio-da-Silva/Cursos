@@ -14,6 +14,8 @@ using Gestao.Domain.Repositories;
 using Gestao.Libraries.Services;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Blazored.LocalStorage;
+using Gestao.Client.Libraries.Notifications;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,6 +89,8 @@ builder.Services.AddSingleton<SmtpClient>(options =>
 });
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 builder.Services.AddScoped<ICepService, CepService>();
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddScoped<CompanyOnSelectedNotification>();
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
