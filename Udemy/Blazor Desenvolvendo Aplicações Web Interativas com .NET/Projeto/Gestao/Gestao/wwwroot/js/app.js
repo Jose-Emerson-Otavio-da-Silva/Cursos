@@ -71,7 +71,7 @@ window.ShowToast = (title, message, type = 'primary', redirectUrl) => {
     // Fecha automaticamente após 4 segundos
     const autoClose = setTimeout(() => {
         bsToast.hide();
-    }, 4000);
+    }, 2000);
 
     // Quando o usuário fecha manualmente
     toast.addEventListener('hidden.bs.toast', () => {

@@ -134,7 +134,7 @@
 
     private async Task SelectCompany(Company company)
     {
-        await LocalStorage.SetItemAsync(AppConstants.LocalStorageCompany, company.Id);
+        await LocalStorage.SetItemAsync(AppConstants.LocalStorageCompany, company);
         Notification.NotificationOnSelected();
     }
 }
