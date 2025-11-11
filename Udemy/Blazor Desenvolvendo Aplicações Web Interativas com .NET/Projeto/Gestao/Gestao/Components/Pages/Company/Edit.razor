@@ -151,11 +151,6 @@
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
         "Sucesso", "Empresa alterada com sucesso!", "info", "/Company/List");
-
-
-        @*     NavigationManager.NavigateTo("/Company/List");
-        await JS.InvokeVoidAsync("ShowToast", "Sucesso", "Empresa cadastrada com sucesso!", "success");
-        *@
     }
     private async Task OnPostalCodeChanged(ChangeEventArgs e)
     {
