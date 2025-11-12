@@ -1,0 +1,104 @@
+@page "/Category/Edit/{id:int}"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+@inject NavigationManager NavigationManager
+@inject ICategoryRepository CategoryRepository
+@inject ILocalStorageService LocalStorage
+
+
+<PageTitle>Conta - Editar</PageTitle>
+@*
+<div class="container-fluid py-2">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary border-bottom-0 d-flex align-items-center justify-content-between">
+                    <h4 class="card-title mb-0 text-white">Atualizar Conta</h4>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="Category" OnValidSubmit="Submit" FormName="Update">
+                        <DataAnnotationsValidator />
+                        <div class=" row g-3">
+                            <div class="col-xxl-3 col-md-6">
+                                <div>
+                                    <label for="description" class="form-label fw-semibold">Descrição/Nome</label>
+                                    <InputText @bind-Value="Category!.Description" autocomplete="off"
+                                        class="form-control" id="description" placeholder="Digite a Descrição/Nome" />
+                                    <ValidationMessage For="() => Category!.Description" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <div>
+                                    <label for="balance" class="form-label fw-semibold">Saldo Inicial</label>
+                                    <InputNumber @bind-Value="Category!.Balance" autocomplete="off" class="form-control"
+                                        id="balance" placeholder="0.00" />
+                                    <ValidationMessage For="() => Category!.Balance" />
+                                </div>
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <div>
+                                    <label for="balanceDate" class="form-label fw-semibold">Data de abertura da
+                                        conta</label>
+                                    <InputDate @bind-Value="Category!.BalanceDate" autocomplete="off"
+                                        class="form-control" id="balanceDate" placeholder="dd/MM/yyyy" />
+                                    <ValidationMessage For="() => Category!.BalanceDate" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between">
+                            <a href="/Category/List" class="btn btn-outline-secondary px-4">Voltar</a>
+                            <button type="submit" class="btn btn-outline-success px-4">Salvar</button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+*@
+
+@code {
+    [Parameter] public int Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Category Category { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var category = await CategoryRepository.Get(Id);
+        if (category is not null)
+            Category = category;
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (Category.Id == 0)
+            {
+                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning", "/Category/List");
+                return;
+            }
+            var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
+            if (Category!.CompanyId != Company!.Id)
+            {
+                await JS.InvokeVoidAsync("ShowToast",
+                "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning", "/Category/List");
+            }
+        }
+    }
+    private async Task Submit()
+    {
+        //Salvar
+        await CategoryRepository.Update(Category);
+
+        //Informar e redirecionar
+        // Exibir toast e redirecionar depois que o usuário fechar
+        await JS.InvokeVoidAsync("ShowToast",
+        "Concluido!", "Conta alterada com sucesso!", "info", "/Category/List");
+    }
+}

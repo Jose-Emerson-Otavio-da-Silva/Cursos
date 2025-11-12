@@ -1,15 +1,15 @@
-@page "/Account/Add"
+@page "/Category/Add"
 @using Blazored.LocalStorage.StorageOptions
 
 @rendermode InteractiveServer
 @inject IJSRuntime JS
 @inject NavigationManager NavigationManager
-@inject IAccountRepository AccountRepository
+@inject ICategoryRepository CategoryRepository
 @inject ILocalStorageService LocalStorage
 
 
 <PageTitle>Conta - Cadastrar</PageTitle>
-
+@*
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-lg-12">
@@ -18,36 +18,36 @@
                     <h4 class="card-title mb-0 text-white">Cadastrar Conta</h4>
                 </div>
                 <div class="card-body">
-                    <EditForm Model="Account" OnValidSubmit="Submit" FormName="Register">
+                    <EditForm Model="Category" OnValidSubmit="Submit" FormName="Register">
                         <DataAnnotationsValidator />
                         <div class=" row g-3">
                             <div class="col-xxl-3 col-md-6">
                                 <label for="description" class="form-label fw-semibold">Descrição/Nome</label>
-                                <InputText @bind-Value="Account!.Description" autocomplete="off" class="form-control"
+                                <InputText @bind-Value="Category!.Description" autocomplete="off" class="form-control"
                                     id="description" placeholder="Digite a descrição/nome da conta" />
-                                <ValidationMessage For="() => Account!.Description" />
+                                <ValidationMessage For="() => Category!.Description" />
                             </div>
 
                             <div class="col-xxl-3 col-md-6">
                                 <label for="balance" class="form-label fw-semibold">Saldo inicial</label>
-                                <InputNumber @bind-Value="Account!.Balance" autocomplete="off" class="form-control"
+                                <InputNumber @bind-Value="Category!.Balance" autocomplete="off" class="form-control"
                                     id="balance" placeholder="0,00" />
-                                <ValidationMessage For="() => Account!.Balance" />
+                                <ValidationMessage For="() => Category!.Balance" />
                             </div>
 
                             <div class="col-xxl-3 col-md-6">
                                 <label for="balanceDate" class="form-label fw-semibold">Data da abertura da
                                     conta</label>
-                                <InputDate @bind-Value="Account!.BalanceDate" autocomplete="off" class="form-control"
+                                <InputDate @bind-Value="Category!.BalanceDate" autocomplete="off" class="form-control"
                                     id="balanceDate" placeholder="dd/MM/yyyy" />
-                                <ValidationMessage For="() => Account!.BalanceDate" />
+                                <ValidationMessage For="() => Category!.BalanceDate" />
                             </div>
                         </div>
 
                         <hr class="my-4">
 
                         <div class="d-flex justify-content-between">
-                            <a href="/Account/List" class="btn btn-outline-secondary px-4">Voltar</a>
+                            <a href="/Category/List" class="btn btn-outline-secondary px-4">Voltar</a>
                             <button type="submit" class="btn btn-outline-success px-4">Salvar</button>
                         </div>
                     </EditForm>
@@ -56,11 +56,11 @@
         </div>
     </div>
 </div>
-
+*@
 
 @code {
     [SupplyParameterFromForm]
-    private Account? Account { get; set; } = new() { BalanceDate = DateTimeOffset.Now };
+    private Category? Category { get; set; } = new();
     private Company? Company;
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -69,16 +69,16 @@
     private async Task Submit()
     {
         //Tratar dados
-        Account!.CreatedAt = DateTimeOffset.Now;
-        Account.CompanyId = Company!.Id;
+        Category!.CreatedAt = DateTimeOffset.Now;
+        Category.CompanyId = Company!.Id;
 
         //Salvar
-        await AccountRepository.Add(Account);
+        await CategoryRepository.Add(Category);
 
         //Informar e redirecionar
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
-        "Sucesso", "Conta cadastrada com sucesso!", "info", "/Account/List");
+        "Sucesso", "Conta cadastrada com sucesso!", "info", "/Category/List");
     }
 
 }

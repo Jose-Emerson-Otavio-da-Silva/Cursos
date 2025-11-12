@@ -114,7 +114,7 @@
 
                                 <form action="Account/Logout" method="post">
                                     <AntiforgeryToken />
-                                    <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+                                    <input type="hidden" name="ReturnUrl" />
                                     <button type="submit" class="dropdown-item">
                                         <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> Logout
                                     </button>
@@ -123,7 +123,6 @@
                         </div>
                     </Authorized>
                 </AuthorizeView>
-
             </div>
         </div>
     </div>
@@ -134,7 +133,6 @@
 
 
 @code {
-    private string? currentUrl;
     private Company? company;
 
     protected override void OnInitialized()
@@ -155,5 +153,4 @@
     {
         Notification.OnCompanySelected -= OnCompanySelected;
     }
-
 }

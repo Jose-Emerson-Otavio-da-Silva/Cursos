@@ -196,6 +196,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2NvdW50XEVkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Category/Add.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVxBZGQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Category/Detail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVxEZXRhaWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Category/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yeVxFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Company/Add.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb21wYW55XEFkZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -97,12 +97,9 @@
     private Company? company;
     private PaginatedList<Account>? Paginated;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        //Blazor Server pega o usuário logado via SignInManager
-        //Blazor WebAssembly pega o usuário logado via AuthenticationStateProvider
         PageSize = Configuration.GetValue<int>("Pagination:PageSize", 1);
-
     }
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
