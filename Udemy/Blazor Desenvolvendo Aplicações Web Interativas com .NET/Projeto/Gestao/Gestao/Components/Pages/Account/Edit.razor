@@ -74,22 +74,21 @@
         if (account is not null)
             Account = account;
     }
-    protected override void OnInitialized()
-    {
-    }
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-
-        if (Account.Id == 0 && firstRender)
+        if (firstRender)
         {
-            await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning", "/Account/List");
-            return;
-        }
-        var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
-        if (Account!.CompanyId != Company!.Id && firstRender)
-        {
-            await JS.InvokeVoidAsync("ShowToast",
-            "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning", "/Account/List");
+            if (Account.Id == 0)
+            {
+                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning", "/Account/List");
+                return;
+            }
+            var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
+            if (Account!.CompanyId != Company!.Id)
+            {
+                await JS.InvokeVoidAsync("ShowToast",
+                "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning", "/Account/List");
+            }
         }
     }
     private async Task Submit()
@@ -100,6 +99,6 @@
         //Informar e redirecionar
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
-        "Concluido!", "Conta alterada com sucesso!", "success", "/Account/List");
+        "Concluido!", "Conta alterada com sucesso!", "info", "/Account/List");
     }
 }
