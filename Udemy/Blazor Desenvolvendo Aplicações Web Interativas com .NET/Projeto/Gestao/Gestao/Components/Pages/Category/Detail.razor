@@ -6,41 +6,33 @@
 @inject ICategoryRepository CategoryRepository
 @inject ILocalStorageService LocalStorage
 
-<PageTitle>Conta - Confirmar Exclusão</PageTitle>
-@*
+<PageTitle>Categoria - Confirmar Exclusão</PageTitle>
+
 <div class="container-fluid py-2">
     <div class="row ">
         <div class="col-lg-12">
             <div class="card shadow-sm border-0 ">
                 <div class="card-header bg-danger border-bottom-0 d-flex align-items-center justify-content-between">
-                    <h4 class="card-title mb-0 text-white">Confirmar exclusão da Conta</h4>
+                    <h4 class="card-title mb-0 text-white">Confirmar exclusão da Categoria</h4>
                 </div>
 
                 <div class="card-body p-4">
                     <div class="alert alert-warning border-warning d-flex align-items-center" role="alert">
                         <i class="bi bi-exclamation-circle-fill me-2 fs-5"></i>
                         <div>
-                            Tem certeza de que deseja <strong>excluir esta Conta</strong>? Esta ação é
+                            Tem certeza de que deseja <strong>excluir esta Categoria</strong>? Esta ação é
                             <strong>irreversível</strong>.
                         </div>
                     </div>
 
                     <h5 class="fw-bold text-primary mt-4 mb-3">
-                        <i class="bi bi-building me-2"></i>Detalhes da Conta
+                        <i class="bi bi-building me-2"></i>Detalhes da Categoria
                     </h5>
 
                     <div class="row g-3 small text-secondary">
                         <div class="col-md-6 col-lg-4">
-                            <label class="fw-semibold text-dark">Descrição/Nome:</label><br />
-                            <span>@Category!.Description</span>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fw-semibold text-dark">Saldo Inicial:</label><br />
-                            <span>@((Category!.Balance ?? 0m).ToString("C"))</span>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <label class="fw-semibold text-dark">Data de Abertura:</label><br />
-                            <span>@(Category!.BalanceDate.ToString("dd/MM/yyyy"))</span>
+                            <label class="fw-semibold text-dark">Nome:</label><br />
+                            <span>@Category!.Name</span>
                         </div>
                     </div>
 
@@ -49,7 +41,7 @@
                     <div class="d-flex justify-content-between">
                         <a href="/Category/List" class="btn btn-outline-secondary px-4">Voltar</a>
                         <button @onclick="Remove" type="button" class="btn btn-soft-danger px-4">
-                            <i class="ri-delete-bin-line"></i>Excluir Conta
+                            <i class="ri-delete-bin-line"></i>Excluir Categoria
                         </button>
                     </div>
                 </div>
@@ -57,7 +49,6 @@
         </div>
     </div>
 </div>
-*@
 
 @code {
     [Parameter] public int Id { get; set; }
@@ -75,14 +66,14 @@
         {
             if (Category.Id == 0)
             {
-                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning", "/Category/List");
+                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Categoria não encontrada!", "warning", "/Category/List");
                 return;
             }
             var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
             if (Category!.CompanyId != Company!.Id)
             {
                 await JS.InvokeVoidAsync("ShowToast",
-                "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning", "/Category/List");
+                "Alerta.", $"A Categoria não pertence à empresa {Company.LegalName}", "warning", "/Category/List");
             }
         }
     }
@@ -94,6 +85,6 @@
         //Informar e redirecionar
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
-        "Sucesso", "Conta excluída com sucesso!", "info", "/Category/List");
+        "Sucesso", "Categoria excluída com sucesso!", "info", "/Category/List");
     }
 }
