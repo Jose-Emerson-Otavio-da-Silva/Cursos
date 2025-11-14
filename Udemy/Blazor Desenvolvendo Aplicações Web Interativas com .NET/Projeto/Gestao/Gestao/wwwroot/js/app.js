@@ -83,79 +83,63 @@ function CompanyMaskInit() {
     });
 }; */
 
-window.ShowToast = (title, message, type = 'primary', redirectUrl) => {
-    // Remove qualquer toast anterior para manter tudo clean
-    const oldOverlay = document.querySelector('.app-toast-overlay');
-    if (oldOverlay) oldOverlay.remove();
+window.ShowToast = (title, message, type = "info", redirectUrl) => {
 
-    // Cria overlay centralizado
+    // Remove qualquer popup anterior
+    const old = document.querySelector('.app-popup-overlay');
+    if (old) old.remove();
+
+    // Overlay com blur
     const overlay = document.createElement('div');
-    overlay.className = 'app-toast-overlay';
+    overlay.className = 'app-popup-overlay';
 
-    // Map de ícones minimalistas
-    const icons = {
-        success: '✔',
-        danger: '✕',
-        warning: '!',
-        info: 'i',
-        primary: 'i'
-    };
+    // Modal
+    const modal = document.createElement('div');
+    modal.className = `app-popup app-popup-${type}`;
 
-    // Cria o card do toast
-    const toast = document.createElement('div');
-    toast.className = `app-toast app-toast-${type}`;
-
-    toast.innerHTML = `
-        <div class="app-toast-icon">
-            <span>${icons[type] || icons.info}</span>
+    modal.innerHTML = `
+        <div class="app-popup-header">
+            <span class="app-popup-title">${title}</span>
+            <button class="app-popup-close" aria-label="Fechar">&times;</button>
         </div>
-        <div class="app-toast-content">
-            <div class="app-toast-title">${title}</div>
-            <div class="app-toast-message">${message}</div>
+
+        <div class="app-popup-body">
+            ${message}
         </div>
-        <button class="app-toast-close" type="button" aria-label="Fechar" data-toast-close>&times;</button>
+
+        <div class="app-popup-actions no-border">
+            <button class="app-popup-btn-ok">Ok</button>
+        </div>
     `;
 
-    overlay.appendChild(toast);
+    overlay.appendChild(modal);
     document.body.appendChild(overlay);
 
-    // Pequena animação de entrada
-    requestAnimationFrame(() => {
-        overlay.classList.add('is-visible');
-        toast.classList.add('is-visible');
-    });
+    // 🚀 Garantir animação: forçar reflow
+    void overlay.offsetHeight;
 
-    const closeToast = () => {
-        toast.classList.remove('is-visible');
-        overlay.classList.remove('is-visible');
+    // 🚀 Garantia total: aplicar classe na próxima frame
+    setTimeout(() => {
+        overlay.classList.add("is-visible");
+        modal.classList.add("is-visible");
+    }, 16);
+
+    const close = () => {
+        modal.classList.remove("is-visible");
+        overlay.classList.remove("is-visible");
 
         setTimeout(() => {
             overlay.remove();
-            if (redirectUrl) {
-                window.location.href = redirectUrl;
-            }
-        }, 220); // tempo da animação de saída
+            if (redirectUrl) window.location.href = redirectUrl;
+        }, 250);
     };
 
-    // Fecha ao clicar no X
-    toast.querySelector('[data-toast-close]').addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeToast();
-    });
+    modal.querySelector('.app-popup-close').addEventListener("click", close);
+    modal.querySelector('.app-popup-btn-ok').addEventListener("click", close);
 
-    // Fecha ao clicar fora do card
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            closeToast();
-        }
-    });
-
-    // Auto-close depois de 3s
-    const autoClose = setTimeout(closeToast, 3000);
-
-    // Se por algum motivo for removido manualmente
-    overlay.addEventListener('remove', () => clearTimeout(autoClose));
+    // 🔒 Fechar clicando fora bloqueado (como solicitado)
 };
+
 
 
 // Animação para a entrada do toast
