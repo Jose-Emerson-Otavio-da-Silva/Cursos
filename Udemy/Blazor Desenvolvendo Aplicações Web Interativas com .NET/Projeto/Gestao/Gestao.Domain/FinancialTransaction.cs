@@ -12,11 +12,11 @@ namespace Gestao.Domain
         public DateTimeOffset DuoDate { get; set; }
         public decimal Amount { get; set; }
         public Recurrence Repeat { get; set; }
-        public int RepeatTimes { get; set; }
-        public decimal InterestPenalty { get; set; }
-        public decimal Discount { get; set; }
-        public DateTimeOffset PaymentDate { get; set; }
-        public decimal AmountPaid { get; set; }
+        public int? RepeatTimes { get; set; }
+        public decimal? InterestPenalty { get; set; }
+        public decimal? Discount { get; set; }
+        public DateTimeOffset? PaymentDate { get; set; }
+        public decimal? AmountPaid { get; set; }
         public string? Observation { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
         public DateTimeOffset? DeletedAt { get; set; }
