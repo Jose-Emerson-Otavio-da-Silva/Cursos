@@ -9,7 +9,7 @@ namespace Gestao.Domain
         public TypeFinancialTransaction TypeFinancialTransaction { get; set; }
         public string Description { get; set; } = string.Empty;
         public DateTimeOffset ReferenceDate { get; set; }
-        public DateTimeOffset DuoDate { get; set; }
+        public DateTimeOffset DueDate { get; set; }
         public decimal Amount { get; set; }
         public Recurrence Repeat { get; set; }
         public int? RepeatTimes { get; set; }

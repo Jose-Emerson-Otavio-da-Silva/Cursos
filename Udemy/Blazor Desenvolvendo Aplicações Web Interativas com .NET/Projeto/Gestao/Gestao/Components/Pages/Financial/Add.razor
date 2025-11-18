@@ -1,53 +1,143 @@
-@page "/Account/Add"
+@page "/Financial/{type}/Add"
 @using Blazored.LocalStorage.StorageOptions
 
 @rendermode InteractiveServer
 @inject IJSRuntime JS
 @inject NavigationManager NavigationManager
-@inject IAccountRepository AccountRepository
+@inject IFinancialTransactionRepository FinancialTransactionRepository
 @inject ILocalStorageService LocalStorage
 
 
-<PageTitle>Conta - Cadastrar</PageTitle>
+<PageTitle>Contas a @(Type == "Pay" ? "Pagar" : "Receber") - Cadastrar</PageTitle>
 
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-lg-12">
             <div class="card shadow-sm border-0">
                 <div class="card-header bg-primary border-bottom-0 d-flex align-items-center justify-content-between">
-                    <h4 class="card-title mb-0 text-white">Cadastrar Conta</h4>
+                    <h4 class="card-title mb-0 text-white">Cadastrar Contas a @(Type == "Pay" ? "Pagar" : "Receber")
+                    </h4>
                 </div>
                 <div class="card-body">
-                    <EditForm Model="Account" OnValidSubmit="Submit" FormName="Register">
+                    <EditForm Model="FinancialTransaction" OnValidSubmit="Submit" FormName="Register">
                         <DataAnnotationsValidator />
                         <div class=" row g-3">
                             <div class="col-xxl-3 col-md-6">
-                                <label for="description" class="form-label fw-semibold">Descrição/Nome</label>
-                                <InputText @bind-Value="Account!.Description" autocomplete="off" class="form-control"
-                                    id="description" placeholder="Digite a descrição/nome da conta" />
-                                <ValidationMessage For="() => Account!.Description" />
+                                <label for="description" class="form-label fw-semibold">Descrição</label>
+                                <InputText @bind-Value="FinancialTransaction!.Description" autocomplete="off"
+                                    class="form-control" id="description" placeholder="Digite a descrição da conta" />
+                                <ValidationMessage For="() => FinancialTransaction!.Description" />
                             </div>
 
                             <div class="col-xxl-3 col-md-6">
-                                <label for="balance" class="form-label fw-semibold">Saldo inicial</label>
-                                <InputNumber @bind-Value="Account!.Balance" autocomplete="off" class="form-control"
-                                    id="balance" placeholder="0,00" />
-                                <ValidationMessage For="() => Account!.Balance" />
+                                <label for="category" class="form-label fw-semibold">Categoria</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.CategoryId" autocomplete="off"
+                                    class="form-control" id="category" placeholder="" />
+                                <ValidationMessage For="() => FinancialTransaction!.CategoryId" />
                             </div>
 
                             <div class="col-xxl-3 col-md-6">
-                                <label for="balanceDate" class="form-label fw-semibold">Data da abertura da
-                                    conta</label>
-                                <InputDate @bind-Value="Account!.BalanceDate" autocomplete="off" class="form-control"
-                                    id="balanceDate" placeholder="dd/MM/yyyy" />
-                                <ValidationMessage For="() => Account!.BalanceDate" />
+                                <label for="account" class="form-label fw-semibold">Conta</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.AccountId" autocomplete="off"
+                                    class="form-control" id="account" placeholder="" />
+                                <ValidationMessage For="() => FinancialTransaction!.AccountId" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="referenceDate" class="form-label fw-semibold">Data da competência</label>
+                                <InputDate @bind-Value="FinancialTransaction!.ReferenceDate" autocomplete="off"
+                                    class="form-control" id="referenceDate" placeholder="dd/mm/yyyy" />
+                                <ValidationMessage For="() => FinancialTransaction!.ReferenceDate" />
                             </div>
                         </div>
+
+                        <div class=" row g-3">
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="dueDate" class="form-label fw-semibold">Data de vencimento</label>
+                                <InputDate @bind-Value="FinancialTransaction!.DueDate" autocomplete="off"
+                                    class="form-control" id="dueDate" placeholder="dd/mm/yyyy" />
+                                <ValidationMessage For="() => FinancialTransaction!.DueDate" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="amount" class="form-label fw-semibold">Valor</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.Amount" autocomplete="off"
+                                    class="form-control" id="amount" placeholder="0,00" />
+                                <ValidationMessage For="() => FinancialTransaction!.Amount" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="repeat" class="form-label fw-semibold">Repetir</label>
+                                @* <InputNumber @bind-Value="FinancialTransaction!.Repeat" autocomplete="off"
+                                    class="form-control" id="repeat" placeholder="0" /> *@
+                                <ValidationMessage For="() => FinancialTransaction!.Repeat" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="repeatTimes" class="form-label fw-semibold">Vezes</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.RepeatTimes" autocomplete="off"
+                                    class="form-control" id="repeatTimes" placeholder="" />
+                                <ValidationMessage For="() => FinancialTransaction!.RepeatTimes" />
+                            </div>
+                        </div>
+
+                        <div class=" row g-3">
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="interestPenalty" class="form-label fw-semibold">Juros/Multas</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.InterestPenalty" autocomplete="off"
+                                    class="form-control" id="interestPenalty" placeholder="" />
+                                <ValidationMessage For="() => FinancialTransaction!.InterestPenalty" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="discount" class="form-label fw-semibold">Desconto</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.Discount" autocomplete="off"
+                                    class="form-control" id="discount" placeholder="0,00" />
+                                <ValidationMessage For="() => FinancialTransaction!.Discount" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="paymentDate" class="form-label fw-semibold">Data pagamento</label>
+                                <InputDate @bind-Value="FinancialTransaction!.PaymentDate" autocomplete="off"
+                                    class="form-control" id="paymentDate" placeholder="dd/MM/yyyy" />
+                                <ValidationMessage For="() => FinancialTransaction!.PaymentDate" />
+                            </div>
+
+                            <div class="col-xxl-3 col-md-6">
+                                <label for="amountPaid" class="form-label fw-semibold">Valor pago</label>
+                                <InputNumber @bind-Value="FinancialTransaction!.AmountPaid" autocomplete="off"
+                                    class="form-control" id="amountPaid" placeholder="0,00" />
+                                <ValidationMessage For="() => FinancialTransaction!.AmountPaid" />
+                            </div>
+                        </div>
+
+                        <div class=" row g-3">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="observation" class="form-label fw-semibold">Observação</label>
+                                    <InputTextArea @bind-Value="FinancialTransaction!.Observation" autocomplete="off"
+                                        class="form-control" id="observation" placeholder="Digite uma observação" />
+                                    <ValidationMessage For="() => FinancialTransaction!.Observation" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class=" row g-3">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="documents" class="form-label fw-semibold">Anexar documentos</label>
+                                    @* <InputTextArea @bind-Value="FinancialTransaction!.Documents" autocomplete="off"
+                                        class="form-control" id="documents" placeholder="Digite uma observação" /> *@
+                                    <ValidationMessage For="() => FinancialTransaction!.Documents" />
+                                </div>
+                            </div>
+                        </div>
+
 
                         <hr class="my-4">
 
                         <div class="d-flex justify-content-between">
-                            <a href="/Account/List" class="btn btn-outline-secondary px-4">Voltar</a>
+                            <a href="/Financial/@Type/List" class="btn btn-outline-secondary px-4">Voltar</a>
                             <button type="submit" class="btn btn-outline-success px-4">Salvar</button>
                         </div>
                     </EditForm>
@@ -59,8 +149,15 @@
 
 
 @code {
+    [Parameter]
+    public string? Type { get; set; }
+
     [SupplyParameterFromForm]
-    private Account? Account { get; set; } = new() { BalanceDate = DateTimeOffset.Now };
+    private FinancialTransaction? FinancialTransaction { get; set; } = new()
+    {
+        ReferenceDate = DateTimeOffset.Now,
+        DueDate = DateTimeOffset.Now
+    };
     private Company? Company;
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -69,16 +166,16 @@
     private async Task Submit()
     {
         //Tratar dados
-        Account!.CreatedAt = DateTimeOffset.Now;
-        Account.CompanyId = Company!.Id;
+        FinancialTransaction!.CreatedAt = DateTimeOffset.Now;
+        //FinancialTransaction.CompanyId = Company!.Id;
 
         //Salvar
-        await AccountRepository.Add(Account);
+        await FinancialTransactionRepository.Add(FinancialTransaction);
 
         //Informar e redirecionar
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
-        "Sucesso", "Conta cadastrada com sucesso!", "info", "/Account/List");
+        "Sucesso", "Conta cadastrada com sucesso!", "info", "/Financial/List");
     }
 
 }

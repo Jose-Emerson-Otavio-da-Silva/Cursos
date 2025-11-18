@@ -82,7 +82,7 @@ namespace Gestao.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ReferenceDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
-                    DuoDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    DueDate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Repeat = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RepeatTimes = table.Column<int>(type: "int", nullable: false),

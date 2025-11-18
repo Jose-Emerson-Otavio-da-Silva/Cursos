@@ -287,7 +287,7 @@ namespace Gestao.Migrations
                     b.Property<decimal>("Discount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTimeOffset>("DuoDate")
+                    b.Property<DateTimeOffset>("DueDate")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<decimal>("InterestPenalty")
