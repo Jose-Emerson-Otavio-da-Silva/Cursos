@@ -1,22 +1,21 @@
 {
   "mainAssemblyName": "Gestao.Client",
   "resources": {
-    "hash": "sha256-e0PA5oNdbeMCVY/2WCn0/eru7FPMOJNhlGfwDlFaFhw=",
+    "hash": "sha256-ZZO0jiE1wpqaVHm886IUKxfsPLgk6kAfxYnylyVmTVo=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-9Fzd5We95Rp03dEKIAbYjPDR3eWyLbmjMlYStvxyiok="
+      "dotnet.native.8.0.22.utrhhhzaq0.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.js": "sha256-aLf0XK8bqX83FXyXydFPTC1FOTq3PaeGDyoDn3uz194="
+      "dotnet.runtime.8.0.22.vc2sc5fddv.js": "sha256-6bV/iAemowb59rmItegP8VsxwWpWUNyMb0Q76Fvvsjo="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-Y1pDEFNAqpzUmFk5FuVUzruqNloBnByUMhlQ96dqto4="
+      "dotnet.native.wasm": "sha256-I9mo79uNpf37/J/jYCGkW9F0w+mgb+ezeNdHNbQNvf0="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
       "icudt_EFIGS.dat": "sha256-8fItetYY8kQ0ww6oxwTLiT3oXlBwHKumbeP2pRF4yTc=",
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
-    "coreAssembly": {},
     "assembly": {
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
       "Microsoft.AspNetCore.Authorization.wasm": "sha256-g81inugSrrLKEtyxg9JkSxiBc3dly3FZcTKaz72rU/U=",
@@ -222,12 +221,12 @@
       "mscorlib.wasm": "sha256-MZJ1V6miMP318lQowft4FPkcszcibPLDTwKj235fSAc=",
       "netstandard.wasm": "sha256-RYAURbR1AHkUZYjKgu+B/i3N3VP4abnAaH+vxwJ8d3c=",
       "System.Private.CoreLib.wasm": "sha256-4YzdATaWUDkUkRpe+hl+T61TaCjRVapVUtqTIai3Gd8=",
-      "Gestao.Domain.wasm": "sha256-ODiNfo4g3zFgTxufxYAjEhA3/SCtEMIRHuSJSkXC9+E=",
-      "Gestao.Client.wasm": "sha256-utaYERD5clvAOstXJ02YzKoxwSEAFrIbii1OKdUN88c="
+      "Gestao.Domain.wasm": "sha256-Aa+NizZtX+FGhyO0e2lT17NyVxk4LEdIq/9CXswVj7U=",
+      "Gestao.Client.wasm": "sha256-T1+M0mpGiC4yWodDmkudQYKTkVqWDee60nQdpaAa0cU="
     },
     "pdb": {
-      "Gestao.Domain.pdb": "sha256-YRxc830e49sqh407WukXKBECdZj1+RaQZ5cZNM6P+/I=",
-      "Gestao.Client.pdb": "sha256-TnI0sxZSK89hp16ohE/FEoQeY0bme1AKXBAeLvcjMlY="
+      "Gestao.Domain.pdb": "sha256-VmILsad+t+hAQXojF7+SPCqPGrCEeDkRXABw9GJdfEI=",
+      "Gestao.Client.pdb": "sha256-xvZCtCRUT9gO/jfhtF5Ru7xdi/a++mHmYLx+4VH8o+Q="
     }
   },
   "cacheBootResources": true,

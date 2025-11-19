@@ -36,7 +36,7 @@
                                 <label for="category" class="form-label fw-semibold">Categoria</label>
                                 <InputSelect @bind-Value="FinancialTransaction!.CategoryId" class="form-select"
                                     id="category">
-                                    <option value="">Selecione a categoria</option>
+                                    <option value="0">Selecione a categoria</option>
                                     @if (Categories is not null)
                                     {
                                         @foreach (var category in Categories)
@@ -52,7 +52,7 @@
                                 <label for="account" class="form-label fw-semibold">Conta</label>
                                 <InputSelect @bind-Value="FinancialTransaction!.AccountId" class="form-select"
                                     id="account" placeholder="">
-                                    <option value="">Selecione a conta</option>
+                                    <option value="0">Selecione a conta</option>
                                     @if (Accounts is not null)
                                     {
                                         @foreach (var account in Accounts)
@@ -65,7 +65,7 @@
                             </div>
 
                             <div class="col-xxl-3 col-md-6">
-                                <label for="referenceDate" class="form-label fw-semibold">Data da competência</label>
+                                <label for="referenceDate" class="form-label fw-semibold">Data competência</label>
                                 <InputDate @bind-Value="FinancialTransaction!.ReferenceDate" autocomplete="off"
                                     class="form-control" id="referenceDate" placeholder="dd/mm/yyyy" />
                                 <ValidationMessage For="() => FinancialTransaction!.ReferenceDate" />
@@ -182,7 +182,7 @@
     private bool RepeatTimesDisabled { get; set; } = true;
 
     [SupplyParameterFromForm]
-    private FinancialTransaction? FinancialTransaction { get; set; } = new()
+    private FinancialTransaction FinancialTransaction { get; set; } = new()
     {
         ReferenceDate = DateTimeOffset.Now,
         DueDate = DateTimeOffset.Now,
@@ -202,8 +202,10 @@
     private async Task Submit()
     {
         //Tratar dados
+        FinancialTransaction.TypeFinancialTransaction = (Type == TypeFinancialTransaction.Pay.ToString()) ?
+        TypeFinancialTransaction.Pay : TypeFinancialTransaction.Receive;
         FinancialTransaction!.CreatedAt = DateTimeOffset.Now;
-        //FinancialTransaction.CompanyId = Company!.Id;
+        FinancialTransaction.CompanyId = Company!.Id;
 
         //Salvar
         await FinancialTransactionRepository.Add(FinancialTransaction);
@@ -211,7 +213,7 @@
         //Informar e redirecionar
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
-        "Sucesso", "Conta cadastrada com sucesso!", "info", "/Financial/List");
+        "Sucesso", "Conta cadastrada com sucesso!", "info", $"/Financial/{Type}/List");
     }
 
     private void RepeatChanged()

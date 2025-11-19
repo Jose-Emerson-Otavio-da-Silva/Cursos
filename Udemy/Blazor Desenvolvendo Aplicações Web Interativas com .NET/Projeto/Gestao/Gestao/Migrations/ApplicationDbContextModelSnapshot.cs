@@ -30,7 +30,8 @@ namespace Gestao.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Balance")
+                    b.Property<decimal?>("Balance")
+                        .IsRequired()
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTimeOffset>("BalanceDate")
@@ -259,10 +260,10 @@ namespace Gestao.Migrations
                     b.Property<int?>("AccountId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Amount")
+                    b.Property<decimal?>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("AmountPaid")
+                    b.Property<decimal?>("AmountPaid")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("CategoryId")
@@ -281,19 +282,19 @@ namespace Gestao.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Discount")
+                    b.Property<decimal?>("Discount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTimeOffset>("DueDate")
+                    b.Property<DateTimeOffset?>("DueDate")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<decimal>("InterestPenalty")
+                    b.Property<decimal?>("InterestPenalty")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Observation")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTimeOffset>("PaymentDate")
+                    b.Property<DateTimeOffset?>("PaymentDate")
                         .HasColumnType("datetimeoffset");
 
                     b.Property<DateTimeOffset>("ReferenceDate")
@@ -303,7 +304,7 @@ namespace Gestao.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RepeatTimes")
+                    b.Property<int?>("RepeatTimes")
                         .HasColumnType("int");
 
                     b.Property<string>("TypeFinancialTransaction")

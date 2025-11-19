@@ -68,8 +68,9 @@
                                         <tr>
                                             <td>@item.ReferenceDate.ToString("dd/MM/yyyy")</td>
                                             <td class="text-center">@item.Description</td>
-                                            <td class="text-center">(@item.AmountPaid.HasValue ?
-                                                item.AmountPaid.Value.ToString("C") : @item.Amount!.Value.ToString("C"))</td>
+                                            <td class="text-center">@(item.AmountPaid.HasValue ?
+                                                                                item.AmountPaid.Value.ToString("C") : @item.Amount.HasValue?
+                                                                                @item.Amount!.Value.ToString("C") : "-")</td>
                                             <td class="text-center">
                                                 <a href="/Financial/@Type/Edit/@item.Id" class="btn btn-sm btn-soft-info me-1"
                                                     title="Editar">

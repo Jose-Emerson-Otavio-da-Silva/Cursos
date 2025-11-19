@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Gestao.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\app copy.css",
+      "PackagePath": "staticwebassets\\app copy.css"
+    },
+    {
       "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
@@ -3865,6 +3869,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\app.js"
     },
     {
+      "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\assets\\js\\fullscreen-lightdark.js",
+      "PackagePath": "staticwebassets\\assets\\js\\fullscreen-lightdark.js"
+    },
+    {
       "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\assets\\js\\layout.js",
       "PackagePath": "staticwebassets\\assets\\js\\layout.js"
     },
@@ -4355,6 +4363,10 @@
     {
       "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\assets\\js\\plugins.js",
       "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\assets\\js\\sidemenu.js",
+      "PackagePath": "staticwebassets\\assets\\js\\sidemenu.js"
     },
     {
       "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\assets\\json\\api-key-list.json",
@@ -14879,6 +14891,10 @@
     {
       "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\wwwroot\\js\\app.js",
+      "PackagePath": "staticwebassets\\js\\app.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Gestao.Microsoft.AspNetCore.StaticWebAssets.props",
