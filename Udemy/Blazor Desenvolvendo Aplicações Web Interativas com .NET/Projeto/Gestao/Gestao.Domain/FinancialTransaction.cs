@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Gestao.Domain.Enums;
 using Gestao.Domain.Interfaces;
+using Gestao.Domain.Libraries.Validations;
 
 namespace Gestao.Domain
 {
@@ -20,7 +21,10 @@ namespace Gestao.Domain
         public DateTimeOffset? DueDate { get; set; }
         public decimal? Amount { get; set; }
         public Recurrence Repeat { get; set; }
+
+        [RequiredRepeatTimes]
         public int? RepeatTimes { get; set; }
+
         public decimal? InterestPenalty { get; set; }
         public decimal? Discount { get; set; }
         public DateTimeOffset? PaymentDate { get; set; }
