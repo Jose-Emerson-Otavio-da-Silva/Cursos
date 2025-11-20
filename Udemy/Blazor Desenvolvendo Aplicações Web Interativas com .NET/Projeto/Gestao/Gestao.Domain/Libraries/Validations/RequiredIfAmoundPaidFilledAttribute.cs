@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Gestao.Domain.Libraries.Validations
+{
+    public class RequiredIfAmoundPaidFilledAttribute : ValidationAttribute
+    {
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
+        {
+            FinancialTransaction transaction = (FinancialTransaction)validationContext.ObjectInstance;
+
+            if (transaction.AmountPaid.HasValue)
+            {
+                if (value is null)
+                {
+                    return new ValidationResult("O campo é obrigatório quando o Valor Pago está preenchido.",
+                    new[] { validationContext.MemberName! });
+                }
+            }
+
+            return ValidationResult.Success;
+        }
+    }
+}

@@ -280,7 +280,8 @@ namespace Gestao.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<decimal?>("Discount")
                         .HasColumnType("decimal(18,2)");

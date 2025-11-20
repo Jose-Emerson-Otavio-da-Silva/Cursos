@@ -10,10 +10,10 @@ namespace Gestao.Domain.Libraries.Validations
 
             if (transaction.Repeat != Enums.Recurrence.None)
             {
-                if (value is null) return new ValidationResult("O campo Vezes é obrigatório", new[] { validationContext.MemberName! });
+                if (value is null) return new ValidationResult("O campo é obrigatório, quando Repetir estiver selecionado", new[] { validationContext.MemberName! });
             }
 
-            return base.IsValid(value, validationContext);
+            return ValidationResult.Success;
         }
     }
 }

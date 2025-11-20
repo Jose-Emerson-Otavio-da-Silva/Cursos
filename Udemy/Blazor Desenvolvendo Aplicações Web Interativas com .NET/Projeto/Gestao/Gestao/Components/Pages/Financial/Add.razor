@@ -103,7 +103,7 @@
                                 <label for="repeatTimes" class="form-label fw-semibold">Vezes</label>
                                 <InputNumber @bind-Value="FinancialTransaction!.RepeatTimes"
                                     disabled="@RepeatTimesDisabled" autocomplete="off" class="form-control"
-                                    id="repeatTimes" placeholder="" />
+                                    id="repeatTimes" placeholder="" step="1" inputmode="numeric" pattern="\d*" />
                                 <ValidationMessage For="() => FinancialTransaction!.RepeatTimes" />
                             </div>
                         </div>
