@@ -15,8 +15,10 @@ namespace Gestao.Domain
         public string Description { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "O campo é obrigatório.")]
+        [Range(typeof(DateTimeOffset), "1/1/1999", "1/1/2200", ErrorMessage = "O data deve estar entre {1:dd/MM/yyyy} e {2:dd/MM/yyyy}.")]
         public DateTimeOffset ReferenceDate { get; set; }
-
+        [RequiredIfAmoundPaidFilledAttribute]
+        [Range(typeof(DateTimeOffset), "1/1/1999", "1/1/2200", ErrorMessage = "O data deve estar entre {1:dd/MM/yyyy} e {2:dd/MM/yyyy}.")]
         public DateTimeOffset? DueDate { get; set; }
         [Range(0.01, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
         [RequiredIfAmoundPaidFilledAttribute]
@@ -25,13 +27,16 @@ namespace Gestao.Domain
         [Range(1, 9999, ErrorMessage = "O campo deve ter entre {1} e {2}.")]
         [RequiredRepeatTimes]
         public int? RepeatTimes { get; set; }
-        [Range(0.01, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
+        [Range(0, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
         public decimal? InterestPenalty { get; set; }
-        [Range(0.01, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
+        [Range(0, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
+        [DiscountNotBeGreaterThanAmountAttribute]
         public decimal? Discount { get; set; }
+        [Range(typeof(DateTimeOffset), "1/1/1999", "1/1/2200", ErrorMessage = "O data deve estar entre {1:dd/MM/yyyy} e {2:dd/MM/yyyy}.")]
         [RequiredIfAmoundPaidFilledAttribute]
         public DateTimeOffset? PaymentDate { get; set; }
         [Range(0.01, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
+        [AmoundPaidValueAttribute]
         public decimal? AmountPaid { get; set; }
         public string? Observation { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
@@ -39,8 +44,10 @@ namespace Gestao.Domain
         public ICollection<Document>? Documents { get; set; }
         public int? CompanyId { get; set; }
         public Company? Company { get; set; }
+        [RequiredIfAmoundPaidFilledAttribute]
         public int? AccountId { get; set; }
         public Account? Account { get; set; }
+        [RequiredIfAmoundPaidFilledAttribute]
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
     }

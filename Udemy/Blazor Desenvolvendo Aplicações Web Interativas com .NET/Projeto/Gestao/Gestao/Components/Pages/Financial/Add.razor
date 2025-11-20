@@ -67,7 +67,7 @@
                             <div class="col-xxl-3 col-md-6">
                                 <label for="referenceDate" class="form-label fw-semibold">Data competência</label>
                                 <InputDate @bind-Value="FinancialTransaction!.ReferenceDate" autocomplete="off"
-                                    class="form-control" id="referenceDate" placeholder="dd/mm/yyyy" />
+                                    class="form-control" id="referenceDate" placeholder="01/01/2000" />
                                 <ValidationMessage For="() => FinancialTransaction!.ReferenceDate" />
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                             <div class="col-xxl-3 col-md-6">
                                 <label for="dueDate" class="form-label fw-semibold">Data de vencimento</label>
                                 <InputDate @bind-Value="FinancialTransaction!.DueDate" autocomplete="off"
-                                    class="form-control" id="dueDate" placeholder="dd/mm/yyyy" />
+                                    class="form-control" id="dueDate" placeholder="01/01/2000" />
                                 <ValidationMessage For="() => FinancialTransaction!.DueDate" />
                             </div>
 
@@ -126,7 +126,7 @@
                             <div class="col-xxl-3 col-md-6">
                                 <label for="paymentDate" class="form-label fw-semibold">Data pagamento</label>
                                 <InputDate @bind-Value="FinancialTransaction!.PaymentDate" autocomplete="off"
-                                    class="form-control" id="paymentDate" placeholder="dd/MM/yyyy" />
+                                    class="form-control" id="paymentDate" placeholder="01/01/2000" />
                                 <ValidationMessage For="() => FinancialTransaction!.PaymentDate" />
                             </div>
 
