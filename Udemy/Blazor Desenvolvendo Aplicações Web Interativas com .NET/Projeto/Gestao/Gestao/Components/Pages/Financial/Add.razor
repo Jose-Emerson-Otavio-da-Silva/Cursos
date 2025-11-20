@@ -152,10 +152,8 @@
                         <div class=" row g-3">
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label for="documents" class="form-label fw-semibold">Anexar documentos</label>
-                                    @* <InputTextArea @bind-Value="FinancialTransaction!.Documents" autocomplete="off"
-                                        class="form-control" id="documents" placeholder="Digite uma observação" /> *@
-                                    <ValidationMessage For="() => FinancialTransaction!.Documents" />
+                                    <label for="anexar" class="form-label">Anexar documentos</label>
+                                    <InputFile class="form-control" id="anexar" placeholder="" OnChange="UploadFile" />
                                 </div>
                             </div>
                         </div>
@@ -227,5 +225,10 @@
         {
             RepeatTimesDisabled = false;
         }
+    }
+    private async Task UploadFile(InputFileChangeEventArgs args)
+    {
+        var file = args.File;
+        // Processar o arquivo conforme necessário
     }
 }
