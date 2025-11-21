@@ -39,7 +39,7 @@
     [Parameter]
     public bool IsEditForm { get; set; } = false;
     [Parameter]
-    public List<Document>? Documents { get; set; } = new List<Document>();
+    public List<Document> Documents { get; set; } = new List<Document>();
     [Parameter]
     public EventCallback<Document> OnUploaded { get; set; }
     [Parameter]
@@ -77,6 +77,7 @@
                 document.Name = Path.GetFileName(file.Name);
                 document.CreatedAt = DateTimeOffset.Now;
 
+                Documents.Add(document);
                 await OnUploaded.InvokeAsync(document);
             }
         }
