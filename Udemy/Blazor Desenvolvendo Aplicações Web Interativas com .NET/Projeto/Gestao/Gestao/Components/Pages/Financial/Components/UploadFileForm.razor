@@ -1,0 +1,106 @@
+@inject IJSRuntime JS
+@inject IWebHostEnvironment WebHostEnvironment
+
+<fieldset class="mb-4">
+    <label for="anexar" class="form-label fw-semibold">Anexar documentos</label>
+    <InputFile class="form-control" id="anexar" OnChange="UploadFile" />
+    <small class="text-muted">Tamanho máximo: @(MaxFileSize / (1024 * 1024))MB</small>
+
+    @if (Documents?.Any() == true)
+    {
+        <div class="table-responsive mt-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th class="text-end">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var document in Documents)
+                    {
+                        <tr>
+                            <td><a href="/uploads/@document.Path" target="_blank">@document.Name</a>
+                            </td>
+                            <td class="text-end">
+                                <button type="button" class="btn btn-outline-danger btn-sm waves-effect waves-light"
+                                    @onclick="() => RemoveFile(document)">Excluir</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</fieldset>
+
+@code {
+    private int MaxFileSize = 1024 * 1024 * 10; // 10 MB
+    [Parameter]
+    public bool IsEditForm { get; set; } = false;
+    [Parameter]
+    public List<Document>? Documents { get; set; } = new List<Document>();
+    [Parameter]
+    public EventCallback<Document> OnUploaded { get; set; }
+    [Parameter]
+    public EventCallback<Document> OnRemoved { get; set; }
+
+    private async Task UploadFile(InputFileChangeEventArgs args)
+    {
+        if (Documents is null)
+            Documents = new List<Document>();
+        var file = args.File;
+        try
+        {
+            if (file is not null)
+            {
+                if (file.Size > MaxFileSize)
+                {
+                    await JS.InvokeVoidAsync("ShowToast", "Atenção",
+                    $"O arquivo excede o tamanho máximo permitido de {MaxFileSize / (1024 * 1024)} MB.", "warning");
+                    return;
+                }
+
+                //Uploads - TCC 01.pdf (TCC 01-{GUID}.pdf)
+                // ~/Gestao/uploads/TCC 01-{GUID}.pdf
+                var uploadsDir = Path.Combine(WebHostEnvironment.ContentRootPath!, "uploads");
+                Directory.CreateDirectory(uploadsDir);
+
+                var fileName = Path.GetFileNameWithoutExtension(file.Name) + "-" + Guid.NewGuid() + Path.GetExtension(file.Name);
+                var filePath = Path.Combine(uploadsDir, fileName);
+
+                await using var fileStream = new FileStream(filePath, FileMode.Create);
+                await file.OpenReadStream(maxAllowedSize: MaxFileSize).CopyToAsync(fileStream);
+
+                var document = new Document();
+                document.Path = fileName;
+                document.Name = Path.GetFileName(file.Name);
+                document.CreatedAt = DateTimeOffset.Now;
+
+                await OnUploaded.InvokeAsync(document);
+            }
+        }
+        catch (Exception ex)
+        {
+            await JS.InvokeVoidAsync("ShowToast", "Erro",
+            $"Ocorreu um erro ao tentar fazer o upload do arquivo. Detalhes: {ex.Message}", "error");
+        }
+    }
+
+    private void RemoveFile(Document document)
+    {
+        var filePath = Path.Combine(WebHostEnvironment.ContentRootPath!, "uploads", document.Path);
+
+        if (!IsEditForm)
+        {
+            // Se for um formulário de inclusão, exclui o arquivo fisicamente
+            if (File.Exists(filePath))
+                File.Delete(filePath);
+        }
+        if (Documents is not null)
+        {
+            Documents.Remove(document);
+            OnRemoved.InvokeAsync(document);
+        }
+    }
+}

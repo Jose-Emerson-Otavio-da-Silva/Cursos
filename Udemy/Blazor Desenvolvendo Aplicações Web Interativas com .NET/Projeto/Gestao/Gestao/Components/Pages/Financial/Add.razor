@@ -151,39 +151,8 @@
                             </div>
                         </div>
 
-                        <fieldset class="mb-4">
-                            <label for="anexar" class="form-label fw-semibold">Anexar documentos</label>
-                            <InputFile class="form-control" id="anexar" OnChange="UploadFile" />
-                            <small class="text-muted">Tamanho máximo: @(MaxFileSize / (1024 * 1024))MB</small>
-
-                            @if (FinancialTransaction.Documents?.Any() == true)
-                            {
-                                <div class="table-responsive mt-3">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Nome</th>
-                                                <th class="text-end">Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var document in FinancialTransaction.Documents)
-                                            {
-                                                <tr>
-                                                    <td><a href="/uploads/@document.Path" target="_blank">@document.Name</a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <button type="button"
-                                                            class="btn btn-outline-danger btn-sm waves-effect waves-light"
-                                                            @onclick="() => RemoveFile(document)">Excluir</button>
-                                                    </td>
-                                                </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            }
-                        </fieldset>
+                        <Gestao.Components.Pages.Financial.Components.UploadFileForm Uploaded="Uploaded"
+                            OnRemoved="Removed" />
 
                         <hr class="my-4">
 
@@ -205,7 +174,7 @@
     private List<Category>? Categories { get; set; }
     private List<Account>? Accounts { get; set; }
     private bool RepeatTimesDisabled { get; set; } = true;
-    private int MaxFileSize = 1024 * 1024 * 10; // 10 MB
+
 
     [SupplyParameterFromForm]
     private FinancialTransaction FinancialTransaction { get; set; } = new()
@@ -255,56 +224,15 @@
             RepeatTimesDisabled = false;
         }
     }
-    private async Task UploadFile(InputFileChangeEventArgs args)
+
+    private void Uploaded(Document document)
     {
-        var file = args.File;
-        try
-        {
-            if (file is not null)
-            {
-                if (file.Size > MaxFileSize)
-                {
-                    await JS.InvokeVoidAsync("ShowToast", "Atenção",
-                    $"O arquivo excede o tamanho máximo permitido de {MaxFileSize / (1024 * 1024)} MB.", "warning");
-                    return;
-                }
-
-                //Uploads - TCC 01.pdf (TCC 01-{GUID}.pdf)
-                // ~/Gestao/uploads/TCC 01-{GUID}.pdf
-                var uploadsDir = Path.Combine(WebHostEnvironment.ContentRootPath!, "uploads");
-                Directory.CreateDirectory(uploadsDir);
-
-                var fileName = Path.GetFileNameWithoutExtension(file.Name) + "-" + Guid.NewGuid() + Path.GetExtension(file.Name);
-                var filePath = Path.Combine(uploadsDir, fileName);
-
-                await using var fileStream = new FileStream(filePath, FileMode.Create);
-                await file.OpenReadStream(maxAllowedSize: MaxFileSize).CopyToAsync(fileStream);
-
-                var document = new Document();
-                document.Path = fileName;
-                document.Name = Path.GetFileName(file.Name);
-                document.CreatedAt = DateTimeOffset.Now;
-
-                if (FinancialTransaction.Documents is not null)
-                {
-                    FinancialTransaction.Documents.Add(document);
-                    StateHasChanged();
-                }
-
-            }
-        }
-        catch (Exception ex)
-        {
-            await JS.InvokeVoidAsync("ShowToast", "Erro",
-            $"Ocorreu um erro ao tentar fazer o upload do arquivo. Detalhes: {ex.Message}", "error");
-        }
+        if (FinancialTransaction.Documents is not null)
+            FinancialTransaction.Documents.Add(document);
     }
 
-    private void RemoveFile(Document document)
+    private void Removed(Document document)
     {
-        var filePath = Path.Combine(WebHostEnvironment.ContentRootPath!, "uploads", document.Path);
-        if (File.Exists(filePath))
-            File.Delete(filePath);
         if (FinancialTransaction.Documents is not null)
             FinancialTransaction.Documents.Remove(document);
     }

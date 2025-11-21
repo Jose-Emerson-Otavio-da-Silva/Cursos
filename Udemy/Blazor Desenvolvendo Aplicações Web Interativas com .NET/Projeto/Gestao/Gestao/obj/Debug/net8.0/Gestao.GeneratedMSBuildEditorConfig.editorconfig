@@ -228,6 +228,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcQWRkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Financial/Components/UploadFileForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcQ29tcG9uZW50c1xVcGxvYWRGaWxlRm9ybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Emerson/Cursos-1/Udemy/Blazor Desenvolvendo Aplicações Web Interativas com .NET/Projeto/Gestao/Gestao/Components/Pages/Financial/Detail.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGaW5hbmNpYWxcRGV0YWlsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
