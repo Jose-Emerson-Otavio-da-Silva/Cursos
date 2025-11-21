@@ -9,8 +9,7 @@
 
   <ItemGroup>
     <None Update="Data\app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
-  </ItemGroup>
-
+</ItemGroup>
   <ItemGroup>
   
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
@@ -36,7 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gestao.Domain\Gestao.Domain.csproj" />
+    <WatchIgnore Include="wwwroot\uploads\**\*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Gestao.Domain\Gestao.Domain.csproj" />
+  </ItemGroup>
 </Project>

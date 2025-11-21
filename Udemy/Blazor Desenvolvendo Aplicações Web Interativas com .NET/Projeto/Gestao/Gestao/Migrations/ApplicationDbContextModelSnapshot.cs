@@ -238,6 +238,10 @@ namespace Gestao.Migrations
                     b.Property<int?>("FinancialTransactionId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Path")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

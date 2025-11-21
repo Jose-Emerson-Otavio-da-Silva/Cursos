@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <WatchIgnore Include="wwwroot\uploads\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Gestao.Domain\Gestao.Domain.csproj" />
   </ItemGroup>
 

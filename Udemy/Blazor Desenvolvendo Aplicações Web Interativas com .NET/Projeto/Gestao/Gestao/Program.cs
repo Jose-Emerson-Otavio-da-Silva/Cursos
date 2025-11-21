@@ -16,6 +16,7 @@ using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Blazored.LocalStorage;
 using Gestao.Client.Libraries.Notifications;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -109,6 +110,17 @@ var localizationOptions = new RequestLocalizationOptions
     SupportedCultures = supportedCultures,
     SupportedUICultures = supportedCultures
 };
+
+#region Config upload file
+var uploadsDir = Path.Combine(builder.Environment.ContentRootPath, "uploads");
+Directory.CreateDirectory(uploadsDir);
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(uploadsDir),
+    RequestPath = "/uploads"
+});
+#endregion
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
