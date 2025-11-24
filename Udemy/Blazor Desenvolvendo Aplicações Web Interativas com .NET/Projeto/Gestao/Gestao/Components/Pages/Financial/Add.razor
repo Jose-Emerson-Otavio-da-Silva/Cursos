@@ -9,7 +9,6 @@
 <PageTitle>Contas a @(Type == "Pay" ? "Pagar" : "Receber") - Cadastrar</PageTitle>
 
 
-
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-lg-12">
@@ -19,7 +18,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <FinancialTransactionForm Type="@Type" OnSave="OnSave" />
+                    <FinancialTransactionForm Type="@Type" OnSave="Save" />
                 </div>
             </div>
         </div>
@@ -30,7 +29,7 @@
     [Parameter]
     public string? Type { get; set; }
 
-    private async Task OnSave(FinancialTransaction financialTransaction)
+    private async Task Save(FinancialTransaction financialTransaction)
     {
         financialTransaction!.CreatedAt = DateTimeOffset.Now;
         await FinancialTransactionRepository.Add(financialTransaction);

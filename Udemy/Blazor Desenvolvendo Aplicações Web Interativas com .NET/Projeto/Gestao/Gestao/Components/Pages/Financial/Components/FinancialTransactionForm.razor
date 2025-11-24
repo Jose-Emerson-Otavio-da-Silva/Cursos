@@ -130,7 +130,7 @@
         </div>
     </div>
 
-    <UploadFileForm OnUploaded="Uploaded" OnRemoved="Removed" />
+    <UploadFileForm Documents="Documents" OnUploaded="Uploaded" OnRemoved="Removed" />
 
     <hr class="my-4">
 
@@ -147,12 +147,12 @@
     public bool IsEditForm { get; set; }
     [Parameter]
     public EventCallback<FinancialTransaction> OnSave { get; set; }
+    private List<Document> Documents;
     private List<Category>? Categories { get; set; }
     private List<Account>? Accounts { get; set; }
     private bool RepeatTimesDisabled { get; set; } = true;
     private Company? Company;
-
-    [SupplyParameterFromForm]
+    [Parameter]
     public FinancialTransaction FinancialTransaction { get; set; } = new()
     {
         ReferenceDate = DateTimeOffset.Now,
@@ -160,6 +160,12 @@
         PaymentDate = DateTimeOffset.Now,
         Documents = new List<Document>()
     };
+
+    protected override void OnParametersSet()
+    {
+        Documents = FinancialTransaction.Documents!.ToList();
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
