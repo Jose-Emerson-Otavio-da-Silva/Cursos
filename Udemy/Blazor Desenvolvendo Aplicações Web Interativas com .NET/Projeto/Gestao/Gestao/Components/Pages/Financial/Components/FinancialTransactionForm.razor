@@ -2,6 +2,7 @@
 @inject ICategoryRepository CategoryRepository
 @inject IAccountRepository AccountRepository
 @inject ILocalStorageService LocalStorage
+@inject ApplicationDbContext DB
 
 <EditForm Model="FinancialTransaction" OnValidSubmit="Submit" FormName="Register">
     <DataAnnotationsValidator />
@@ -130,12 +131,12 @@
         </div>
     </div>
 
-    <UploadFileForm Documents="Documents" OnUploaded="Uploaded" OnRemoved="Removed" />
+    <UploadFileForm IsEditForm="IsEditForm" Documents="Documents" OnUploaded="Uploaded" OnRemoved="Removed" />
 
     <hr class="my-4">
 
     <div class="d-flex justify-content-between">
-        <a href="/Financial/@Type/List" class="btn btn-outline-secondary px-4">Voltar</a>
+        <a href="/Financial/@Type/List" class="btn btn-outline-secondary px-4" @onclick="BackRollback">Voltar</a>
         <button type="submit" class="btn btn-outline-success px-4">Salvar</button>
     </div>
 </EditForm>
@@ -208,5 +209,10 @@
     {
         if (FinancialTransaction.Documents is not null)
             FinancialTransaction.Documents.Remove(document);
+    }
+
+    private void BackRollback()
+    {
+        DB.ChangeTracker.Clear();
     }
 }
