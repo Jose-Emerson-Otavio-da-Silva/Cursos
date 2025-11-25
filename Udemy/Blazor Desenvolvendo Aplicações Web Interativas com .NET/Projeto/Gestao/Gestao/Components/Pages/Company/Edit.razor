@@ -6,6 +6,7 @@
 @inject ICepService CepService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject ICompanyRepository CompanyRepository
+@inject ApplicationDbContext DB
 
 
 <PageTitle>Empresa - Atualizar</PageTitle>
@@ -98,7 +99,8 @@
                         <hr class="my-4">
 
                         <div class="d-flex justify-content-between">
-                            <a href="/Company/List" class="btn btn-outline-secondary px-4">Voltar</a>
+                            <a href="/Company/List" class="btn btn-outline-secondary px-4"
+                                @onclick="BackRollback">Voltar</a>
                             <button type="submit" class="btn btn-outline-success px-4">Salvar</button>
                         </div>
                     </EditForm>
@@ -180,5 +182,9 @@
                 StateHasChanged();
             }
         }
+    }
+    private void BackRollback(MouseEventArgs args)
+    {
+        DB.ChangeTracker.Clear();
     }
 }
