@@ -1,12 +1,12 @@
-@page "/Account/Detail/{id:int}"
-
+@page "/Financial/{Type}/Detail/{id:int}"
 @rendermode InteractiveServer
+
 @inject IJSRuntime JS
 @inject NavigationManager NavigationManager
-@inject IAccountRepository AccountRepository
+@inject IFinancialTransactionRepository FinancialTransactionRepository
 @inject ILocalStorageService LocalStorage
 
-<PageTitle>Conta - Confirmar Exclusão</PageTitle>
+<PageTitle>Contas a @(Type == "Pay" ? "Pagar" : "Receber") - Confirmar Exclusão</PageTitle>
 
 <div class="container-fluid py-2">
     <div class="row ">
@@ -20,7 +20,8 @@
                     <div class="alert alert-warning border-warning d-flex align-items-center" role="alert">
                         <i class="bi bi-exclamation-circle-fill me-2 fs-5"></i>
                         <div>
-                            Tem certeza de que deseja <strong>excluir esta Conta</strong>? Esta ação é
+                            Tem certeza de que deseja <strong>excluir esta Conta a @(Type == "Pay" ? "Pagar" :
+                                                                "Receber")</strong>? Esta ação é
                             <strong>irreversível</strong>.
                         </div>
                     </div>
@@ -31,25 +32,121 @@
 
                     <div class="row g-3 small text-secondary">
                         <div class="col-md-6 col-lg-4">
-                            <label class="fw-semibold text-dark">Descrição/Nome:</label><br />
-                            <span>@Account!.Description</span>
+                            <label class="fw-semibold text-dark">Descrição:</label><br />
+                            <span>@FinancialTransaction!.Description</span>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <label class="fw-semibold text-dark">Saldo Inicial:</label><br />
-                            <span>@((Account!.Balance ?? 0m).ToString("C"))</span>
+                            <label class="fw-semibold text-dark">Categoria:</label><br />
+                            @if (FinancialTransaction!.Category is not null)
+                            {
+                                <span>@FinancialTransaction!.Category.Name</span>
+                            }
                         </div>
                         <div class="col-md-6 col-lg-4">
-                            <label class="fw-semibold text-dark">Data de Abertura:</label><br />
-                            <span>@(Account!.BalanceDate.ToString("dd/MM/yyyy"))</span>
+                            <label class="fw-semibold text-dark">Conta:</label><br />
+                            @if (FinancialTransaction!.Account is not null)
+                            {
+                                <span>@(FinancialTransaction!.Account.Description)</span>
+                            }
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Data competência:</label><br />
+                            <span>@(FinancialTransaction!.ReferenceDate.ToString("dd/MM/yyyy"))</span>
                         </div>
                     </div>
-
+                    <div class="row g-3 small text-secondary">
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Data vencimento:</label><br />
+                            @if (FinancialTransaction!.DueDate.HasValue)
+                            {
+                                <span>@(FinancialTransaction!.DueDate.Value.ToString("dd/MM/yyyy"))</span>
+                            }
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Valor:</label><br />
+                            @if (FinancialTransaction!.Amount.HasValue)
+                            {
+                                <span>@FinancialTransaction!.Amount.Value.ToString("C")</span>
+                            }
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Repetir:</label><br />
+                            <span>@(FinancialTransaction!.Repeat.GetDisplayName())</span>
+                            @* @foreach (var repeat in Enum.GetValues(typeof(Recurrence)))
+                            {
+                                <option value="@repeat">@repeat.ToString()</option>
+                            } *@
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Vezes:</label><br />
+                            <span>@(FinancialTransaction!.RepeatTimes)</span>
+                        </div>
+                    </div>
+                    <div class="row g-3 small text-secondary">
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Juros/Multas:</label><br />
+                            @if (FinancialTransaction!.InterestPenalty.HasValue)
+                            {
+                                <span>@(FinancialTransaction!.InterestPenalty.Value.ToString("C"))</span>
+                            }
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Desconto:</label><br />
+                            @if (FinancialTransaction!.Discount.HasValue)
+                            {
+                                <span>@FinancialTransaction!.Discount.Value.ToString("C")</span>
+                            }
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Data pagamento:</label><br />
+                            @if (FinancialTransaction!.PaymentDate.HasValue)
+                            {
+                                <span>@(FinancialTransaction!.PaymentDate.Value.ToString("dd/MM/yyyy"))</span>
+                            }
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="fw-semibold text-dark">Valor pago:</label><br />
+                            <span>@(FinancialTransaction!.AmountPaid.HasValue ?
+                                                                FinancialTransaction!.AmountPaid.Value.ToString("C") : "-")</span>
+                        </div>
+                    </div>
+                    <div class=" row g-3">
+                        <div class="row g-3 small text-secondary">
+                            <div class="col-md-6 col-lg-4">
+                                <label class="fw-semibold text-dark">Observação:</label><br />
+                                <span>@(FinancialTransaction!.Observation ?? "-")</span>
+                            </div>
+                        </div>
+                    </div>
                     <hr class="my-4">
-
+                    <fieldset class="mb-2">
+                        @if (FinancialTransaction.Documents is not null && FinancialTransaction.Documents.Any())
+                        {
+                            <label class="fw-bold text-primary form-label mb-0">Documentos anexados</label>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var document in FinancialTransaction.Documents)
+                                        {
+                                            <tr>
+                                                <td><a href="/uploads/@document.Path" target="_blank">@document.Name</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                    </fieldset>
+                    <hr class="my-4">
                     <div class="d-flex justify-content-between">
-                        <a href="/Account/List" class="btn btn-outline-secondary px-4">Voltar</a>
+                        <a href="/Financial/{Type}/List" class="btn btn-outline-secondary px-4">Voltar</a>
                         <button @onclick="Remove" type="button" class="btn btn-soft-danger px-4">
-                            <i class="ri-delete-bin-line"></i>Excluir Conta
+                            <i class="ri-delete-bin-line"></i>Excluir
                         </button>
                     </div>
                 </div>
@@ -61,39 +158,42 @@
 
 @code {
     [Parameter] public int Id { get; set; }
-    private Account Account { get; set; } = new();
+    [Parameter] public string? Type { get; set; }
+    private FinancialTransaction FinancialTransaction { get; set; } = new();
 
     protected override async Task OnParametersSetAsync()
     {
-        var account = await AccountRepository.Get(Id);
-        if (account is not null)
-            Account = account;
+        var financialTransaction = await FinancialTransactionRepository.Get(Id);
+        if (financialTransaction is not null)
+            FinancialTransaction = financialTransaction;
     }
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            if (Account.Id == 0)
+            if (FinancialTransaction.Id == 0)
             {
-                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning", "/Account/List");
+                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning",
+                "/FinancialTransaction/List");
                 return;
             }
             var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
-            if (Account!.CompanyId != Company!.Id)
+            if (FinancialTransaction!.CompanyId != Company!.Id)
             {
                 await JS.InvokeVoidAsync("ShowToast",
-                "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning", "/Account/List");
+                "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning",
+                $"/Financial/{Type}/List");
             }
         }
     }
     private async Task Remove()
     {
         //Salvar
-        await AccountRepository.Delete(Account.Id);
+        await FinancialTransactionRepository.Delete(FinancialTransaction.Id);
 
         //Informar e redirecionar
         // Exibir toast e redirecionar depois que o usuário fechar
         await JS.InvokeVoidAsync("ShowToast",
-        "Sucesso", "Conta excluída com sucesso!", "info", "/Account/List");
+        "Sucesso", "Conta excluída com sucesso!", "info", $"/Financial/{Type}/List");
     }
 }
