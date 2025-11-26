@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Yxn5qXspKbo=",
+  "dgSpecHash": "MVWE3snYEwM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\Gestao.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emerson\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
+    "C:\\Users\\Emerson\\.nuget\\packages\\coravel\\6.0.2\\coravel.6.0.2.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\8.0.13\\microsoft.aspnetcore.authentication.facebook.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.13\\microsoft.aspnetcore.authentication.google.8.0.13.nupkg.sha512",
@@ -57,6 +58,7 @@
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\8.0.0\\microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\8.0.0\\microsoft.extensions.filesystemglobbing.8.0.0.nupkg.sha512",
+    "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\3.1.0\\microsoft.extensions.hosting.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.identity.core\\8.0.13\\microsoft.extensions.identity.core.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.identity.stores\\8.0.13\\microsoft.extensions.identity.stores.8.0.13.nupkg.sha512",
     "C:\\Users\\Emerson\\.nuget\\packages\\microsoft.extensions.logging\\8.0.1\\microsoft.extensions.logging.8.0.1.nupkg.sha512",

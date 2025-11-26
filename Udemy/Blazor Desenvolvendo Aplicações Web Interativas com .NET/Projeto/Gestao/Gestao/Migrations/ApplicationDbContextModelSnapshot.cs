@@ -309,6 +309,9 @@ namespace Gestao.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("RepeatGroup")
+                        .HasColumnType("int");
+
                     b.Property<int?>("RepeatTimes")
                         .HasColumnType("int");
 

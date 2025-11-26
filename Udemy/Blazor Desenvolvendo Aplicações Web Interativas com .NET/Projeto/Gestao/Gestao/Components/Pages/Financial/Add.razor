@@ -1,9 +1,11 @@
 @page "/Financial/{type}/Add"
+
 @rendermode InteractiveServer
 
 @inject IJSRuntime JS
 @inject NavigationManager NavigationManager
 @inject IFinancialTransactionRepository FinancialTransactionRepository
+@inject IQueue Queue
 
 
 <PageTitle>Contas a @(Type == "Pay" ? "Pagar" : "Receber") - Cadastrar</PageTitle>
@@ -33,6 +35,15 @@
     {
         financialTransaction!.CreatedAt = DateTimeOffset.Now;
         await FinancialTransactionRepository.Add(financialTransaction);
+
+        if (financialTransaction.Repeat != Recurrence.None)
+        {
+            Queue.QueueInvocableWithPayload<FinancialTransactionRepeatInvocable, FinancialTransaction>(
+            financialTransaction);
+            await JS.InvokeVoidAsync("ShowToast",
+            "Sucesso", "Registro salvo com sucesso! As repetições foram agendadas.", "info", $"/Financial/{Type}/List");
+            return;
+        }
 
         await JS.InvokeVoidAsync("ShowToast",
         "Sucesso", "Conta cadastrada com sucesso!", "info", $"/Financial/{Type}/List");

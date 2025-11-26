@@ -23,6 +23,7 @@ namespace Gestao.Domain
         [Range(0.01, double.MaxValue, ErrorMessage = "O campo deve ser maior que zero.")]
         [RequiredIfAmoundPaidFilledAttribute]
         public decimal? Amount { get; set; }
+        public int? RepeatGroup { get; set; }
         public Recurrence Repeat { get; set; }
         [Range(1, 9999, ErrorMessage = "O campo deve ter entre {1} e {2}.")]
         [RequiredRepeatTimes]

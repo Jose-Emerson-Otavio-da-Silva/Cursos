@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Localization;
 using Blazored.LocalStorage;
 using Gestao.Client.Libraries.Notifications;
 using Microsoft.Extensions.FileProviders;
+using Coravel;
+using Gestao.Libraries.Queues;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -75,7 +77,10 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 #endregion
 
-#region Dependency Injection
+#region Dependency Injection (Repositories / Extra Libraries / EmailSender / LocalStorage / Queuing)
+builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddQueue();
+builder.Services.AddScoped<FinancialTransactionRepeatInvocable>();
 builder.Services.AddSingleton<SmtpClient>(options =>
 {
     var smtp = new SmtpClient();
@@ -88,9 +93,8 @@ builder.Services.AddSingleton<SmtpClient>(options =>
         builder.Configuration.GetValue<string>("EmailSender:Password")!);
     return smtp;
 });
-builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 builder.Services.AddScoped<ICepService, CepService>();
-builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddSingleton<IEmailSender<ApplicationUser>, EmailSender>();
 builder.Services.AddScoped<CompanyOnSelectedNotification>();
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
