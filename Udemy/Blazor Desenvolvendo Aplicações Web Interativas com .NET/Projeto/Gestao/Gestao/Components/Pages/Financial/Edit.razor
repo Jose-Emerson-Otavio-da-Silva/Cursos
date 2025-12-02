@@ -4,6 +4,7 @@
 @inject NavigationManager NavigationManager
 @inject IFinancialTransactionRepository FinancialTransactionRepository
 @inject ApplicationDbContext DB
+@inject IQueue Queue
 
 <PageTitle>Contas a @(Type == "Pay" ? "Pagar" : "Receber") - Alterar</PageTitle>
 
@@ -41,6 +42,8 @@
     private async Task Save(FinancialTransaction financialTransaction)
     {
         await FinancialTransactionRepository.Update(financialTransaction);
+        Queue.QueueInvocableWithPayload<FinancialTransactionRepeatInvocable, FinancialTransaction>(
+        financialTransaction);
 
         await JS.InvokeVoidAsync("ShowToast",
         "Sucesso", "Conta cadastrada com sucesso!", "info", $"/Financial/{Type}/List");

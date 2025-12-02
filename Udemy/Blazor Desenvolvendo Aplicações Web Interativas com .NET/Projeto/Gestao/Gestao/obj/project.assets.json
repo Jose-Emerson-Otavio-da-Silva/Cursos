@@ -5529,6 +5529,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Blazored.LocalStorage >= 4.5.0",
+      "Coravel >= 6.0.2",
       "Gestao.Client >= 1.0.0",
       "Gestao.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Facebook >= 8.0.13",
@@ -5541,24 +5542,23 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.13",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.13",
-      "Microsoft.EntityFrameworkCore.Tools >= 8.0.13",
-      "coravel >= 6.0.2"
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.13"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Emerson\\.nuget\\packages\\": {}
+    "C:\\Users\\emerson.sap09\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\Gestao.csproj",
+      "projectUniqueName": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\Gestao.csproj",
       "projectName": "Gestao",
-      "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\Gestao.csproj",
-      "packagesPath": "C:\\Users\\Emerson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\obj\\",
+      "projectPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\Gestao.csproj",
+      "packagesPath": "C:\\Users\\emerson.sap09\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Emerson\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\emerson.sap09\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5570,11 +5570,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj": {
-              "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj"
+            "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj": {
+              "projectPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Client\\Gestao.Client.csproj"
             },
-            "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj": {
-              "projectPath": "C:\\Users\\Emerson\\Cursos-1\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj"
+            "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj": {
+              "projectPath": "C:\\Users\\emerson.sap09\\Projetos\\Cursos\\Udemy\\Blazor Desenvolvendo Aplicações Web Interativas com .NET\\Projeto\\Gestao\\Gestao.Domain\\Gestao.Domain.csproj"
             }
           }
         }
@@ -5588,8 +5588,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -5598,6 +5597,10 @@
           "Blazored.LocalStorage": {
             "target": "Package",
             "version": "[4.5.0, )"
+          },
+          "Coravel": {
+            "target": "Package",
+            "version": "[6.0.2, )"
           },
           "Microsoft.AspNetCore.Authentication.Facebook": {
             "target": "Package",
@@ -5646,10 +5649,6 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.13, )"
-          },
-          "coravel": {
-            "target": "Package",
-            "version": "[6.0.2, )"
           }
         },
         "imports": [
@@ -5663,24 +5662,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.21, 8.0.21]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.21, 8.0.21]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.21, 8.0.21]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.21, 8.0.21]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5689,7 +5670,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
