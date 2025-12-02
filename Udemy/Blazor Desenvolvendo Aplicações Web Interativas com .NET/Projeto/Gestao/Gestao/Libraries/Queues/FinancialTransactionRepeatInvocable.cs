@@ -1,3 +1,5 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Transactions;
 using Coravel.Invocable;
 using Gestao.Domain;
 using Gestao.Domain.Repositories;
@@ -16,11 +18,30 @@ namespace Gestao.Libraries.Queues
 
         public async Task Invoke()
         {
+            int countTransactionsSameGroup = await _repository.GetCountTransactionsSameGroup(Payload.Id);
+
             var startPoint = 1;
             RegisterNewTransaction(startPoint);
 
-            int transactionSameGroup = await _repository.GetCountTransactionsSameGroup(Payload.Id);
-            RegisterNewTransaction(transactionSameGroup);
+            RegisterNewTransaction(countTransactionsSameGroup);
+
+            if (Payload.Repeat != Domain.Enums.Recurrence.None && countTransactionsSameGroup > Payload.RepeatTimes)
+            {
+                var transactions = await _repository.GetTransactionsSameGroup(Payload.Id);
+                for (int i = countTransactionsSameGroup; i > Payload.RepeatTimes; i--)
+                {
+                    await _repository.Delete(transactions.ElementAt(i));
+                }
+            }
+
+            if (Payload.Repeat == Domain.Enums.Recurrence.None && countTransactionsSameGroup > 1)
+            {
+                var transactions = await _repository.GetTransactionsSameGroup(Payload.Id);
+                for (int i = 2; i < countTransactionsSameGroup; i++)
+                {
+                    await _repository.Delete(transactions.ElementAt(i));
+                }
+            }
         }
 
         private void RegisterNewTransaction(int startPoint)

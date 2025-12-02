@@ -91,14 +91,24 @@ namespace Gestao.Data.Repositories
             var entity = await Get(id); // Obtém a transação financeira pelo ID
             if (entity is not null) // Verifica se a transação existe
             {
-                _context.FinancialTransactions.Remove(entity); // Remove a entidade do contexto
-                await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
+                await Delete(entity);
             }
+        }
+
+        public async Task Delete(FinancialTransaction entity)
+        {
+            _context.FinancialTransactions.Remove(entity); // Remove a entidade do contexto
+            await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
         }
 
         public async Task<int> GetCountTransactionsSameGroup(int id)
         {
-            return await _context.FinancialTransactions.Where(a => a.RepeatGroup == id).CountAsync();
+            return await _context.FinancialTransactions.Where(a => a.RepeatGroup == id).OrderBy(a => a.Id).CountAsync();
+        }
+
+        public async Task<List<FinancialTransaction>> GetTransactionsSameGroup(int id)
+        {
+            return await _context.FinancialTransactions.Where(a => a.RepeatGroup == id).OrderBy(a => a.Id).ToListAsync();
         }
     }
 }
