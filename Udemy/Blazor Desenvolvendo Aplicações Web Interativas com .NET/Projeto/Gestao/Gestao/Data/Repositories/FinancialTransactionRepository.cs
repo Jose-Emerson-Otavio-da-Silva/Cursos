@@ -95,5 +95,10 @@ namespace Gestao.Data.Repositories
                 await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
             }
         }
+
+        public async Task<int> GetCountTransactionsSameGroup(int id)
+        {
+            return await _context.FinancialTransactions.Where(a => a.RepeatGroup == id).CountAsync();
+        }
     }
 }

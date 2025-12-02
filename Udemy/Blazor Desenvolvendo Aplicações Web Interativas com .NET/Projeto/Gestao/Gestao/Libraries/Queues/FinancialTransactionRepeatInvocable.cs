@@ -18,6 +18,9 @@ namespace Gestao.Libraries.Queues
         {
             var startPoint = 1;
             RegisterNewTransaction(startPoint);
+
+            int transactionSameGroup = await _repository.GetCountTransactionsSameGroup(Payload.Id);
+            RegisterNewTransaction(transactionSameGroup);
         }
 
         private void RegisterNewTransaction(int startPoint)
