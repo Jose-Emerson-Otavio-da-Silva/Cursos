@@ -1,9 +1,7 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Transactions;
 using Coravel.Invocable;
 using Gestao.Domain;
+using Gestao.Domain.Enums;
 using Gestao.Domain.Repositories;
-using Microsoft.VisualBasic;
 
 namespace Gestao.Libraries.Queues
 {
@@ -19,22 +17,20 @@ namespace Gestao.Libraries.Queues
         public async Task Invoke()
         {
             int countTransactionsSameGroup = await _repository.GetCountTransactionsSameGroup(Payload.Id);
+            int startPoint = 1;
 
-            var startPoint = 1;
-            RegisterNewTransaction(startPoint);
+            await RegisterNewTransaction(startPoint);
 
-            RegisterNewTransaction(countTransactionsSameGroup);
+            await RegisterNewTransaction(countTransactionsSameGroup);
 
-            if (Payload.Repeat != Domain.Enums.Recurrence.None && countTransactionsSameGroup > Payload.RepeatTimes)
-            {
-                var transactions = await _repository.GetTransactionsSameGroup(Payload.Id);
-                for (int i = countTransactionsSameGroup; i > Payload.RepeatTimes; i--)
-                {
-                    await _repository.Delete(transactions.ElementAt(i));
-                }
-            }
+            await TransactionsReduction(countTransactionsSameGroup);
 
-            if (Payload.Repeat == Domain.Enums.Recurrence.None && countTransactionsSameGroup > 1)
+            await RepeatTransactionsRemove(countTransactionsSameGroup);
+        }
+
+        private async Task RepeatTransactionsRemove(int countTransactionsSameGroup)
+        {
+            if (Payload.Repeat == Recurrence.None && countTransactionsSameGroup > 1)
             {
                 var transactions = await _repository.GetTransactionsSameGroup(Payload.Id);
                 for (int i = 2; i < countTransactionsSameGroup; i++)
@@ -44,9 +40,21 @@ namespace Gestao.Libraries.Queues
             }
         }
 
-        private void RegisterNewTransaction(int startPoint)
+        private async Task TransactionsReduction(int countTransactionsSameGroup)
         {
-            if (Payload.Repeat != Domain.Enums.Recurrence.None)
+            if (Payload.Repeat != Recurrence.None && countTransactionsSameGroup > Payload.RepeatTimes)
+            {
+                var transactions = await _repository.GetTransactionsSameGroup(Payload.Id);
+                for (int i = countTransactionsSameGroup; i > Payload.RepeatTimes; i--)
+                {
+                    await _repository.Delete(transactions.ElementAt(i));
+                }
+            }
+        }
+
+        private async Task RegisterNewTransaction(int startPoint)
+        {
+            if (Payload.Repeat != Recurrence.None)
             {
                 var repeatTimes = Payload.RepeatTimes - 1;
 
@@ -55,20 +63,40 @@ namespace Gestao.Libraries.Queues
                     var financial = new FinancialTransaction();
                     financial.TypeFinancialTransaction = Payload.TypeFinancialTransaction;
                     financial.Description = Payload.Description;
-                    financial.ReferenceDate = Payload.ReferenceDate;
-                    financial.DueDate = Payload.DueDate;
+                    financial.ReferenceDate = IncrementDate(Payload.Repeat, 1, Payload.ReferenceDate);
+                    financial.DueDate = Payload.DueDate.HasValue ? IncrementDate(Payload.Repeat, i, Payload.DueDate.Value) : null;
                     financial.Amount = Payload.Amount;
                     financial.RepeatGroup = Payload.Id;
-                    financial.Repeat = Domain.Enums.Recurrence.None;
+                    financial.Repeat = Recurrence.None;
                     financial.RepeatTimes = null;
                     financial.CreatedAt = DateTimeOffset.Now;
 
                     financial.CompanyId = Payload.CompanyId;
                     financial.AccountId = Payload.AccountId;
                     financial.CategoryId = Payload.CategoryId;
-                    _repository.Add(financial);
+                    await _repository.Add(financial);
                 }
             }
+        }
+
+        private DateTimeOffset IncrementDate(Recurrence repeat, int count, DateTimeOffset date)
+        {
+            DateTimeOffset dateModified = date;
+            switch (repeat)
+            {
+                case Recurrence.Weekly:
+                    dateModified = date.AddDays(7 * count);
+                    break;
+                case Recurrence.Monthly:
+                    dateModified = date.AddMonths(count);
+                    break;
+                case Recurrence.Yearly:
+                    dateModified = date.AddYears(count);
+                    break;
+                default:
+                    break;
+            }
+            return dateModified;
         }
     }
 }
