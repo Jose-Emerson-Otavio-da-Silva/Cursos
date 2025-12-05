@@ -16,16 +16,32 @@ namespace Gestao.Libraries.Queues
 
         public async Task Invoke()
         {
-            int countTransactionsSameGroup = await _repository.GetCountTransactionsSameGroup(Payload.Id);
             int startPoint = 1;
+            int countTransactionsSameGroup = await _repository.GetCountTransactionsSameGroup(Payload.Id);
 
-            await RegisterNewTransaction(startPoint);
+            await AssignRepeatGroupToPayload();
 
-            await RegisterNewTransaction(countTransactionsSameGroup);
+            if (countTransactionsSameGroup == 0)
+            {
+                await RegisterNewTransactions(startPoint);
+            }
+            else
+            {
+                await RegisterNewTransactions(countTransactionsSameGroup);   
+            }
 
             await TransactionsReduction(countTransactionsSameGroup);
 
             await RepeatTransactionsRemove(countTransactionsSameGroup);
+        }
+
+        private async Task AssignRepeatGroupToPayload()
+        {
+            if (Payload.Repeat != Recurrence.None)
+            {
+                Payload.RepeatGroup = Payload.Id;
+                await _repository.Update(Payload);
+            }
         }
 
         private async Task RepeatTransactionsRemove(int countTransactionsSameGroup)
@@ -52,7 +68,7 @@ namespace Gestao.Libraries.Queues
             }
         }
 
-        private async Task RegisterNewTransaction(int startPoint)
+        private async Task RegisterNewTransactions(int startPoint)
         {
             if (Payload.Repeat != Recurrence.None)
             {
@@ -63,7 +79,7 @@ namespace Gestao.Libraries.Queues
                     var financial = new FinancialTransaction();
                     financial.TypeFinancialTransaction = Payload.TypeFinancialTransaction;
                     financial.Description = Payload.Description;
-                    financial.ReferenceDate = IncrementDate(Payload.Repeat, 1, Payload.ReferenceDate);
+                    financial.ReferenceDate = IncrementDate(Payload.Repeat, i, Payload.ReferenceDate);
                     financial.DueDate = Payload.DueDate.HasValue ? IncrementDate(Payload.Repeat, i, Payload.DueDate.Value) : null;
                     financial.Amount = Payload.Amount;
                     financial.RepeatGroup = Payload.Id;

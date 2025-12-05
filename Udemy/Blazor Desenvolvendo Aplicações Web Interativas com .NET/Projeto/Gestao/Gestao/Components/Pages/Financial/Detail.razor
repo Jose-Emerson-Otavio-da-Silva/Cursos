@@ -117,11 +117,11 @@
                                 <span>@(FinancialTransaction!.Observation ?? "-")</span>
                             </div>
                         </div>
-                    </div>
-                    <hr class="my-4">
-                    <fieldset class="mb-2">
-                        @if (FinancialTransaction.Documents is not null && FinancialTransaction.Documents.Any())
-                        {
+                    </div>                    
+                    @if (FinancialTransaction.Documents is not null && FinancialTransaction.Documents.Any())
+                    {
+                        <hr class="my-4">
+                        <fieldset class="mb-2">
                             <label class="fw-bold text-primary form-label mb-0">Documentos anexados</label>
                             <div class="table-responsive mt-3">
                                 <table class="table table-striped">
@@ -140,8 +140,8 @@
                                     </tbody>
                                 </table>
                             </div>
-                        }
-                    </fieldset>
+                        </fieldset>
+                    }                    
                     <hr class="my-4">
                     <div class="d-flex justify-content-between">
                         <a href="/Financial/{Type}/List" class="btn btn-outline-secondary px-4">Voltar</a>
