@@ -10,12 +10,12 @@ namespace Gestao.Data.Repositories
     /// </summary>
     public class CompanyRepository : ICompanyRepository
     {
-        private readonly ApplicationDbContext _context; // Contexto do banco de dados
+        private readonly IDbContextFactory<ApplicationDbContext> _factory; // Contexto do banco de dados
 
         // Construtor que recebe o contexto do banco de dados via injeção de dependência
-        public CompanyRepository(ApplicationDbContext context)
+        public CompanyRepository(IDbContextFactory<ApplicationDbContext> factory)
         {
-            _context = context;
+            _factory = factory;
         }
 
         /// <summary>
@@ -27,24 +27,27 @@ namespace Gestao.Data.Repositories
         /// <returns>Uma lista paginada de empresas</returns>
         public async Task<PaginatedList<Company>> GetAll(Guid applicationUserId, int pageIndex, int pageSize, string searchWord)
         {
-            // Obtém os itens para a página atual
-            var items = await _context.Companies
-                .Where(a => a.UserId == applicationUserId) // Filtra as empresas pelo ID do usuário
-                .Where(a => a.TradeName.Contains(searchWord) || a.LegalName.Contains(searchWord))
-                .OrderBy(a => a.TradeName)
-                .Skip((pageIndex - 1) * pageSize) // Ignora os itens das páginas anteriores
-                .Take(pageSize) // Seleciona os itens para a página atual
-                .ToListAsync();
+            using (var _db = _factory.CreateDbContext())
+            {
+                // Obtém os itens para a página atual
+                var items = await _db.Companies
+                    .Where(a => a.UserId == applicationUserId) // Filtra as empresas pelo ID do usuário
+                    .Where(a => a.TradeName.Contains(searchWord) || a.LegalName.Contains(searchWord))
+                    .OrderBy(a => a.TradeName)
+                    .Skip((pageIndex - 1) * pageSize) // Ignora os itens das páginas anteriores
+                    .Take(pageSize) // Seleciona os itens para a página atual
+                    .ToListAsync();
 
-            // Conta o número total de empresas associadas ao usuário
-            var count = await _context.Companies
-                .Where(a => a.UserId == applicationUserId).Where(a => a.TradeName.Contains(searchWord) || a.LegalName.Contains(searchWord)).CountAsync();
+                // Conta o número total de empresas associadas ao usuário
+                var count = await _db.Companies
+                    .Where(a => a.UserId == applicationUserId).Where(a => a.TradeName.Contains(searchWord) || a.LegalName.Contains(searchWord)).CountAsync();
 
-            // Calcula o número total de páginas
-            int totalPages = (int)Math.Ceiling((decimal)count / pageSize);
+                // Calcula o número total de páginas
+                int totalPages = (int)Math.Ceiling((decimal)count / pageSize);
 
-            // Retorna a lista paginada
-            return new PaginatedList<Company>(items, pageIndex, totalPages);
+                // Retorna a lista paginada
+                return new PaginatedList<Company>(items, pageIndex, totalPages);
+            }
         }
 
         /// <summary>
@@ -54,7 +57,10 @@ namespace Gestao.Data.Repositories
         /// <returns>A empresa, se encontrada, caso contrário, null</returns>
         public async Task<Company?> Get(int id)
         {
-            return await _context.Companies.SingleOrDefaultAsync(a => a.Id == id);
+            using (var _db = _factory.CreateDbContext())
+            {
+                return await _db.Companies.SingleOrDefaultAsync(a => a.Id == id);
+            }
         }
 
         /// <summary>
@@ -64,8 +70,11 @@ namespace Gestao.Data.Repositories
         /// <returns>Uma tarefa que representa a operação assíncrona</returns>
         public async Task Add(Company entity)
         {
-            _context.Companies.Add(entity); // Adiciona a empresa ao contexto
-            await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
+            using (var _db = _factory.CreateDbContext())
+            {
+                _db.Companies.Add(entity); // Adiciona a empresa ao contexto
+                await _db.SaveChangesAsync(); // Salva as alterações no banco de dados
+            }
         }
 
         /// <summary>
@@ -75,8 +84,11 @@ namespace Gestao.Data.Repositories
         /// <returns>Uma tarefa que representa a operação assíncrona</returns>
         public async Task Update(Company entity)
         {
-            _context.Companies.Update(entity); // Atualiza a empresa no contexto
-            await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
+            using (var _db = _factory.CreateDbContext())
+            {
+                _db.Companies.Update(entity); // Atualiza a empresa no contexto
+                await _db.SaveChangesAsync(); // Salva as alterações no banco de dados
+            }
         }
 
         /// <summary>
@@ -86,11 +98,14 @@ namespace Gestao.Data.Repositories
         /// <returns>Uma tarefa que representa a operação assíncrona</returns>
         public async Task Delete(int id)
         {
-            var entity = await Get(id); // Obtém a empresa pelo ID
-            if (entity is not null) // Verifica se a empresa existe
+            using (var _db = _factory.CreateDbContext())
             {
-                _context.Companies.Remove(entity); // Remove a empresa do contexto
-                await _context.SaveChangesAsync(); // Salva as alterações no banco de dados
+                var entity = await Get(id); // Obtém a empresa pelo ID
+                if (entity is not null) // Verifica se a empresa existe
+                {
+                    _db.Companies.Remove(entity); // Remove a empresa do contexto
+                    await _db.SaveChangesAsync(); // Salva as alterações no banco de dados
+                }
             }
         }
     }

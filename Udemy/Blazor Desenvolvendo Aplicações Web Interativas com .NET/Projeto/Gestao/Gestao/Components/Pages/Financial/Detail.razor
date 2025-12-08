@@ -117,7 +117,7 @@
                                 <span>@(FinancialTransaction!.Observation ?? "-")</span>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                     @if (FinancialTransaction.Documents is not null && FinancialTransaction.Documents.Any())
                     {
                         <hr class="my-4">
@@ -141,7 +141,7 @@
                                 </table>
                             </div>
                         </fieldset>
-                    }                    
+                    }
                     <hr class="my-4">
                     <div class="d-flex justify-content-between">
                         <a href="/Financial/{Type}/List" class="btn btn-outline-secondary px-4">Voltar</a>
@@ -160,6 +160,7 @@
     [Parameter] public int Id { get; set; }
     [Parameter] public string? Type { get; set; }
     private FinancialTransaction FinancialTransaction { get; set; } = new();
+    private bool _validated;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -169,22 +170,22 @@
     }
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (firstRender || _validated) return;
+
+        if (FinancialTransaction.Id == 0)
         {
-            if (FinancialTransaction.Id == 0)
-            {
-                await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning",
-                "/FinancialTransaction/List");
-                return;
-            }
-            var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
-            if (FinancialTransaction!.CompanyId != Company!.Id)
-            {
-                await JS.InvokeVoidAsync("ShowToast",
-                "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning",
-                $"/Financial/{Type}/List");
-            }
+            await JS.InvokeVoidAsync("ShowToast", "Alerta", "Conta não encontrada!", "warning",
+            "/FinancialTransaction/List");
+            return;
         }
+        var Company = await LocalStorage.GetItemAsync<Company>(AppConstants.LocalStorageCompany);
+        if (FinancialTransaction!.CompanyId != Company!.Id)
+        {
+            await JS.InvokeVoidAsync("ShowToast",
+            "Alerta.", $"A conta não pertence à empresa {Company.LegalName}", "warning",
+            $"/Financial/{Type}/List");
+        }
+        _validated = true;
     }
     private async Task Remove()
     {

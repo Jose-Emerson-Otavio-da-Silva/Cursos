@@ -10,15 +10,15 @@ namespace Gestao.Data.Repositories
     /// </summary>
     public class AccountRepository : IAccountRepository
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IDbContextFactory<ApplicationDbContext> _factory;
 
         /// <summary>
         /// Construtor que recebe o contexto do banco de dados
         /// </summary>
-        /// <param name="context"></param>
-        public AccountRepository(ApplicationDbContext context)
+        /// <param name="factory"></param>
+        public AccountRepository(IDbContextFactory<ApplicationDbContext> factory)
         {
-            _context = context;
+            _factory = factory;
         }
 
         /// <summary>
@@ -30,24 +30,27 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task<PaginatedList<Account>> GetAll(int companyId, int pageIndex, int pageSize, string searchWord = "")
         {
-            // Obtém os itens da página atual
-            var items = await _context.Accounts
-                .Where(a => a.CompanyId == companyId)
-                .Where(a => a.Description.Contains(searchWord))
-                .OrderBy(a => a.Description)
-                .Skip((pageIndex - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+            using (var _db = _factory.CreateDbContext())
+            {
+                // Obtém os itens da página atual
+                var items = await _db.Accounts
+                    .Where(a => a.CompanyId == companyId)
+                    .Where(a => a.Description.Contains(searchWord))
+                    .OrderBy(a => a.Description)
+                    .Skip((pageIndex - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
 
-            // Conta o total de itens
-            var count = await _context.Accounts
-                .Where(a => a.CompanyId == companyId).Where(a => a.Description.Contains(searchWord)).CountAsync();
+                // Conta o total de itens
+                var count = await _db.Accounts
+                    .Where(a => a.CompanyId == companyId).Where(a => a.Description.Contains(searchWord)).CountAsync();
 
-            // Calcula o número total de páginas
-            int totalPages = (int)Math.Ceiling((decimal)count / pageSize);
+                // Calcula o número total de páginas
+                int totalPages = (int)Math.Ceiling((decimal)count / pageSize);
 
-            // Retorna a lista paginada
-            return new PaginatedList<Account>(items, pageIndex, totalPages);
+                // Retorna a lista paginada
+                return new PaginatedList<Account>(items, pageIndex, totalPages);
+            }
         }
 
         /// <summary>
@@ -57,9 +60,12 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task<List<Account>> GetAll(int companyId)
         {
-            return await _context.Accounts
-                .Where(a => a.CompanyId == companyId)
-                .ToListAsync();
+            using (var _db = _factory.CreateDbContext())
+            {
+                return await _db.Accounts
+                    .Where(a => a.CompanyId == companyId)
+                    .ToListAsync();
+            }
         }
 
         /// <summary>
@@ -69,7 +75,10 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task<Account?> Get(int id)
         {
-            return await _context.Accounts.SingleOrDefaultAsync(a => a.Id == id);
+            using (var _db = _factory.CreateDbContext())
+            {
+                return await _db.Accounts.SingleOrDefaultAsync(a => a.Id == id);
+            }
         }
 
         /// <summary>
@@ -79,8 +88,11 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task Add(Account entity)
         {
-            _context.Accounts.Add(entity);
-            await _context.SaveChangesAsync();
+            using (var _db = _factory.CreateDbContext())
+            {
+                _db.Accounts.Add(entity);
+                await _db.SaveChangesAsync();
+            }
         }
 
         /// <summary>
@@ -90,8 +102,11 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task Update(Account entity)
         {
-            _context.Accounts.Update(entity);
-            await _context.SaveChangesAsync();
+            using (var _db = _factory.CreateDbContext())
+            {
+                _db.Accounts.Update(entity);
+                await _db.SaveChangesAsync();
+            }
         }
 
         /// <summary>
@@ -101,11 +116,14 @@ namespace Gestao.Data.Repositories
         /// <returns></returns>
         public async Task Delete(int id)
         {
-            var entity = await Get(id); // Obtém a conta pelo ID
-            if (entity is not null)
+            using (var _db = _factory.CreateDbContext())
             {
-                _context.Accounts.Remove(entity); // Remove a conta
-                await _context.SaveChangesAsync(); // Salva as alterações
+                var entity = await Get(id); // Obtém a conta pelo ID
+                if (entity is not null)
+                {
+                    _db.Accounts.Remove(entity); // Remove a conta
+                    await _db.SaveChangesAsync(); // Salva as alterações
+                }
             }
         }
     }

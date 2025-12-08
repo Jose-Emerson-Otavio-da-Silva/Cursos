@@ -69,25 +69,39 @@
             <ValidationMessage For="() => FinancialTransaction!.Amount" />
         </div>
 
-        <div class="col-xxl-3 col-md-6">
-            <label for="repeat" class="form-label fw-semibold">Repetir</label>
-            <InputSelect @bind-Value="FinancialTransaction!.Repeat" @bind-Value:after="RepeatChanged"
-                class="form-select" id="repeat">
-                @foreach (Recurrence option in Enum.GetValues(typeof(Recurrence)))
-                {
-                    <option value="@option">@option.GetDisplayName()</option>
-                }
-            </InputSelect>
-            <ValidationMessage For="() => FinancialTransaction!.Repeat" />
-        </div>
+        @if (!FinancialTransaction.RepeatGroup.HasValue || FinancialTransaction.RepeatGroup == FinancialTransaction.Id)
+        {
+            <div class="col-xxl-3 col-md-6">
+                <label for="repeat" class="form-label fw-semibold">Repetir</label>
+                <InputSelect @bind-Value="FinancialTransaction!.Repeat" @bind-Value:after="RepeatChanged"
+                    class="form-select" id="repeat">
+                    @foreach (Recurrence option in Enum.GetValues(typeof(Recurrence)))
+                    {
+                        <option value="@option">@option.GetDisplayName()</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => FinancialTransaction!.Repeat" />
+            </div>
 
-        <div class="col-xxl-3 col-md-6">
-            <label for="repeatTimes" class="form-label fw-semibold">Vezes</label>
-            <InputNumber @bind-Value="FinancialTransaction!.RepeatTimes" disabled="@RepeatTimesDisabled"
-                autocomplete="off" class="form-control" id="repeatTimes" placeholder="" step="1" inputmode="numeric"
-                pattern="\d*" />
-            <ValidationMessage For="() => FinancialTransaction!.RepeatTimes" />
-        </div>
+            <div class="col-xxl-3 col-md-6">
+                <label for="repeatTimes" class="form-label fw-semibold">Vezes</label>
+                <InputNumber @bind-Value="FinancialTransaction!.RepeatTimes" disabled="@RepeatTimesDisabled"
+                    autocomplete="off" class="form-control" id="repeatTimes" placeholder="" step="1" inputmode="numeric"
+                    pattern="\d*" />
+                <ValidationMessage For="() => FinancialTransaction!.RepeatTimes" />
+            </div>
+        }
+        else
+        {
+            <div class="col-xxl-3 col-md-6">
+                <div>
+                    <label for="repeat" class="form-label fw-semibold">Repetir</label><br />
+                    <p>Acesse a <a href="/Financial/@Type/Edit/@FinancialTransaction.RepeatGroup">transação de
+                            origem </a>para
+                        alterar esse campo.</p>
+                </div>
+            </div>
+        }
     </div>
 
     <div class=" row g-3">
@@ -165,6 +179,7 @@
     protected override void OnParametersSet()
     {
         Documents = FinancialTransaction.Documents!.ToList();
+        RepeatTimesDisabled = FinancialTransaction.Repeat == Recurrence.None;
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

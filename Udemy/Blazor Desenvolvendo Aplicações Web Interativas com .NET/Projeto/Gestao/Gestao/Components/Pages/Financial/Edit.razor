@@ -34,7 +34,7 @@
     [Parameter]
     public int Id { get; set; }
     public FinancialTransaction FinancialTransaction { get; set; }
-    
+
     protected override async Task OnParametersSetAsync()
     {
         FinancialTransaction = (await FinancialTransactionRepository.Get(Id))!;
@@ -47,6 +47,6 @@
         financialTransaction);
 
         await JS.InvokeVoidAsync("ShowToast",
-        "Sucesso", "Conta alterada com sucesso!", "info", $"/Financial/{Type}/List");
+        "Sucesso", "Conta alterada com sucesso! Se houver repetições, sistema pode demorar alguns segundos para exibir as parcelas.", "info", $"/Financial/{Type}/List");
     }
 }

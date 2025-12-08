@@ -4300,11 +4300,11 @@ C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações W
 C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\a32wj0owux-{0}-tptq2av103-tptq2av103.gz
 C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\fgfqq01qh5-{0}-lfu7j35m59-lfu7j35m59.gz
 C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\wxmx2w2ves-{0}-oyz0vx2fzb-oyz0vx2fzb.gz
-C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\vibb7oz1mv-{0}-knxb4hksl3-knxb4hksl3.gz
-C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\9y7inlh8fc-{0}-sel4k3b468-sel4k3b468.gz
-C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bgh0hcnqip-{0}-fafe2fnzti-fafe2fnzti.gz
-C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\7gkwprjboy-{0}-xzodmhu47z-xzodmhu47z.gz
 C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\swae.build.ex.cache
-C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\k44zvoq31s-{0}-eo0ecfvss6-eo0ecfvss6.gz
+C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\vibb7oz1mv-{0}-b1phoby9xh-b1phoby9xh.gz
+C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\9y7inlh8fc-{0}-wjgroqnw60-wjgroqnw60.gz
+C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\bgh0hcnqip-{0}-vrl2r4fn4h-vrl2r4fn4h.gz
+C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\7gkwprjboy-{0}-sjass7ij7e-sjass7ij7e.gz
+C:\Users\emerson.sap09\Projetos\Cursos\Udemy\Blazor Desenvolvendo Aplicações Web Interativas com .NET\Projeto\Gestao\Gestao.Client\obj\Debug\net8.0\compressed\k44zvoq31s-{0}-lu42haht8k-lu42haht8k.gz
