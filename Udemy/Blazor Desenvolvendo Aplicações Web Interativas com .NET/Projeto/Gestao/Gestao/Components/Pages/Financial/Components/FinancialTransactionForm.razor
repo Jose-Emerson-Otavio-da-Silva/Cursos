@@ -69,7 +69,7 @@
             <ValidationMessage For="() => FinancialTransaction!.Amount" />
         </div>
 
-        @if (!FinancialTransaction.RepeatGroup.HasValue || FinancialTransaction.RepeatGroup == FinancialTransaction.Id)
+        @if ( IsEditForm == false || (IsEditForm && FinancialTransaction.RepeatGroup.HasValue && FinancialTransaction.RepeatGroup == FinancialTransaction.Id))
         {
             <div class="col-xxl-3 col-md-6">
                 <label for="repeat" class="form-label fw-semibold">Repetir</label>

@@ -1,15 +1,15 @@
 {
   "mainAssemblyName": "Gestao.Client",
   "resources": {
-    "hash": "sha256-oVanikQMa5WMmL7AmBkVxWx1lu4ilMerAuDk4hlwR0U=",
+    "hash": "sha256-cioh/cV1me9UETiT8ypZyMHDYlJrw4MaaVXJy73i3gk=",
     "jsModuleNative": {
-      "dotnet.native.js": "sha256-vtotCeXt2UD6oc459laJT32vBgigZ+eLoUmdeFkvYDk="
+      "dotnet.native.js": "sha256-9Fzd5We95Rp03dEKIAbYjPDR3eWyLbmjMlYStvxyiok="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.js": "sha256-6bV/iAemowb59rmItegP8VsxwWpWUNyMb0Q76Fvvsjo="
+      "dotnet.runtime.js": "sha256-aLf0XK8bqX83FXyXydFPTC1FOTq3PaeGDyoDn3uz194="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-I9mo79uNpf37/J/jYCGkW9F0w+mgb+ezeNdHNbQNvf0="
+      "dotnet.native.wasm": "sha256-Y1pDEFNAqpzUmFk5FuVUzruqNloBnByUMhlQ96dqto4="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -222,19 +222,19 @@
       "mscorlib.wasm": "sha256-MZJ1V6miMP318lQowft4FPkcszcibPLDTwKj235fSAc=",
       "netstandard.wasm": "sha256-RYAURbR1AHkUZYjKgu+B/i3N3VP4abnAaH+vxwJ8d3c=",
       "System.Private.CoreLib.wasm": "sha256-4YzdATaWUDkUkRpe+hl+T61TaCjRVapVUtqTIai3Gd8=",
-      "Gestao.Domain.wasm": "sha256-0lJRpV/lG3wmkRV4oWA71tBkjSdv4+qS8DGnUICVFoM=",
-      "Gestao.Client.wasm": "sha256-faeUuXZpdf0/aHqnEyLSpFqxYutGyKeMVB6iQrJ2+8g="
+      "Gestao.Domain.wasm": "sha256-u+bEvc9VoyrnI6fpef7fTDy2HSBTHwY8EH20TiDOTe4=",
+      "Gestao.Client.wasm": "sha256-9CtH+L+lFcBF6Ex2lDD2yRNbgRfr/99pXdY0HYxZkN0="
     },
     "pdb": {
-      "Gestao.Domain.pdb": "sha256-M9VU405ts/SIJVjhRCreu9+ufQXefgUvI3Q4i7YYT2Y=",
-      "Gestao.Client.pdb": "sha256-d9fKBnCPhAfjRfxeMVcbW4Wyp7D6+r/9nBg5I0IPrUc="
+      "Gestao.Domain.pdb": "sha256-a1PxqFdWDVM+3+DxSgmgeNHwRv7zSh4l8RZgYSEWwmw=",
+      "Gestao.Client.pdb": "sha256-xYg78CdQQ7fAjNgSWaurg7Tr6RKc0AXQ8MqhWdK55IY="
     }
   },
   "cacheBootResources": true,
   "debugLevel": -1,
   "appsettings": [
-    "../appsettings.json",
-    "../appsettings.Development.json"
+    "../appsettings.Development.json",
+    "../appsettings.json"
   ],
   "globalizationMode": "sharded",
   "extensions": {

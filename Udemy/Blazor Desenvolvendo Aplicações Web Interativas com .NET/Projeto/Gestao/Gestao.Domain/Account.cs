@@ -10,12 +10,13 @@ namespace Gestao.Domain
         [MinLength(3, ErrorMessage = "O campo Descrição/Nome deve ter no mínimo {1} caracteres.")]
         public string Description { get; set; } = string.Empty;
         [Required(ErrorMessage = "O campo Saldo Inicial é obrigatório.")]
-        public decimal? Balance { get; set; }
+        public decimal Balance { get; set; }
         [Required(ErrorMessage = "O campo Data de abertura da conta é obrigatório.")]
         public DateTimeOffset BalanceDate { get; set; }
         public int? CompanyId { get; set; }
         public Company? Company { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
         public DateTimeOffset? DeletedAt { get; set; }
+        public ICollection<FinancialTransaction>? FinancialTransactions { get; set; }
     }
 }
