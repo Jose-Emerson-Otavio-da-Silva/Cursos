@@ -112,7 +112,7 @@
                                 <form action="Account/Logout" method="post">
                                     <AntiforgeryToken />
                                     <input type="hidden" name="ReturnUrl" />
-                                    <button type="submit" class="dropdown-item">
+                                    <button @onclick="CompanyDeselected" type="submit" class="dropdown-item">
                                         <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> Sair
                                     </button>
                                 </form>
@@ -149,5 +149,13 @@
     public void Dispose()
     {
         Notification.OnCompanySelected -= OnCompanySelected;
+    }
+    private async void CompanyDeselected(MouseEventArgs args)
+    {
+        var existCompany = await LocalStorage.ContainKeyAsync(AppConstants.LocalStorageCompany);
+        if (existCompany)
+        {
+            await LocalStorage.RemoveItemAsync(AppConstants.LocalStorageCompany);
+        }
     }
 }
