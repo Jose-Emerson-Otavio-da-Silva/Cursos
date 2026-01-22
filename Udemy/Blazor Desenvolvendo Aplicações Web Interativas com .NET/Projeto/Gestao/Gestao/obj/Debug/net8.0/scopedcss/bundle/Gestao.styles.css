@@ -1,4 +1,4 @@
-/* _content/Gestao/Components/Layout/Admin/MainLayout.razor.rz.scp.css */
+/* /Components/Layout/Admin/MainLayout.razor.rz.scp.css */
 #blazor-error-ui[b-71deae6lvz] {
     background: lightyellow;
     bottom: 0;
@@ -17,7 +17,7 @@
     right: 0.75rem;
     top: 0.5rem;
 }
-/* _content/Gestao/Components/Layout/Admin/NavMenu.razor.rz.scp.css */
+/* /Components/Layout/Admin/NavMenu.razor.rz.scp.css */
 .nav-item[b-ahs2ex62hz]  a.active {
     color: white;
     font-weight: 500;
