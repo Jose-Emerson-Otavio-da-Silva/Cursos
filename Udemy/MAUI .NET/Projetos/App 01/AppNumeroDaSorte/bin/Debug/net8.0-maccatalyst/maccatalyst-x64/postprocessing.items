@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="AppNumeroDaSorte.app/Contents/MacOS/AppNumeroDaSorte">
+      <IsAppExtension>false</IsAppExtension>
+      <BCSymbolMapName>AppNumeroDaSorte.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>AppNumeroDaSorte.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/emerson/Documents/GitHub/Cursos/Udemy/MAUI .NET/Projetos/App 01/AppNumeroDaSorte/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>AppNumeroDaSorte.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/emerson/Documents/GitHub/Cursos/Udemy/MAUI .NET/Projetos/App 01/AppNumeroDaSorte</SourceProjectPath>
+      <IsXPCService></IsXPCService>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
