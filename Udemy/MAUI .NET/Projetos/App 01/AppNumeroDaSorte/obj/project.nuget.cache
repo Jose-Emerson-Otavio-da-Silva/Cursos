@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BCMTwIC0IlY=",
+  "dgSpecHash": "+z9tTpSbOXY=",
   "success": true,
   "projectFilePath": "/Users/emerson/Documents/GitHub/Cursos/Udemy/MAUI .NET/Projetos/App 01/AppNumeroDaSorte/AppNumeroDaSorte.csproj",
   "expectedPackageFiles": [
@@ -107,7 +107,11 @@
     "/Users/emerson/.nuget/packages/xamarin.kotlin.stdlib.jdk7/1.9.0.1/xamarin.kotlin.stdlib.jdk7.1.9.0.1.nupkg.sha512",
     "/Users/emerson/.nuget/packages/xamarin.kotlin.stdlib.jdk8/1.9.0.1/xamarin.kotlin.stdlib.jdk8.1.9.0.1.nupkg.sha512",
     "/Users/emerson/.nuget/packages/xamarin.kotlinx.coroutines.android/1.7.2.1/xamarin.kotlinx.coroutines.android.1.7.2.1.nupkg.sha512",
-    "/Users/emerson/.nuget/packages/xamarin.kotlinx.coroutines.core.jvm/1.7.2.1/xamarin.kotlinx.coroutines.core.jvm.1.7.2.1.nupkg.sha512"
+    "/Users/emerson/.nuget/packages/xamarin.kotlinx.coroutines.core.jvm/1.7.2.1/xamarin.kotlinx.coroutines.core.jvm.1.7.2.1.nupkg.sha512",
+    "/Users/emerson/.nuget/packages/microsoft.ios.ref.net8.0_18.0/18.0.8324/microsoft.ios.ref.net8.0_18.0.18.0.8324.nupkg.sha512",
+    "/Users/emerson/.nuget/packages/microsoft.ios.runtime.iossimulator-x64.net8.0_18.0/18.0.8324/microsoft.ios.runtime.iossimulator-x64.net8.0_18.0.18.0.8324.nupkg.sha512",
+    "/Users/emerson/.nuget/packages/microsoft.maccatalyst.ref.net8.0_18.0/18.0.8324/microsoft.maccatalyst.ref.net8.0_18.0.18.0.8324.nupkg.sha512",
+    "/Users/emerson/.nuget/packages/microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0/18.0.8324/microsoft.maccatalyst.runtime.maccatalyst-x64.net8.0_18.0.18.0.8324.nupkg.sha512"
   ],
   "logs": []
 }
