@@ -13,11 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppNumeroDaSorte")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0aecd094f1987e6a588d3a4abfffb71006fa507")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff267bac22810a0a986e4b67e876fe57d0e7b72d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppNumeroDaSorte")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppNumeroDaSorte")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("ios0.0")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("ios1.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("ios15.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
