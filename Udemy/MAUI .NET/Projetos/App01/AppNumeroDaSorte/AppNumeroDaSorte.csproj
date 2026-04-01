@@ -20,9 +20,6 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
-		<AndroidTargetSdkVersion>34</AndroidTargetSdkVersion>
-    	<AndroidCompileSdkVersion>34</AndroidCompileSdkVersion>
-
 		<!-- Display name -->
 		<ApplicationTitle>AppNumeroDaSorte</ApplicationTitle>
 
@@ -64,7 +61,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
 	</ItemGroup>
 
 </Project>
