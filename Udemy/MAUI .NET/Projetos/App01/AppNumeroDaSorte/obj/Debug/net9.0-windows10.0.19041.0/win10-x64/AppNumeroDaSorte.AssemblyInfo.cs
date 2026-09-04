@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppNumeroDaSorte")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b97f32cb535ab7ac2db5e628374ec82efd9dab53")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ae02fc268859a842d8ddfe9b72dd7cf03f9df7d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppNumeroDaSorte")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppNumeroDaSorte")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
