@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/emerson/Documents/GitHub/Cursos/Udemy/MAUI .NET/Projetos/App01/AppNumeroDaSorte/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/Entitlements.xcent /Users/emerson/Documents/GitHub/Cursos/Udemy/MAUI .NET/Projetos/App01/AppNumeroDaSorte/bin/Debug/net9.0-maccatalyst/maccatalyst-x64/AppNumeroDaSorte.app
